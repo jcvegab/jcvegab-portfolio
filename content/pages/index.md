@@ -22,16 +22,16 @@ sections:
     projects_number: 6
     view_all_label: View All
     view_all_url: portfolio
-  - section_id: latest-posts
-    type: section_posts
-    title: ¿Qué hay de nuevo?
-    subtitle: "Aquí veras los artículos más recientes \U0001F4F0"
-    posts_number: 3
-    col_number: three
-    actions:
-      - label: Ver Blog
-        url: blog
-        style: button
+  # - section_id: latest-posts
+  #   type: section_posts
+  #   title: ¿Qué hay de nuevo?
+  #   subtitle: "Aquí veras los artículos más recientes \U0001F4F0"
+  #   posts_number: 3
+  #   col_number: three
+  #   actions:
+  #     - label: Ver Blog
+  #       url: blog
+  #       style: button
 seo:
   title: Joseph Vega Blacido
   description: Full Stack Web Developer | React - Ruby on Rails
