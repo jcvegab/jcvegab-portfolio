@@ -1,13 +1,15 @@
+@use "functions";
+
 /**
  * Site Footer
  */
 .site-footer {
-  border-top: 1px solid _palette(charcoal-light-75);
+  border-top: 1px solid functions.palette(charcoal-light-75);
   padding-bottom: 1.33333em;
   padding-top: 2.5em;
 
   .palette-dark & {
-    border-top-color: _palette(charcoal-light-7);
+    border-top-color: functions.palette(charcoal-light-7);
   }
 }
 
@@ -17,22 +19,22 @@
 
     &:hover,
     &:focus {
-      color: _palette(accent);
+      color: functions.palette(accent);
 
       .accent-green & {
-        color: _palette(accent-green);
+        color: functions.palette(accent-green);
       }
     
       .accent-blue & {
-        color: _palette(accent-blue);
+        color: functions.palette(accent-blue);
       }
     
       .accent-violet & {
-        color: _palette(accent-violet);
+        color: functions.palette(accent-violet);
       }
     
       .accent-yellow & {
-        color: _palette(accent-yellow);
+        color: functions.palette(accent-yellow);
       }
     }
   }

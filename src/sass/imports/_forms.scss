@@ -1,3 +1,5 @@
+@use "functions";
+
 /**
  * Form fields
  */
@@ -22,7 +24,7 @@ input[type="url"],
 select,
 textarea {
   background: transparent;
-  border-color: _palette(charcoal-light-75);
+  border-color: functions.palette(charcoal-light-75);
   border-radius: 0;
   border-style: solid;
   border-width: 0 0 2px;
@@ -42,12 +44,12 @@ textarea {
   }
 
   .palette-dark & {
-    border-color: _palette(charcoal-light-7);
+    border-color: functions.palette(charcoal-light-7);
   }
 }
 
 option {
-  color: _palette(charcoal);
+  color: functions.palette(charcoal);
 }
 
 .form-group {
@@ -56,7 +58,7 @@ option {
 
   .animate-border {
     bottom: 0;
-    background: _palette(accent);
+    background: functions.palette(accent);
     height: 2px;
     left: 0;
     position: absolute;
@@ -65,19 +67,19 @@ option {
     width: 0;
 
     .accent-green & {
-      background: _palette(accent-green);
+      background: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      background: _palette(accent-blue);
+      background: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      background: _palette(accent-violet);
+      background: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      background: _palette(accent-yellow);
+      background: functions.palette(accent-yellow);
     }
   }
 
@@ -116,20 +118,20 @@ option {
   }
 
   &:before {
-    border-top-color: _palette(charcoal-light-40);
+    border-top-color: functions.palette(charcoal-light-40);
     margin-top: .125em;
 
     .palette-dark & {
-      border-top-color: _palette(charcoal-light-25);
+      border-top-color: functions.palette(charcoal-light-25);
     }
   }
 
   &:after {
-    border-bottom-color: _palette(charcoal-light-40);
+    border-bottom-color: functions.palette(charcoal-light-40);
     margin-top: -.75em;
 
     .palette-dark & {
-      border-bottom-color: _palette(charcoal-light-25);
+      border-bottom-color: functions.palette(charcoal-light-25);
     }
   }
 }
@@ -152,45 +154,45 @@ option {
 
 // Placeholder text color
 ::-webkit-input-placeholder {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
 }
 
 ::-moz-placeholder {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
 }
 
 ::-ms-input-placeholder {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
 }
 
 ::placeholder {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
 }
 
 .palette-dark {
   ::-webkit-input-placeholder {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
   
   ::-moz-placeholder {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
     opacity: 1;
   }
   
   :-ms-input-placeholder {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
   
   ::-ms-input-placeholder {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
   
   ::placeholder {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
 }

@@ -1,8 +1,10 @@
+@use "functions";
+
 /**
  * General
  */
 html {
-  font-family: _font(primary);
+  font-family: functions.font(primary);
   font-size: 112.5%;
   height: 100%;
   min-height: 100%;
@@ -14,51 +16,51 @@ html {
 
 body {
   background: #fff;
-  color: _palette(charcoal);
+  color: functions.palette(charcoal);
   line-height: 1.66667;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 
   &.palette-dark {
-    background: _palette(charcoal);
-    color: _palette(charcoal-light-60);
+    background: functions.palette(charcoal);
+    color: functions.palette(charcoal-light-60);
   }
 }
 
 a {
   border-bottom: 1px solid currentColor;
-  color: _palette(accent);
+  color: functions.palette(accent);
   text-decoration: none;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 
   .accent-green & {
-    color: _palette(accent-green);
+    color: functions.palette(accent-green);
   }
 
   .accent-blue & {
-    color: _palette(accent-blue);
+    color: functions.palette(accent-blue);
   }
 
   .accent-violet & {
-    color: _palette(accent-violet);
+    color: functions.palette(accent-violet);
   }
 
   .accent-yellow & {
-    color: _palette(accent-yellow);
+    color: functions.palette(accent-yellow);
   }
 
   &:hover,
   &:focus {
-    color: _palette(charcoal);
+    color: functions.palette(charcoal);
   }
 
   &:not(.button) {
     &:hover,
     &:focus {
       .palette-dark & {
-        color: _palette(charcoal-light-60);
+        color: functions.palette(charcoal-light-60);
       }
     }
   }
@@ -128,18 +130,18 @@ address {
 mark,
 ins {
   background: #fff493;
-  color: _palette(charcoal);
+  color: functions.palette(charcoal);
   padding: 0 3px;
   text-decoration: none;
 }
 
 code,
 pre {
-  font-family: _font(monospace);
+  font-family: functions.font(monospace);
 }
 
 pre {
-  background: _palette(charcoal-light-80);
+  background: functions.palette(charcoal-light-80);
   font-size: 0.88889em;
   margin: 0 0 1.875em;
   overflow: auto;
@@ -148,7 +150,7 @@ pre {
   white-space: pre;
 
   .palette-dark & {
-    background: _palette(charcoal-light-3);
+    background: functions.palette(charcoal-light-3);
   }
 }
 
@@ -173,7 +175,7 @@ blockquote {
   }
 
   &:before {
-    color: _palette(accent);
+    color: functions.palette(accent);
     content: "\201C";
     font-size: 2.5em;
     left: 0;
@@ -182,19 +184,19 @@ blockquote {
     top: 0;
 
     .accent-green & {
-      color: _palette(accent-green);
+      color: functions.palette(accent-green);
     }
 
     .accent-blue & {
-      color: _palette(accent-blue);
+      color: functions.palette(accent-blue);
     }
 
     .accent-violet & {
-      color: _palette(accent-violet);
+      color: functions.palette(accent-violet);
     }
 
     .accent-yellow & {
-      color: _palette(accent-yellow);
+      color: functions.palette(accent-yellow);
     }
   }
 
@@ -246,11 +248,11 @@ li > ol {
 
 hr {
   border: 0;
-  border-bottom: 1px solid _palette(charcoal-light-75);
+  border-bottom: 1px solid functions.palette(charcoal-light-75);
   margin: 2.5em 0;
 
   .palette-dark & {
-    border-bottom-color: _palette(charcoal-light-7);
+    border-bottom-color: functions.palette(charcoal-light-7);
   }
 }
 
@@ -262,24 +264,24 @@ table {
 }
 
 caption {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
   font-size: 0.88889em;
   font-style: normal;
   margin-bottom: 0.9375em;
   text-align: left;
 
   .palette-dark & {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
 }
 
 th,
 td {
-  border-bottom: 1px solid _palette(charcoal-light-75);
+  border-bottom: 1px solid functions.palette(charcoal-light-75);
   padding: 0.5em 5px;
 
   .palette-dark & {
-    border-bottom-color: _palette(charcoal-light-7);
+    border-bottom-color: functions.palette(charcoal-light-7);
   }
 }
 

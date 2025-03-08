@@ -1,3 +1,5 @@
+@use "functions";
+
 /**
  * Buttons
  */
@@ -9,7 +11,7 @@
   border: 0;
   border-radius: 0;
   box-sizing: border-box;
-  color: _palette(accent);
+  color: functions.palette(accent);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -27,19 +29,19 @@
   transition: .3s ease;
 
   .accent-green & {
-    color: _palette(accent-green);
+    color: functions.palette(accent-green);
   }
 
   .accent-blue & {
-    color: _palette(accent-blue);
+    color: functions.palette(accent-blue);
   }
 
   .accent-violet & {
-    color: _palette(accent-violet);
+    color: functions.palette(accent-violet);
   }
 
   .accent-yellow & {
-    color: _palette(accent-yellow);
+    color: functions.palette(accent-yellow);
   }
 
   &:before,
@@ -69,23 +71,23 @@
   &:hover,
   &:focus,
   &:active {
-    color: _palette(accent);
+    color: functions.palette(accent);
     outline: 0;
 
     .accent-green & {
-      color: _palette(accent-green);
+      color: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      color: _palette(accent-blue);
+      color: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      color: _palette(accent-violet);
+      color: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      color: _palette(accent-yellow);
+      color: functions.palette(accent-yellow);
     }
 
     &:before,

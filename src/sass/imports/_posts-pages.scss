@@ -1,3 +1,5 @@
+@use "functions";
+
 /**
  * Posts and Pages
  */
@@ -17,11 +19,11 @@
 
 .page-subtitle,
 .post-subtitle {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
   margin-top: 0.5em;
 
   .palette-dark & {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
 }
 
@@ -31,13 +33,13 @@
 }
 
 .post-meta {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
   font-size: 0.88889em;
   letter-spacing: 1px;
   text-transform: uppercase;
 
   .palette-dark & {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
 }
 

@@ -1,0 +1,19 @@
+@use 'sass:color';
+
+$palette: (
+    charcoal: #272c30,
+    charcoal-light-3: color.adjust(#272c30, $lightness: 3%),
+    charcoal-light-7: color.adjust(#272c30, $lightness: 7%),
+    charcoal-light-15: color.adjust(#272c30, $lightness: 15%),
+    charcoal-light-25: color.adjust(#272c30, $lightness: 25%),
+    charcoal-light-40: color.adjust(#272c30, $lightness: 40%),
+    charcoal-light-60: color.adjust(#272c30, $lightness: 60%),
+    charcoal-light-75: color.adjust(#272c30, $lightness: 75%),
+    charcoal-light-80: color.adjust(#272c30, $lightness: 80%),
+    charcoal-dark-15: color.adjust(#272c30, $lightness: -15%),
+    accent: #d8195e,
+    accent-blue: #0c8aea,
+    accent-green: #0da5b1,
+    accent-violet: #7c43a8,
+    accent-yellow: #ed9700
+);

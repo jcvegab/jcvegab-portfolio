@@ -1,13 +1,15 @@
+@use "functions";
+
 /**
  * Site Header
  */
 .site-header {
-  border-bottom: 1px solid _palette(charcoal-light-75);
+  border-bottom: 1px solid functions.palette(charcoal-light-75);
   padding-bottom: 1em;
   padding-top: 1em;
 
   .palette-dark & {
-    border-bottom-color: _palette(charcoal-light-7);
+    border-bottom-color: functions.palette(charcoal-light-7);
   }
 }
 
@@ -48,24 +50,24 @@
   text-transform: uppercase;
 
   a {
-    background: _palette(accent);
+    background: functions.palette(accent);
     display: inline-block;
     padding: 0.2em 0.45em;
 
     .accent-green & {
-      background: _palette(accent-green);
+      background: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      background: _palette(accent-blue);
+      background: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      background: _palette(accent-violet);
+      background: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      background: _palette(accent-yellow);
+      background: functions.palette(accent-yellow);
     }
   }
 }
@@ -81,22 +83,22 @@
   line-height: 1.2;
 
   &.current-menu-item {
-    color: _palette(accent);
+    color: functions.palette(accent);
 
     .accent-green & {
-      color: _palette(accent-green);
+      color: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      color: _palette(accent-blue);
+      color: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      color: _palette(accent-violet);
+      color: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      color: _palette(accent-yellow);
+      color: functions.palette(accent-yellow);
     }
   }
 
@@ -106,22 +108,22 @@
       color: inherit;
 
       &:hover {
-        color: _palette(accent);
+        color: functions.palette(accent);
 
         .accent-green & {
-          color: _palette(accent-green);
+          color: functions.palette(accent-green);
         }
       
         .accent-blue & {
-          color: _palette(accent-blue);
+          color: functions.palette(accent-blue);
         }
       
         .accent-violet & {
-          color: _palette(accent-violet);
+          color: functions.palette(accent-violet);
         }
       
         .accent-yellow & {
-          color: _palette(accent-yellow);
+          color: functions.palette(accent-yellow);
         }
       }
     }
@@ -175,7 +177,7 @@
 @media only screen and (max-width: 800px) {
   .site-header {
     &:after {
-      background: rgba(_palette(charcoal),.6);
+      background: rgba(functions.palette(charcoal),.6);
       content: "";
       height: 100vh;
       left: 0;
@@ -189,7 +191,7 @@
       z-index: 998;
 
       .palette-dark & {
-        background: rgba(_palette(charcoal-dark-15),.6);
+        background: rgba(functions.palette(charcoal-dark-15),.6);
       }
     }
   }
@@ -218,7 +220,7 @@
     z-index: 999;
 
     .palette-dark & {
-      background:_palette(charcoal);
+      background:functions.palette(charcoal);
     }
   }
 
@@ -241,18 +243,18 @@
   }
 
   .menu-item {
-    border-top: 1px solid _palette(charcoal-light-75);
+    border-top: 1px solid functions.palette(charcoal-light-75);
     display: block;
 
     .palette-dark & {
-      border-top-color: _palette(charcoal-light-7);
+      border-top-color: functions.palette(charcoal-light-7);
     }
 
     &:not(.menu-button):last-child {
-      border-bottom: 1px solid _palette(charcoal-light-75);
+      border-bottom: 1px solid functions.palette(charcoal-light-75);
 
       .palette-dark & {
-        border-bottom-color: _palette(charcoal-light-7);
+        border-bottom-color: functions.palette(charcoal-light-7);
       }
     }
 

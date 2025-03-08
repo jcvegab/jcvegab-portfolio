@@ -1,3 +1,5 @@
+@use "functions";
+
 /**
  * Sections
  */
@@ -24,13 +26,13 @@
 }
 
 .block-subtitle {
-  color: _palette(charcoal-light-40);
+  color: functions.palette(charcoal-light-40);
   font-size: 0.88889em;
   line-height: 1.5;
   margin: 0.5em 0 0;
 
   .palette-dark & {
-    color: _palette(charcoal-light-25);
+    color: functions.palette(charcoal-light-25);
   }
 }
 
@@ -73,7 +75,7 @@
 
   &:before,
   &:after {
-    border: 2px solid _palette(charcoal-light-75);
+    border: 2px solid functions.palette(charcoal-light-75);
     box-sizing: border-box;
     content: "";
     height: 35%;
@@ -82,7 +84,7 @@
     width: 100%;
 
     .palette-dark & {
-      border-color: _palette(charcoal-light-7);
+      border-color: functions.palette(charcoal-light-7);
     }
   }
 
@@ -120,7 +122,7 @@
 /* Portfolio section */
 .view-all-button {
   box-sizing: border-box;
-  color: _palette(accent);
+  color: functions.palette(accent);
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
@@ -134,24 +136,24 @@
   z-index: 2;
 
   .accent-green & {
-    color: _palette(accent-green);
+    color: functions.palette(accent-green);
   }
 
   .accent-blue & {
-    color: _palette(accent-blue);
+    color: functions.palette(accent-blue);
   }
 
   .accent-violet & {
-    color: _palette(accent-violet);
+    color: functions.palette(accent-violet);
   }
 
   .accent-yellow & {
-    color: _palette(accent-yellow);
+    color: functions.palette(accent-yellow);
   }
 
   &:before,
   &:after {
-    border: 2px solid _palette(accent);
+    border: 2px solid functions.palette(accent);
     box-sizing: border-box;
     content: "";
     height: 32%;
@@ -162,19 +164,19 @@
     width: 100%;
 
     .accent-green & {
-      border-color: _palette(accent-green);
+      border-color: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      border-color: _palette(accent-blue);
+      border-color: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      border-color: _palette(accent-violet);
+      border-color: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      border-color: _palette(accent-yellow);
+      border-color: functions.palette(accent-yellow);
     }
   }
 
@@ -220,7 +222,7 @@
   }
 
   .palette-dark & {
-    color: _palette(charcoal-light-60);
+    color: functions.palette(charcoal-light-60);
   }
 }
 

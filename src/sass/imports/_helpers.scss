@@ -1,3 +1,5 @@
+@use "functions";
+
 /**
  * Helper Classes
  */
@@ -75,26 +77,26 @@
   position: relative;
 
   &:before {
-    border-left: 45px solid _palette(accent);
+    border-left: 45px solid functions.palette(accent);
     content: "";
     display: block;
     height: 3px;
     margin-bottom: 0.83333rem;
 
     .accent-green & {
-      border-left-color: _palette(accent-green);
+      border-left-color: functions.palette(accent-green);
     }
   
     .accent-blue & {
-      border-left-color: _palette(accent-blue);
+      border-left-color: functions.palette(accent-blue);
     }
   
     .accent-violet & {
-      border-left-color: _palette(accent-violet);
+      border-left-color: functions.palette(accent-violet);
     }
   
     .accent-yellow & {
-      border-left-color: _palette(accent-yellow);
+      border-left-color: functions.palette(accent-yellow);
     }
   }
 }
