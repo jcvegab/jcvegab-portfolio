@@ -41,7 +41,7 @@ sections:
     content: >
       ¡Hola! Muchas gracias por tu interés en trabajar juntos. Puedes completar
       el siguiente formulario de contacto o contactarme por email
-      jcvb0206@gmail.com o vía [WhatsApp](https://wa.link/lg1yhf) 
+      contact@jcvegab.site o vía [WhatsApp](https://wa.link/lg1yhf) 
 seo:
   title: Contact
   description: This is the contact page
