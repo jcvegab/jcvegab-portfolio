@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser';
-import ScriptTag from 'react-script-tag';
+import ReactHtmlParser, { convertNodeToElement } from 'html-react-parser';
+import ScriptTag from '../components/ScriptTag';
 import Link from './link';
 import _ from 'lodash';
 
