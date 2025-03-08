@@ -7,7 +7,7 @@
         "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
         "develop": "next dev",
         "fetch": "sourcebit fetch",
-        "build": "next build && next export",
+        "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
         "start": "next start"
     },
     "dependencies": {
