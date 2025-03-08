@@ -18,11 +18,6 @@
                 "style": "link"
             },
             {
-                "label": "Blog",
-                "url": "/blog/",
-                "style": "link"
-            },
-            {
                 "label": "Acerca",
                 "url": "/about/",
                 "style": "link"
@@ -36,7 +31,7 @@
         "logo_img": "/images/Frame 24.png"
     },
     "footer": {
-        "content": "Joseph Vega Blacido @jcvegab | Todos los derechos reservados &copy; 2021.",
+        "content": "Joseph Vega Blacido @jcvegab | Todos los derechos reservados &copy; 2025.",
         "has_social": true,
         "social_links": [
             {
