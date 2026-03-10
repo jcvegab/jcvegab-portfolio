@@ -1,71 +1,71 @@
 {
-    "title": "Joseph Vega Blacido",
-    "path_prefix": "/",
-    "color_scheme": "light",
-    "accent_color": "blue",
-    "header": {
-        "title": "JCVEGAB",
-        "has_nav": true,
-        "nav_links": [
-            {
-                "label": "Inicio",
-                "url": "/",
-                "style": "link"
-            },
-            {
-                "label": "Portafolio",
-                "url": "/portfolio/",
-                "style": "link"
-            },
-            {
-                "label": "Acerca",
-                "url": "/about/",
-                "style": "link"
-            },
-            {
-                "label": "Contacto",
-                "url": "/contact/",
-                "style": "link"
-            }
-        ],
-        "logo_img": "/images/Frame 24.png"
-    },
-    "footer": {
-        "content": "Joseph Vega Blacido @jcvegab | Todos los derechos reservados &copy; 2025.",
-        "has_social": true,
-        "social_links": [
-            {
-                "label": "Github",
-                "url": "https://www.github.com/jcvegab",
-                "style": "icon",
-                "icon": "github",
-                "new_window": true,
-                "no_follow": false,
-                "type": "action"
-            },
-            {
-                "label": "LinkedIn",
-                "url": "https://www.linkedin.com/in/joseph-vegab",
-                "style": "icon",
-                "icon": "linkedin",
-                "new_window": true
-            },
-            {
-                "label": "Twitter",
-                "url": "https://twitter.com/jcvegab",
-                "style": "icon",
-                "icon": "twitter",
-                "new_window": true
-            },
-            {
-                "label": "Instagram",
-                "url": "https://www.instagram.com/jcvegab_",
-                "style": "icon",
-                "icon": "instagram",
-                "new_window": true
-            }
-        ]
-    },
-    "domain": "https://jcvegab.site",
-    "favicon": "/images/Frame 25.png"
+  "title": "Joseph Vega Blacido",
+  "path_prefix": "/",
+  "color_scheme": "light",
+  "accent_color": "blue",
+  "header": {
+    "title": "JCVEGAB",
+    "has_nav": true,
+    "nav_links": [
+      {
+        "label": "Inicio",
+        "url": "/",
+        "style": "link"
+      },
+      {
+        "label": "Portafolio",
+        "url": "/portfolio/",
+        "style": "link"
+      },
+      {
+        "label": "Acerca",
+        "url": "/about/",
+        "style": "link"
+      },
+      {
+        "label": "Contacto",
+        "url": "/contact/",
+        "style": "link"
+      }
+    ],
+    "logo_img": "/images/Frame 24.png"
+  },
+  "footer": {
+    "content": "Joseph Vega Blacido @jcvegab | Todos los derechos reservados &copy; 2025.",
+    "has_social": true,
+    "social_links": [
+      {
+        "label": "Github",
+        "url": "https://www.github.com/jcvegab",
+        "style": "icon",
+        "icon": "github",
+        "new_window": true,
+        "no_follow": false,
+        "type": "action"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/joseph-vegab",
+        "style": "icon",
+        "icon": "linkedin",
+        "new_window": true
+      },
+      {
+        "label": "Twitter",
+        "url": "https://twitter.com/jcvegab",
+        "style": "icon",
+        "icon": "twitter",
+        "new_window": true
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/jcvegab_",
+        "style": "icon",
+        "icon": "instagram",
+        "new_window": true
+      }
+    ]
+  },
+  "domain": "https://jcvegab.dev",
+  "favicon": "/images/Frame 25.png"
 }

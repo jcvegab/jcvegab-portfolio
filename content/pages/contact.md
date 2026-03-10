@@ -41,7 +41,7 @@ sections:
     content: >
       ¡Hola! Muchas gracias por tu interés en trabajar juntos. Puedes completar
       el siguiente formulario de contacto o contactarme por email
-      contact@jcvegab.site
+      contact@jcvegab.dev
 seo:
   title: Contact
   description: This is the contact page
