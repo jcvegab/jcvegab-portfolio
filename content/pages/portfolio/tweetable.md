@@ -1,55 +1,90 @@
 ---
-title: Tweetable
-subtitle: Clon de Twitter en Ruby on Rails
+title: Tweetable – Twitter Clone en Ruby on Rails
+subtitle: Aplicación tipo Twitter construida con Ruby on Rails
 date: '2021-01-13'
-thumb_image: /images/unique-paprika.png
-thumb_image_alt: 'White, black, and red shoe sole'
-image: /images/unique-paprika.png
-image_alt: Vista de Tweetable en Ruby on Rails
+thumb_image: /images/tweetable-cover.png
+thumb_image_alt: Interfaz de Tweetable, clon de Twitter desarrollado en Ruby on Rails
+image: /images/tweetable-cover.png
+image_alt: Vista de la aplicación Tweetable desarrollada con Ruby on Rails
+
 seo:
-  title: Project Title 1
-  description: This is the project 1 description
+  title: Tweetable – Twitter Clone construido con Ruby on Rails
+  description: Aplicación tipo Twitter desarrollada con Ruby on Rails como proyecto MVP. Incluye autenticación con Devise, autorización con Pundit y login social con Omniauth. Proyecto de desarrollo web backend.
   extra:
     - name: 'og:type'
       value: website
       keyName: property
+
     - name: 'og:title'
-      value: Project Title 1
+      value: Tweetable – Twitter Clone en Ruby on Rails
       keyName: property
+
     - name: 'og:description'
-      value: This is the project 1 description
+      value: Proyecto de clon de Twitter desarrollado en Ruby on Rails con autenticación Devise, autorización Pundit y login social mediante Omniauth.
       keyName: property
+
     - name: 'og:image'
-      value: images/1.jpg
+      value: /images/tweetable-cover.png
       keyName: property
       relativeUrl: true
+
+    - name: 'og:locale'
+      value: es_ES
+      keyName: property
+
     - name: 'twitter:card'
       value: summary_large_image
+
     - name: 'twitter:title'
-      value: Project Title 1
+      value: Tweetable – Twitter Clone en Ruby on Rails
+
     - name: 'twitter:description'
-      value: This is the project 1 description
+      value: Aplicación estilo Twitter desarrollada con Ruby on Rails como MVP, utilizando Devise, Pundit y Omniauth.
+
     - name: 'twitter:image'
-      value: images/1.jpg
+      value: /images/tweetable-cover.png
       relativeUrl: true
+
 layout: project
 ---
-El siguiente proyecto fue un entregable como concepto integral de aprendizaje del framework backend Ruby on Rails.
 
-Para el desarrollo de Tweetable, una aplicación con los elementos básicos de Twitter, se tuvo 3 días para crear un producto mínimo viable (MVP) en un equipo de desarrollo conformado por 3 personas. Esta versión consta de 2 entidades como Usuario y Tweet, así mismo a cada entidad se le añadió una capa de validaciones.
+Tweetable es un **clon simplificado de Twitter desarrollado con Ruby on Rails**, creado como proyecto de aprendizaje para comprender la arquitectura de aplicaciones web backend con Rails.
 
-## Conocimientos requeridos / aplicados
+El objetivo del proyecto fue desarrollar un **producto mínimo viable (MVP)** en un periodo de **3 días**, trabajando en un equipo de **3 desarrolladores**.
 
-HTML, CSS, Ruby, Ruby on Rails
+La aplicación reproduce funcionalidades básicas de Twitter, incluyendo:
 
-## Gemas usadas
+- registro y autenticación de usuarios
+- creación y publicación de tweets
+- validaciones de datos
+- control de permisos
 
-*   [**Devise**](https://github.com/heartcombo/devise) para el registro de usuarios y control de sesiones.
+El modelo de datos se compone principalmente de dos entidades:
 
-*   [**Pundit**](https://github.com/varvet/pundit) para la autorización de permisos y acceso de los usuarios.
+- **User**
+- **Tweet**
 
-*   [**Omniauth-Github**](https://github.com/omniauth/omniauth-github) para el registro mediante cuentas Github (Deshabilitado el callback).
+Cada entidad incluye validaciones para garantizar la integridad de los datos dentro de la aplicación Rails.
 
-*   [**Omniauth-Google**](https://github.com/zquestz/omniauth-google-oauth2) para el registro mediante cuentas Google (Deshabilitado el callback).
+## Tecnologías utilizadas
 
-Puedes ver el código fuente en mi repositorio de Github: [Tweetable (Twitter clone)](https://github.com/jcvegab/tweetable-team-project)
+- HTML
+- CSS
+- Ruby
+- Ruby on Rails
+
+## Gemas utilizadas en el proyecto
+
+- **Devise** – autenticación de usuarios y gestión de sesiones.
+- **Pundit** – autorización y control de permisos.
+- **Omniauth-Github** – autenticación mediante cuentas de GitHub (callback deshabilitado).
+- **Omniauth-Google** – autenticación mediante cuentas de Google (callback deshabilitado).
+
+Estas herramientas permiten implementar rápidamente funcionalidades comunes de aplicaciones web modernas como **login social, autenticación segura y control de acceso basado en roles**.
+
+## Código fuente
+
+Puedes revisar el código completo del proyecto en GitHub:
+
+**Repositorio:**  
+https://github.com/jcvegab/tweetable-team-project
