@@ -8,7 +8,7 @@ image: /images/tweetable-cover.png
 image_alt: Vista de la aplicación Tweetable desarrollada con Ruby on Rails
 
 seo:
-  title: Tweetable – Twitter Clone construido con Ruby on Rails
+  title: Tweetable | Twitter Clone construido con Ruby on Rails
   description: Aplicación tipo Twitter desarrollada con Ruby on Rails como proyecto MVP. Incluye autenticación con Devise, autorización con Pundit y login social con Omniauth. Proyecto de desarrollo web backend.
   extra:
     - name: 'og:type'

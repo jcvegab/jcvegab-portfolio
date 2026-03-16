@@ -4,7 +4,7 @@ subtitle: Proyectos y experimentos de desarrollo web Full-Stack
 layout_style: mosaic
 
 seo:
-  title: Joseph Vega | Full-Stack Developer (React, TypeScript, Node.js, NestJS)
+  title: Portfolio | Joseph Vega – Full-Stack Developer
   description: Portafolio de Joseph Vega, Full-Stack Developer de Perú especializado en React, TypeScript, Node.js, NestJS y Ruby on Rails. Proyectos de desarrollo web, APIs backend y aplicaciones full-stack.
   extra:
     - name: 'og:type'

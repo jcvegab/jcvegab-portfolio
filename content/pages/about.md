@@ -5,7 +5,7 @@ image: images/about.jpg
 image_alt: Joseph Vega desarrollando software
 
 seo:
-  title: Joseph Vega – Full-Stack Developer | Sobre mí
+  title: Sobre mí | Joseph Vega – Full-Stack Developer
   description: Conoce a Joseph Vega, Full-Stack Developer de Perú especializado en React, TypeScript, Node.js, NestJS y Ruby on Rails. Experiencia desarrollando aplicaciones web modernas y APIs backend.
   extra:
     - name: 'og:type'
