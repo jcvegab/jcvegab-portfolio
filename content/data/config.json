@@ -28,7 +28,7 @@
         "style": "link"
       }
     ],
-    "logo_img": "/images/Frame 24.png"
+    "logo_img": "/images/logo_full.png"
   },
   "footer": {
     "content": "Joseph Vega Blacido @jcvegab | Todos los derechos reservados &copy; 2025.",
@@ -67,5 +67,5 @@
     ]
   },
   "domain": "https://jcvegab.dev",
-  "favicon": "/images/Frame 25.png"
+  "favicon": "/images/favicon.png"
 }
