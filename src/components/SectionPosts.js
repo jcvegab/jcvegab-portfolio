@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
+
+import CtaButtons from './CtaButtons';
 
 import {
   getPageUrl,
@@ -9,7 +10,7 @@ import {
   Link,
   withPrefix,
 } from '../utils';
-import CtaButtons from './CtaButtons';
+import { formatDate } from '../utils/dates';
 
 export default class SectionPosts extends React.Component {
   renderPost(post, index) {
@@ -18,8 +19,8 @@ export default class SectionPosts extends React.Component {
     const thumbImageAlt = _.get(post, 'thumb_image_alt', '');
     const excerpt = _.get(post, 'excerpt');
     const date = _.get(post, 'date');
-    const dateTimeAttr = moment(date).strftime('%Y-%m-%d %H:%M');
-    const formattedDate = moment(date).strftime('%B %d, %Y');
+    const dateTimeAttr = formatDate(date, 'date_time_attribute');
+    const formattedDate = formatDate(date, 'date_display');
     const postUrl = getPageUrl(post, { withPrefix: true });
 
     return (

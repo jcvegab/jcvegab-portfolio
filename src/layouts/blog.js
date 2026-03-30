@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
 
 import { Layout } from '../components/index';
+
 import { classNames, getPageUrl, Link, withPrefix } from '../utils';
+import { formatDate } from '../utils/dates';
 
 export default class Blog extends React.Component {
   renderPost(post, index) {
@@ -12,8 +13,8 @@ export default class Blog extends React.Component {
     const thumbImageAlt = _.get(post, 'thumb_image_alt', '');
     const excerpt = _.get(post, 'excerpt');
     const date = _.get(post, 'date');
-    const dateTimeAttr = moment(date).strftime('%Y-%m-%d %H:%M');
-    const formattedDate = moment(date).strftime('%B %d, %Y');
+    const dateTimeAttr = formatDate(date, 'date_time_attribute');
+    const formattedDate = formatDate(date, 'date_display');
     const postUrl = getPageUrl(post, { withPrefix: true });
 
     return (

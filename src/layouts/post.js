@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
 
 import { Layout } from '../components/index';
+
 import { htmlToReact, withPrefix, markdownify } from '../utils';
+import { formatDate } from '../utils/dates';
 
 export default class Post extends React.Component {
   render() {
@@ -15,8 +16,8 @@ export default class Post extends React.Component {
     const image = _.get(page, 'image');
     const imageAlt = _.get(page, 'image_alt', '');
     const date = _.get(page, 'date');
-    const dateTimeAttr = moment(date).strftime('%Y-%m-%d %H:%M');
-    const formattedDate = moment(date).strftime('%A, %B %e, %Y');
+    const dateTimeAttr = formatDate(date, 'date_time_attribute');
+    const formattedDate = formatDate(date, 'date_display_full');
     const markdownContent = _.get(page, 'markdown_content');
 
     return (
