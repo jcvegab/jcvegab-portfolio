@@ -4,11 +4,19 @@ import _ from 'lodash';
 import { Layout } from '../components/index';
 import { getPageUrl, Link, withPrefix } from '../utils';
 
-export default class Portfolio extends React.Component {
-  renderProject(project, index) {
-    const title = _.get(project, 'title');
-    const thumbImage = _.get(project, 'thumb_image');
-    const thumbImageAlt = _.get(project, 'thumb_image_alt', '');
+export default function Portfolio({ data, page, projects: rawProjects = [] }) {
+  const { config } = data;
+
+  const { title, subtitle, layout_style: layoutStyle = 'mosaic' } = page;
+
+  const projects = _.orderBy(rawProjects, 'date', 'desc');
+
+  const renderProject = (project, index) => {
+    const {
+      title,
+      thumb_image: thumbImage,
+      thumb_image_alt: thumbImageAlt = '',
+    } = project;
     const projectUrl = getPageUrl(project, { withPrefix: true });
 
     return (
@@ -25,35 +33,19 @@ export default class Portfolio extends React.Component {
         </Link>
       </article>
     );
-  }
+  };
 
-  render() {
-    const data = _.get(this.props, 'data');
-    const config = _.get(data, 'config');
-    const page = _.get(this.props, 'page');
-    const title = _.get(page, 'title');
-    const subtitle = _.get(page, 'subtitle');
-    const layoutStyle = _.get(page, 'layout_style', 'mosaic');
-    const projects = _.orderBy(
-      _.get(this.props, 'projects', []),
-      'date',
-      'desc',
-    );
-
-    return (
-      <Layout page={page} config={config}>
-        <div className="inner outer">
-          <header className="page-header inner-sm">
-            <h1 className="page-title line-top">{title}</h1>
-            {subtitle && <div className="page-subtitle">{subtitle}</div>}
-          </header>
-          <div className={`portfolio-feed layout-${layoutStyle}`}>
-            {_.map(projects, (project, index) =>
-              this.renderProject(project, index),
-            )}
-          </div>
+  return (
+    <Layout page={page} config={config}>
+      <div className="inner outer">
+        <header className="page-header inner-sm">
+          <h1 className="page-title line-top">{title}</h1>
+          {subtitle && <div className="page-subtitle">{subtitle}</div>}
+        </header>
+        <div className={`portfolio-feed layout-${layoutStyle}`}>
+          {projects.map((project, index) => renderProject(project, index))}
         </div>
-      </Layout>
-    );
-  }
+      </div>
+    </Layout>
+  );
 }

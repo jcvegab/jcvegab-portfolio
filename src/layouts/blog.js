@@ -6,13 +6,27 @@ import { Layout } from '../components/index';
 import { classNames, getPageUrl, Link, withPrefix } from '../utils';
 import { formatDate } from '../utils/dates';
 
-export default class Blog extends React.Component {
-  renderPost(post, index) {
-    const title = _.get(post, 'title');
-    const thumbImage = _.get(post, 'thumb_image');
-    const thumbImageAlt = _.get(post, 'thumb_image_alt', '');
-    const excerpt = _.get(post, 'excerpt');
-    const date = _.get(post, 'date');
+export default function Blog({ data, page, posts: rawPosts = [] }) {
+  const { config } = data;
+
+  const {
+    title,
+    hide_title: hideTitle,
+    subtitle,
+    col_number: colNumber = 'three',
+  } = page;
+
+  const posts = _.orderBy(rawPosts, 'date', 'desc');
+
+  const renderPost = (post, index) => {
+    const {
+      title,
+      thumb_image: thumbImage,
+      thumb_image_alt: thumbImageAlt = '',
+      excerpt,
+      date,
+    } = post;
+
     const dateTimeAttr = formatDate(date, 'date_time_attribute');
     const formattedDate = formatDate(date, 'date_display');
     const postUrl = getPageUrl(post, { withPrefix: true });
@@ -39,39 +53,28 @@ export default class Blog extends React.Component {
         </div>
       </article>
     );
-  }
+  };
 
-  render() {
-    const data = _.get(this.props, 'data');
-    const config = _.get(data, 'config');
-    const page = _.get(this.props, 'page');
-    const title = _.get(page, 'title');
-    const hideTitle = _.get(page, 'hide_title');
-    const subtitle = _.get(page, 'subtitle');
-    const colNumber = _.get(page, 'col_number', 'three');
-    const posts = _.orderBy(_.get(this.props, 'posts', []), 'date', 'desc');
-
-    return (
-      <Layout page={page} config={config}>
-        <div className="inner outer">
-          <header
-            className={classNames('page-header', 'inner-sm', {
-              'screen-reader-text': hideTitle,
-            })}
-          >
-            <h1 className="page-title line-top">{title}</h1>
-            {subtitle && <div className="page-subtitle">{subtitle}</div>}
-          </header>
-          <div
-            className={classNames('post-feed', 'grid', {
-              'grid-col-2': colNumber === 'two',
-              'grid-col-3': colNumber === 'three',
-            })}
-          >
-            {_.map(posts, (post, index) => this.renderPost(post, index))}
-          </div>
+  return (
+    <Layout page={page} config={config}>
+      <div className="inner outer">
+        <header
+          className={classNames('page-header', 'inner-sm', {
+            'screen-reader-text': hideTitle,
+          })}
+        >
+          <h1 className="page-title line-top">{title}</h1>
+          {subtitle && <div className="page-subtitle">{subtitle}</div>}
+        </header>
+        <div
+          className={classNames('post-feed', 'grid', {
+            'grid-col-2': colNumber === 'two',
+            'grid-col-3': colNumber === 'three',
+          })}
+        >
+          {posts.map((post, index) => renderPost(post, index))}
         </div>
-      </Layout>
-    );
-  }
+      </div>
+    </Layout>
+  );
 }

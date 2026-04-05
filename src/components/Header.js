@@ -1,52 +1,59 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Router from 'next/router';
 import _ from 'lodash';
 
 import { Link, withPrefix, classNames, getPageUrl } from '../utils';
 import Action from './Action';
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleWindowResize = this.handleWindowResize.bind(this);
-    this.handleRouteChange = this.handleRouteChange.bind(this);
-    this.menuOpenRef = React.createRef();
-  }
+export default function Header({ page, config }) {
+  const { header } = config;
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleWindowResize, true);
-    Router.events.on('routeChangeStart', this.handleRouteChange);
-  }
+  const {
+    logo_img: logo,
+    logo_img_alt: logoAlt = '',
+    title,
+    has_nav: hasNav,
+    nav_links: navLinks,
+  } = header;
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowResize, true);
-    Router.events.off('routeChangeStart', this.handleRouteChange);
-  }
+  const pageUrl = _.trim(getPageUrl(page), '/');
 
-  handleWindowResize() {
-    const menuOpenElm = _.get(this.menuOpenRef, 'current.offsetParent');
-    if (menuOpenElm === null) {
+  const menuOpenRef = useRef(null);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
       document.body.classList.remove('menu--opened');
-    }
-  }
+    };
 
-  handleRouteChange() {
-    document.body.classList.remove('menu--opened');
-  }
+    const handleWindowResize = () => {
+      const menuOpenElm = _.get(menuOpenRef, 'current.offsetParent');
+      if (menuOpenElm === null) {
+        document.body.classList.remove('menu--opened');
+      }
+    };
 
-  handleMenuToggle(event) {
+    window.addEventListener('resize', handleWindowResize, true);
+    Router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize, true);
+      Router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
+
+  const handleMenuToggle = (event) => {
     event.preventDefault();
     document.body.classList.toggle('menu--opened');
-  }
+  };
 
-  renderNavLinks(navLinks, pageUrl) {
+  const renderNavLinks = (navLinks, pageUrl) => {
     return (
       <React.Fragment>
         <button
           id="menu-open"
           className="menu-toggle"
-          ref={this.menuOpenRef}
-          onClick={this.handleMenuToggle.bind(this)}
+          ref={menuOpenRef}
+          onClick={handleMenuToggle}
         >
           <span className="screen-reader-text">Open Menu</span>
           <span className="icon-menu" aria-hidden="true" />
@@ -60,7 +67,7 @@ export default class Header extends React.Component {
             <button
               id="menu-close"
               className="menu-toggle"
-              onClick={this.handleMenuToggle.bind(this)}
+              onClick={handleMenuToggle}
             >
               <span className="screen-reader-text">Close Menu</span>
               <span className="icon-close" aria-hidden="true" />
@@ -86,42 +93,28 @@ export default class Header extends React.Component {
         </nav>
       </React.Fragment>
     );
-  }
+  };
 
-  render() {
-    const page = _.get(this.props, 'page');
-    const pageUrl = _.trim(getPageUrl(page), '/');
-    const config = _.get(this.props, 'config');
-    const header = _.get(config, 'header');
-    const logo = _.get(header, 'logo_img');
-    const logoAlt = _.get(header, 'logo_img_alt', '');
-    const title = _.get(header, 'title');
-    const hasNav = _.get(header, 'has_nav');
-    const navLinks = _.get(header, 'nav_links');
-
-    return (
-      <header id="masthead" className="site-header outer">
-        <div className="inner">
-          <div className="site-header-inside">
-            <div className="site-branding">
-              {logo ? (
-                <p className="site-logo">
-                  <Link href={withPrefix('/')}>
-                    <img src={withPrefix(logo)} alt={logoAlt} />
-                  </Link>
-                </p>
-              ) : (
-                <p className="site-title">
-                  <Link href={withPrefix('/')}>{title}</Link>
-                </p>
-              )}
-            </div>
-            {hasNav &&
-              !_.isEmpty(navLinks) &&
-              this.renderNavLinks(navLinks, pageUrl)}
+  return (
+    <header id="masthead" className="site-header outer">
+      <div className="inner">
+        <div className="site-header-inside">
+          <div className="site-branding">
+            {logo ? (
+              <p className="site-logo">
+                <Link href={withPrefix('/')}>
+                  <img src={withPrefix(logo)} alt={logoAlt} />
+                </Link>
+              </p>
+            ) : (
+              <p className="site-title">
+                <Link href={withPrefix('/')}>{title}</Link>
+              </p>
+            )}
           </div>
+          {hasNav && !_.isEmpty(navLinks) && renderNavLinks(navLinks, pageUrl)}
         </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  );
 }
