@@ -36,6 +36,6 @@
     "webpack": "^5.106.2"
   },
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.3"
   }
 }
