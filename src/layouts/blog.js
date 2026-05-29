@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { orderBy } from '../utils';
 
 import { Layout } from '../components/index';
 
@@ -16,7 +16,7 @@ export default function Blog({ data, page, posts: rawPosts = [] }) {
     col_number: colNumber = 'three',
   } = page;
 
-  const posts = _.orderBy(rawPosts, 'date', 'desc');
+  const posts = orderBy(rawPosts, 'date', 'desc');
 
   const renderPost = (post, index) => {
     const {

@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { camelCase, upperFirst } from '../utils';
 
 import components, { Layout } from '../components/index';
 import { getPageUrl } from '../utils';
@@ -20,7 +20,7 @@ export default function Advanced({ data, page, posts, projects }) {
       )}
       {sections.map((section, index) => {
         const sectionType = section.type;
-        const component = _.upperFirst(_.camelCase(sectionType));
+        const component = upperFirst(camelCase(sectionType));
         if (!component) {
           throw new Error(
             `page section does not have the 'type' property, page: ${pageUrl}`,

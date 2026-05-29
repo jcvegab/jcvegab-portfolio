@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { orderBy, size } from '../utils';
 
 import { getPageUrl, htmlToReact, Link, withPrefix } from '../utils';
 
@@ -17,9 +17,9 @@ export default function SectionPortfolio({
     projects_number: projectsNumber = 6,
   } = section;
 
-  const projects = _.orderBy(rawProjects, 'date', 'desc');
+  const projects = orderBy(rawProjects, 'date', 'desc');
   const recentProjects = projects.slice(0, projectsNumber);
-  const projectCount = _.size(recentProjects);
+  const projectCount = size(recentProjects);
 
   const renderProject = (
     project,

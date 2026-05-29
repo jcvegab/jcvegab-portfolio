@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import noframe from 'reframe.js/dist/noframe';
-import _ from 'lodash';
+import { get, isEmpty, trim } from '../utils';
 
 import { withPrefix, classNames } from '../utils';
 import Header from './Header';
@@ -37,19 +37,19 @@ export default function Body({ children, config, page }) {
     handleVideoEmbeds();
   }, [children]);
 
-  const domain = _.trim(configDomain, '/');
+  const domain = trim(configDomain, '/');
   const title = seoTitle ? seoTitle : [pageTitle, configTitle].join(' | ');
-  const seoRobots = _.get(seo, 'robots', []).join(',');
+  const seoRobots = get(seo, 'robots', []).join(',');
 
-  const seoExtra = _.get(seo, 'extra', []).map((meta, index) => {
-    const keyName = _.get(meta, 'keyName', 'name');
-    const name = _.get(meta, 'name');
+  const seoExtra = get(seo, 'extra', []).map((meta, index) => {
+    const keyName = get(meta, 'keyName', 'name');
+    const name = get(meta, 'name');
     if (!name) {
       return null;
     }
     const nameAttr = { [keyName]: name };
-    const relativeUrl = _.get(meta, 'relativeUrl');
-    let value = _.get(meta, 'value');
+    const relativeUrl = get(meta, 'relativeUrl');
+    let value = get(meta, 'value');
     if (!value) {
       return null;
     }
@@ -70,7 +70,7 @@ export default function Body({ children, config, page }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google" content="notranslate" />
         <meta name="description" content={seoDescription} />
-        {!_.isEmpty(seoRobots) && <meta name="robots" content={seoRobots} />}
+        {!isEmpty(seoRobots) && <meta name="robots" content={seoRobots} />}
         {seoExtra}
         {favicon && <link rel="icon" href={withPrefix(favicon)} />}
         <body

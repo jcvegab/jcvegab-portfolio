@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { orderBy } from '../utils';
 
 import { Layout } from '../components/index';
 import { getPageUrl, Link, withPrefix } from '../utils';
@@ -9,7 +9,7 @@ export default function Portfolio({ data, page, projects: rawProjects = [] }) {
 
   const { title, subtitle, layout_style: layoutStyle = 'mosaic' } = page;
 
-  const projects = _.orderBy(rawProjects, 'date', 'desc');
+  const projects = orderBy(rawProjects, 'date', 'desc');
 
   const renderProject = (project, index) => {
     const {

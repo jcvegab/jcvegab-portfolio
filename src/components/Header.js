@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Router from 'next/router';
-import _ from 'lodash';
+import { get, isEmpty, map, trim } from '../utils';
 
 import { Link, withPrefix, classNames, getPageUrl } from '../utils';
 import Action from './Action';
@@ -16,7 +16,7 @@ export default function Header({ page, config }) {
     nav_links: navLinks,
   } = header;
 
-  const pageUrl = _.trim(getPageUrl(page), '/');
+  const pageUrl = trim(getPageUrl(page), '/');
 
   const menuOpenRef = useRef(null);
 
@@ -26,7 +26,7 @@ export default function Header({ page, config }) {
     };
 
     const handleWindowResize = () => {
-      const menuOpenElm = _.get(menuOpenRef, 'current.offsetParent');
+      const menuOpenElm = get(menuOpenRef, 'current.offsetParent');
       if (menuOpenElm === null) {
         document.body.classList.remove('menu--opened');
       }
@@ -73,9 +73,9 @@ export default function Header({ page, config }) {
               <span className="icon-close" aria-hidden="true" />
             </button>
             <ul className="menu">
-              {_.map(navLinks, (action, index) => {
-                const actionUrl = _.trim(_.get(action, 'url'), '/');
-                const actionStyle = _.get(action, 'style', 'link');
+              {map(navLinks, (action, index) => {
+                const actionUrl = trim(get(action, 'url'), '/');
+                const actionStyle = get(action, 'style', 'link');
                 return (
                   <li
                     key={index}
@@ -112,7 +112,7 @@ export default function Header({ page, config }) {
               </p>
             )}
           </div>
-          {hasNav && !_.isEmpty(navLinks) && renderNavLinks(navLinks, pageUrl)}
+          {hasNav && !isEmpty(navLinks) && renderNavLinks(navLinks, pageUrl)}
         </div>
       </div>
     </header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { isEmpty } from '../utils';
 
 import { htmlToReact } from '../utils';
 import ActionLink from './ActionLink';
@@ -27,7 +27,7 @@ export default function Footer({ config }) {
               <ActionLink key={index} action={action} />
             ))}
           </div>
-          {hasSocial && !_.isEmpty(socialLinks) && (
+          {hasSocial && !isEmpty(socialLinks) && (
             <div className="social-links">
               {socialLinks.map((action, index) => (
                 <Action key={index} action={action} />

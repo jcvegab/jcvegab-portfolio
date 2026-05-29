@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { isEmpty, orderBy } from '../utils';
 
 import CtaButtons from './CtaButtons';
 
@@ -22,7 +22,7 @@ export default function SectionPosts({ section, posts: rawPosts = [] }) {
     posts_number: postsNumber = 3,
   } = section;
 
-  const posts = _.orderBy(rawPosts, 'date', 'desc');
+  const posts = orderBy(rawPosts, 'date', 'desc');
   const recentPosts = posts.slice(0, postsNumber);
 
   const renderPost = (post, index) => {
@@ -83,7 +83,7 @@ export default function SectionPosts({ section, posts: rawPosts = [] }) {
             {recentPosts.map((post, index) => renderPost(post, index))}
           </div>
         </div>
-        {!_.isEmpty(actions) && (
+        {!isEmpty(actions) && (
           <div className="block-buttons inner-sm">
             <CtaButtons actions={actions} />
           </div>

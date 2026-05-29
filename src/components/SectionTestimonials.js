@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { isEmpty } from '../utils';
 
 import { htmlToReact, classNames, withPrefix } from '../utils';
 
@@ -45,7 +45,7 @@ export default function SectionTestimonials({ section }) {
             )}
           </div>
         )}
-        {!_.isEmpty(testimonials) && (
+        {!isEmpty(testimonials) && (
           <div className="block-content">
             <div
               className={classNames('grid', {
