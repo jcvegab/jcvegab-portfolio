@@ -1,21 +1,17 @@
 {
   "name": "exto-nextjs",
-  "description": "A Stackbit Exto theme built with Next.js",
   "version": "0.1.0",
+  "description": "A Stackbit Exto theme built with Next.js",
   "license": "MIT",
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
   "scripts": {
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "develop": "next dev",
     "fetch": "sourcebit fetch",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
-    "start": "next start",
     "format": "prettier --write '**/*.{js,jsx}'",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "next start"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -37,8 +33,15 @@
     "webpack": "^5.106.2"
   },
   "devDependencies": {
+    "@types/react": "^17.0.92",
+    "@types/react-dom": "^17.0.26",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
   }
 }
