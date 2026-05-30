@@ -15,7 +15,7 @@
     "start": "next start",
     "format": "prettier --write '**/*.{js,jsx}'",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
