@@ -1,4 +1,4 @@
-@use "functions";
+@use 'functions';
 
 /**
  * Buttons
@@ -25,8 +25,8 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 
   .accent-green & {
     color: functions.palette(accent-green);
@@ -49,12 +49,12 @@
     border: 2px solid currentColor;
     box-sizing: border-box;
     color: inherit;
-    content: "";
+    content: '';
     height: 32%;
     left: 0;
     position: absolute;
-    transition: .3s ease;
-    -webkit-transition: .3s ease;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
     width: 100%;
   }
 
@@ -77,15 +77,15 @@
     .accent-green & {
       color: functions.palette(accent-green);
     }
-  
+
     .accent-blue & {
       color: functions.palette(accent-blue);
     }
-  
+
     .accent-violet & {
       color: functions.palette(accent-violet);
     }
-  
+
     .accent-yellow & {
       color: functions.palette(accent-yellow);
     }

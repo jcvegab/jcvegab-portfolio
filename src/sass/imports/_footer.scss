@@ -1,4 +1,4 @@
-@use "functions";
+@use 'functions';
 
 /**
  * Site Footer
@@ -24,15 +24,15 @@
       .accent-green & {
         color: functions.palette(accent-green);
       }
-    
+
       .accent-blue & {
         color: functions.palette(accent-blue);
       }
-    
+
       .accent-violet & {
         color: functions.palette(accent-violet);
       }
-    
+
       .accent-yellow & {
         color: functions.palette(accent-yellow);
       }
