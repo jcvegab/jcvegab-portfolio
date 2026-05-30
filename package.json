@@ -14,7 +14,8 @@
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "start": "next start",
     "format": "prettier --write '**/*.{js,jsx}'",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -36,6 +37,8 @@
     "webpack": "^5.106.2"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
     "prettier": "^3.8.3"
   }
 }
