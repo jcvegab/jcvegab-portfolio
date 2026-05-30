@@ -1,4 +1,4 @@
-import { isEmpty, htmlToReact, classNames, withPrefix } from '../utils';
+import { classNames, htmlToReact, isEmpty, withPrefix } from '../utils';
 
 import type {
   SectionTestimonialItem,

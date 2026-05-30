@@ -18,9 +18,9 @@ export default function SectionForm(props: SectionFormProps) {
     submit_label: submitLabel,
   } = section;
 
-  const formHoneypotInputId = formId + '-honeypot';
-  const formHoneypotLabelId = formId + '-honeypot-label';
-  const formHoneypotName = formId + '-bot-field';
+  const formHoneypotInputId = `${formId}-honeypot`;
+  const formHoneypotLabelId = `${formId}-honeypot-label`;
+  const formHoneypotName = `${formId}-bot-field`;
 
   return (
     <section id={sectionId} className="block block-form outer">

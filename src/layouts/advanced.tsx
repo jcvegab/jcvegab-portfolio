@@ -1,6 +1,6 @@
 import components, { Layout } from '../components';
 
-import { camelCase, upperFirst, getPageUrl } from '../utils';
+import { camelCase, getPageUrl, upperFirst } from '../utils';
 
 import type { AdvancedProps } from './advanced.types';
 

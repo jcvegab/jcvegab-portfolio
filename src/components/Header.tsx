@@ -1,23 +1,24 @@
-import { useEffect, useRef, Fragment } from 'react';
+'use client';
 
-import Router from 'next/router';
+import { usePathname } from 'next/navigation';
+import { Fragment, useEffect, useRef } from 'react';
 
 import Action from './Action';
 
 import {
-  Link,
-  withPrefix,
   classNames,
-  getPageUrl,
   get,
+  getPageUrl,
   isEmpty,
+  Link,
   map,
   trim,
+  withPrefix,
 } from '../utils';
 
 import type { MouseEvent } from 'react';
-import type { HeaderProps } from './Header.types';
 import type { ActionData } from './Action.types';
+import type { HeaderProps } from './Header.types';
 
 export default function Header({ page, config }: HeaderProps) {
   const { header } = config;
@@ -33,13 +34,14 @@ export default function Header({ page, config }: HeaderProps) {
   const pageUrl = trim(getPageUrl(page), '/');
 
   const menuOpenRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      document.body.classList.remove('menu--opened');
-    };
+    document.body.classList.remove('menu--opened');
+  }, [pathname]);
 
-    const handleWindowResize = (event: UIEvent) => {
+  useEffect(() => {
+    const handleWindowResize = (_event: UIEvent) => {
       const menuOpenElm = get(menuOpenRef, 'current.offsetParent');
       if (menuOpenElm === null) {
         document.body.classList.remove('menu--opened');
@@ -47,11 +49,9 @@ export default function Header({ page, config }: HeaderProps) {
     };
 
     window.addEventListener('resize', handleWindowResize, true);
-    Router.events.on('routeChangeStart', handleRouteChange);
 
     return () => {
       window.removeEventListener('resize', handleWindowResize, true);
-      Router.events.off('routeChangeStart', handleRouteChange);
     };
   }, []);
 

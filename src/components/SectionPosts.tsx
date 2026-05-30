@@ -1,13 +1,13 @@
 import CtaButtons from './CtaButtons';
 
 import {
-  isEmpty,
-  orderBy,
-  getPageUrl,
-  htmlToReact,
   classNames,
   formatDate,
+  getPageUrl,
+  htmlToReact,
+  isEmpty,
   Link,
+  orderBy,
   withPrefix,
 } from '../utils';
 

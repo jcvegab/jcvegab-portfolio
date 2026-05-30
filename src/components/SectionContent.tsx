@@ -1,4 +1,4 @@
-import { htmlToReact, withPrefix, markdownify } from '../utils';
+import { htmlToReact, markdownify, withPrefix } from '../utils';
 
 import type { SectionContentProps } from './SectionContent.types';
 

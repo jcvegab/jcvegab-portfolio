@@ -1,5 +1,5 @@
-import ActionLink from './ActionLink';
 import Action from './Action';
+import ActionLink from './ActionLink';
 
 import { htmlToReact, isEmpty } from '../utils';
 

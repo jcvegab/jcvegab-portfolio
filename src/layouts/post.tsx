@@ -1,7 +1,6 @@
 import { Layout } from '../components';
 
-import { formatDate, htmlToReact, withPrefix, markdownify } from '../utils';
-
+import { formatDate, htmlToReact, markdownify, withPrefix } from '../utils';
 import type { PostProps } from './post.types';
 
 export default function Post({ data, page }: PostProps) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { FormFieldProps } from './FormField.types';
 
 export default function FormField({ field }: FormFieldProps) {

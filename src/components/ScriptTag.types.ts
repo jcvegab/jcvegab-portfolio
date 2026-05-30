@@ -1,14 +1,9 @@
 export type ScriptTagProps = {
-  isHydrating?: boolean;
-  async?: boolean | number;
-  crossOrigin?: string;
-  defer?: boolean;
-  integrity?: string;
-  nonce?: string;
   src?: string;
-  text?: string;
+  async?: boolean;
+  defer?: boolean;
   type?: string;
-  dangerouslySetInnerHTML?: { __html?: string };
-  onError?: (event: Event) => void;
-  onLoad?: (event: Event) => void;
+  id?: string;
+  dangerouslySetInnerHTML?: { __html: string };
+  children?: React.ReactNode;
 };

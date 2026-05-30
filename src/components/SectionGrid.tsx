@@ -1,6 +1,6 @@
 import CtaButtons from './CtaButtons';
 
-import { htmlToReact, classNames, withPrefix, markdownify } from '../utils';
+import { classNames, htmlToReact, markdownify, withPrefix } from '../utils';
 
 import type { SectionGridItem, SectionGridProps } from './SectionGrid.types';
 

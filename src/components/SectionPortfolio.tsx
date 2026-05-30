@@ -1,9 +1,9 @@
 import {
-  orderBy,
-  size,
   getPageUrl,
   htmlToReact,
   Link,
+  orderBy,
+  size,
   withPrefix,
 } from '../utils';
 
