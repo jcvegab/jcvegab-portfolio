@@ -1,4 +1,4 @@
-@use "functions";
+@use 'functions';
 
 /**
  * Helper Classes
@@ -67,7 +67,7 @@
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: table;
   }
 }
@@ -78,7 +78,7 @@
 
   &:before {
     border-left: 45px solid functions.palette(accent);
-    content: "";
+    content: '';
     display: block;
     height: 3px;
     margin-bottom: 0.83333rem;
@@ -86,15 +86,15 @@
     .accent-green & {
       border-left-color: functions.palette(accent-green);
     }
-  
+
     .accent-blue & {
       border-left-color: functions.palette(accent-blue);
     }
-  
+
     .accent-violet & {
       border-left-color: functions.palette(accent-violet);
     }
-  
+
     .accent-yellow & {
       border-left-color: functions.palette(accent-yellow);
     }

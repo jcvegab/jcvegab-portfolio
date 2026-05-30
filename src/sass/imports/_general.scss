@@ -1,4 +1,4 @@
-@use "functions";
+@use 'functions';
 
 /**
  * General
@@ -32,8 +32,8 @@ a {
   border-bottom: 1px solid currentColor;
   color: functions.palette(accent);
   text-decoration: none;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 
   .accent-green & {
     color: functions.palette(accent-green);
@@ -176,7 +176,7 @@ blockquote {
 
   &:before {
     color: functions.palette(accent);
-    content: "\201C";
+    content: '\201C';
     font-size: 2.5em;
     left: 0;
     line-height: 1;
@@ -303,14 +303,14 @@ video {
 
 .post-content,
 .block-content {
-  iframe[src*="vimeo.com"],
-  iframe[src*="youtube.com"] {
+  iframe[src*='vimeo.com'],
+  iframe[src*='youtube.com'] {
     display: block;
     margin-bottom: 1.66667em;
     margin-top: 1.66667em;
 
     &:first-child {
-        margin-top: 0;
+      margin-top: 0;
     }
   }
 }
