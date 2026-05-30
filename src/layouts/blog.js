@@ -6,6 +6,32 @@ import { Layout } from '../components/index';
 import { classNames, getPageUrl, Link, withPrefix } from '../utils';
 import { formatDate } from '../utils/dates';
 
+/**
+ * @typedef {Object} BlogPost
+ * @property {string} [title]
+ * @property {string} [thumb_image]
+ * @property {string} [thumb_image_alt]
+ * @property {string} [excerpt]
+ * @property {string|number|Date} [date]
+ * @property {{ urlPath: string }} __metadata
+ */
+
+/**
+ * @typedef {Object} BlogPage
+ * @property {string} title
+ * @property {boolean} [hide_title]
+ * @property {string} [subtitle]
+ * @property {"two"|"three"} [col_number]
+ */
+
+/**
+ * @typedef {Object} BlogData
+ * @property {Object} config
+ */
+
+/**
+ * @param {{ data: BlogData, page: BlogPage, posts?: BlogPost[] }} props
+ */
 export default function Blog({ data, page, posts: rawPosts = [] }) {
   const { config } = data;
 
@@ -18,6 +44,10 @@ export default function Blog({ data, page, posts: rawPosts = [] }) {
 
   const posts = orderBy(rawPosts, 'date', 'desc');
 
+  /**
+   * @param {BlogPost} post
+   * @param {number} index
+   */
   const renderPost = (post, index) => {
     const {
       title,

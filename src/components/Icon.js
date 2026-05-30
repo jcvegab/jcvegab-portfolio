@@ -5,7 +5,7 @@ import React from 'react';
  */
 
 /**
- * @param {IconVariant} type - The name of the icon to render.
+ * @param {{ icon: IconVariant }} props
  */
 export default function Icon({ icon }) {
   switch (icon) {

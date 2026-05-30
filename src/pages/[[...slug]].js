@@ -5,6 +5,14 @@ import { withRemoteDataUpdates } from 'sourcebit-target-next/with-remote-data-up
 
 import pageLayouts from '../layouts';
 
+/**
+ * @typedef {Object} PageProps
+ * @property {{ __metadata?: { modelName?: string } }} page
+ */
+
+/**
+ * @param {PageProps} props
+ */
 class Page extends React.Component {
   render() {
     const modelName = get(this.props, 'page.__metadata.modelName');
@@ -22,6 +30,9 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
+/**
+ * @param {{ params: { slug?: string[] } }} context
+ */
 export async function getStaticProps({ params }) {
   console.log('Page [...slug].js getStaticProps, params: ', params);
   const pagePath = '/' + (params.slug ? params.slug.join('/') : '');

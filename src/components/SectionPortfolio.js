@@ -3,6 +3,29 @@ import { orderBy, size } from '../utils';
 
 import { getPageUrl, htmlToReact, Link, withPrefix } from '../utils';
 
+/**
+ * @typedef {Object} SectionPortfolioProject
+ * @property {string} [title]
+ * @property {string} [thumb_image]
+ * @property {string} [thumb_image_alt]
+ * @property {{ urlPath: string }} __metadata
+ * @property {string|number|Date} [date]
+ */
+
+/**
+ * @typedef {Object} SectionPortfolioData
+ * @property {string} section_id
+ * @property {string} [title]
+ * @property {string} [subtitle]
+ * @property {"mosaic"|"grid"} [layout_style]
+ * @property {string} [view_all_label]
+ * @property {string} [view_all_url]
+ * @property {number} [projects_number]
+ */
+
+/**
+ * @param {{ section: SectionPortfolioData, projects?: SectionPortfolioProject[] }} props
+ */
 export default function SectionPortfolio({
   section,
   projects: rawProjects = [],
@@ -21,6 +44,13 @@ export default function SectionPortfolio({
   const recentProjects = projects.slice(0, projectsNumber);
   const projectCount = size(recentProjects);
 
+  /**
+   * @param {SectionPortfolioProject} project
+   * @param {number} index
+   * @param {number} projectCount
+   * @param {string} viewAllLabel
+   * @param {string} viewAllUrl
+   */
   const renderProject = (
     project,
     index,

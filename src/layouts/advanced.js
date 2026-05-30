@@ -4,6 +4,27 @@ import { camelCase, upperFirst } from '../utils';
 import components, { Layout } from '../components/index';
 import { getPageUrl } from '../utils';
 
+/**
+ * @typedef {Object} AdvancedSection
+ * @property {string} type
+ */
+
+/**
+ * @typedef {Object} AdvancedPage
+ * @property {boolean} [hideTitle]
+ * @property {string} [title]
+ * @property {AdvancedSection[]} [sections]
+ * @property {{ urlPath: string }} __metadata
+ */
+
+/**
+ * @typedef {Object} AdvancedData
+ * @property {Object} config
+ */
+
+/**
+ * @param {{ data: AdvancedData, page: AdvancedPage, posts?: Object[], projects?: Object[] }} props
+ */
 export default function Advanced({ data, page, posts, projects }) {
   const { config } = data;
 

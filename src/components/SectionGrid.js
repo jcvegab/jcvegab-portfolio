@@ -3,6 +3,38 @@ import React from 'react';
 import { htmlToReact, classNames, withPrefix, markdownify } from '../utils';
 import CtaButtons from './CtaButtons';
 
+/**
+ * @typedef {Object} SectionGridAction
+ * @property {string} url
+ * @property {string} label
+ * @property {"link"|"button"|"icon"} [style]
+ * @property {string} [icon]
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @typedef {Object} SectionGridItem
+ * @property {string} [title]
+ * @property {string} [content]
+ * @property {string} [image]
+ * @property {string} [image_alt]
+ * @property {SectionGridAction[]} [actions]
+ */
+
+/**
+ * @typedef {Object} SectionGridData
+ * @property {string} section_id
+ * @property {string} [title]
+ * @property {string} [subtitle]
+ * @property {SectionGridItem[]} [grid_items]
+ * @property {"two"|"three"} [col_number]
+ * @property {boolean} [is_numbered]
+ */
+
+/**
+ * @param {{ section: SectionGridData }} props
+ */
 export default function SectionGrid({ section }) {
   const {
     section_id: sectionId,
@@ -13,6 +45,10 @@ export default function SectionGrid({ section }) {
     is_numbered: isNumbered,
   } = section;
 
+  /**
+   * @param {SectionGridItem} gridItem
+   * @param {number} index
+   */
   const renderGridItem = (gridItem, index) => {
     const {
       title,

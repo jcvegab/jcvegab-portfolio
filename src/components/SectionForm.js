@@ -5,23 +5,23 @@ import FormField from './FormField';
 
 /**
  * @typedef {Object} SectionI
- * @property {string} section_id - Section ID
- * @property {string} title - Section title
- * @property {string} subtitle - Section subtitle
- * @property {string} content - Section content (Markdown)
- * @property {string} form_id - Form ID
- * @property {string} form_action - Form action URL
- * @property {FormField[]} form_fields - Form fields configuration
- * @property {string} submit_label - Submit button label
+ * @property {string} section_id
+ * @property {string} title
+ * @property {string} subtitle
+ * @property {string} content
+ * @property {string} form_id
+ * @property {string} form_action
+ * @property {FormFieldI[]} form_fields
+ * @property {string} submit_label
  */
 
 /**
  * @typedef {Object} SectionFormProps
- * @property {SectionI} section - Section data
+ * @property {SectionI} section
  */
 
 /**
- * @param {SectionFormProps} props - Component props
+ * @param {SectionFormProps} props
  * @returns {JSX.Element} - Rendered component
  */
 export default function SectionForm(props) {

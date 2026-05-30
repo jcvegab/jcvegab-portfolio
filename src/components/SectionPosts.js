@@ -12,6 +12,39 @@ import {
 } from '../utils';
 import { formatDate } from '../utils/dates';
 
+/**
+ * @typedef {Object} SectionPostsAction
+ * @property {string} url
+ * @property {string} label
+ * @property {"link"|"button"|"icon"} [style]
+ * @property {string} [icon]
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @typedef {Object} SectionPostsPost
+ * @property {string} [title]
+ * @property {string} [thumb_image]
+ * @property {string} [thumb_image_alt]
+ * @property {string} [excerpt]
+ * @property {string|number|Date} [date]
+ * @property {{ urlPath: string }} __metadata
+ */
+
+/**
+ * @typedef {Object} SectionPostsData
+ * @property {string} section_id
+ * @property {string} [title]
+ * @property {string} [subtitle]
+ * @property {SectionPostsAction[]} [actions]
+ * @property {"two"|"three"} [col_number]
+ * @property {number} [posts_number]
+ */
+
+/**
+ * @param {{ section: SectionPostsData, posts?: SectionPostsPost[] }} props
+ */
 export default function SectionPosts({ section, posts: rawPosts = [] }) {
   const {
     section_id: sectionId,
@@ -25,6 +58,10 @@ export default function SectionPosts({ section, posts: rawPosts = [] }) {
   const posts = orderBy(rawPosts, 'date', 'desc');
   const recentPosts = posts.slice(0, postsNumber);
 
+  /**
+   * @param {SectionPostsPost} post
+   * @param {number} index
+   */
   const renderPost = (post, index) => {
     const {
       title,

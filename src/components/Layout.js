@@ -7,6 +7,37 @@ import { withPrefix, classNames } from '../utils';
 import Header from './Header';
 import Footer from './Footer';
 
+/**
+ * @typedef {Object} LayoutSeo
+ * @property {string} [title]
+ * @property {string} [description]
+ * @property {string[]} [robots]
+ * @property {{
+ *   keyName?: string,
+ *   name?: string,
+ *   value?: string,
+ *   relativeUrl?: boolean
+ * }[]} [extra]
+ */
+
+/**
+ * @typedef {Object} LayoutPage
+ * @property {string} title
+ * @property {LayoutSeo} seo
+ */
+
+/**
+ * @typedef {Object} LayoutConfig
+ * @property {string} title
+ * @property {"light"|"dark"} [color_scheme]
+ * @property {string} [accent_color]
+ * @property {string} [favicon]
+ * @property {string} [domain]
+ */
+
+/**
+ * @param {{ children: React.ReactNode, config: LayoutConfig, page: LayoutPage }} props
+ */
 export default function Body({ children, config, page }) {
   const {
     title: configTitle,
@@ -41,6 +72,10 @@ export default function Body({ children, config, page }) {
   const title = seoTitle ? seoTitle : [pageTitle, configTitle].join(' | ');
   const seoRobots = get(seo, 'robots', []).join(',');
 
+  /**
+   * @param {LayoutSeo['extra'][number]} meta
+   * @param {number} index
+   */
   const seoExtra = get(seo, 'extra', []).map((meta, index) => {
     const keyName = get(meta, 'keyName', 'name');
     const name = get(meta, 'name');

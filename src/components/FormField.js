@@ -6,17 +6,17 @@ import React from 'react';
 
 /**
  * @typedef {Object} FormFieldI
- * @property {FormFieldInputType} input_type - The type of the form field.
- * @property {string} name - The name of the form field.
- * @property {string} [default_value] - The default value or placeholder for the form field.
- * @property {string[]} [options] - The options for select input type.
- * @property {boolean} [is_required] - Whether the form field is required.
- * @property {string} [label] - The label for the form field.
+ * @property {FormFieldInputType} input_type
+ * @property {string} name
+ * @property {string} [default_value]
+ * @property {string[]} [options]
+ * @property {boolean} [is_required]
+ * @property {string} [label]
  */
 
 /**
  * @typedef {Object} FormFieldProps
- * @property {FormFieldI} field - The form field configuration.
+ * @property {FormFieldI} field
  */
 
 /**

@@ -3,6 +3,23 @@ import React from 'react';
 import { Layout } from '../components/index';
 import { htmlToReact, withPrefix, markdownify } from '../utils';
 
+/**
+ * @typedef {Object} ProjectData
+ * @property {Object} config
+ */
+
+/**
+ * @typedef {Object} ProjectPage
+ * @property {string} title
+ * @property {string} [subtitle]
+ * @property {string} [image]
+ * @property {string} [image_alt]
+ * @property {string} [markdown_content]
+ */
+
+/**
+ * @param {{ data: ProjectData, page: ProjectPage }} props
+ */
 export default function Project({ data, page }) {
   const { config } = data;
 

@@ -2,6 +2,9 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Helmet } from 'react-helmet';
 
 export default class MyDocument extends Document {
+  /**
+   * @param {import('next/document').DocumentContext} ctx
+   */
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     // see https://github.com/nfl/react-helmet#server-usage for more information

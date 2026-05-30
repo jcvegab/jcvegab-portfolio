@@ -4,21 +4,21 @@ import { htmlToReact, withPrefix, markdownify } from '../utils';
 
 /**
  * @typedef {Object} SectionI
- * @property {string} section_id - Section ID
- * @property {string} title - Section title
- * @property {string} subtitle - Section subtitle
- * @property {string} image - Section image URL
- * @property {string} image_alt - Section image alt text
- * @property {string} content - Section content (Markdown)
+ * @property {string} section_id
+ * @property {string} title
+ * @property {string} subtitle
+ * @property {string} image
+ * @property {string} image_alt
+ * @property {string} content
  */
 
 /**
  * @typedef {Object} SectionContentProps
- * @property {SectionI} section - Section data
+ * @property {SectionI} section
  */
 
 /**
- * @param {SectionContentProps} props - Component props
+ * @param {SectionContentProps} props
  * @returns {JSX.Element} - Rendered component
  */
 export default function SectionContent({ section }) {

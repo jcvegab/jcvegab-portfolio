@@ -5,6 +5,37 @@ import { htmlToReact } from '../utils';
 import ActionLink from './ActionLink';
 import Action from './Action';
 
+/**
+ * @typedef {Object} FooterLink
+ * @property {string} url
+ * @property {string} label
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @typedef {Object} FooterSocialLink
+ * @property {string} url
+ * @property {string} label
+ * @property {"link"|"button"|"icon"} [style]
+ * @property {string} [icon]
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @typedef {Object} FooterConfig
+ * @property {{
+ *   content?: string,
+ *   links?: FooterLink[],
+ *   has_social?: boolean,
+ *   social_links?: FooterSocialLink[]
+ * }} footer
+ */
+
+/**
+ * @param {{ config: FooterConfig }} props
+ */
 export default function Footer({ config }) {
   const { footer } = config;
 

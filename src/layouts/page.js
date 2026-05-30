@@ -3,6 +3,23 @@ import React from 'react';
 import { Layout } from '../components/index';
 import { htmlToReact, withPrefix, markdownify } from '../utils';
 
+/**
+ * @typedef {Object} PageData
+ * @property {Object} config
+ */
+
+/**
+ * @typedef {Object} PagePage
+ * @property {string} title
+ * @property {string} [subtitle]
+ * @property {string} [image]
+ * @property {string} [image_alt]
+ * @property {string} [markdown_content]
+ */
+
+/**
+ * @param {{ data: PageData, page: PagePage }} props
+ */
 export default function Page({ data, page }) {
   const { config } = data;
 

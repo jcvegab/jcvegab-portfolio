@@ -1,6 +1,9 @@
 import React from 'react';
 import NextLink from 'next/link';
 
+/**
+ * @param {{ children: React.ReactNode, href: string }} props
+ */
 export default function Link({ children, href, ...other }) {
   // Pass Any internal link to Next.js Link, for anything else, use <a> tag
   const internal = /^\/(?!\/)/.test(href);

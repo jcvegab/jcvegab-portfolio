@@ -5,6 +5,24 @@ import { Layout } from '../components/index';
 import { htmlToReact, withPrefix, markdownify } from '../utils';
 import { formatDate } from '../utils/dates';
 
+/**
+ * @typedef {Object} PostData
+ * @property {Object} config
+ */
+
+/**
+ * @typedef {Object} PostPage
+ * @property {string} title
+ * @property {string} [subtitle]
+ * @property {string} [image]
+ * @property {string} [image_alt]
+ * @property {string|number|Date} [date]
+ * @property {string} [markdown_content]
+ */
+
+/**
+ * @param {{ data: PostData, page: PostPage }} props
+ */
 export default function Post({ data, page }) {
   const { config } = data;
 

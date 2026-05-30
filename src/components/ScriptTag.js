@@ -34,14 +34,20 @@ class ScriptTag extends Component {
     onLoad: noop,
   };
 
+  /**
+   * @param {HTMLElement} node
+   */
   static removeNode(node) {
     if (node) {
       node.parentNode.removeChild(node);
     }
   }
 
-  constructor(props, context) {
-    super(props, context);
+  /**
+   * @param {Object} props
+   */
+  constructor(props) {
+    super(props);
     this.domRef = null;
     this.state = {
       isHydrated: props.isHydrating,
@@ -102,6 +108,9 @@ class ScriptTag extends Component {
     });
   }
 
+  /**
+   * @param {Object} nextProps
+   */
   componentWillReceiveProps(nextProps) {
     // This logic assumes that the <script> only need to be updated if the 'src' or 'innerHTML' has changed
     //  - this prevents the <script> from updating unnecessarily, which prevents additional 'onload' events
@@ -132,6 +141,10 @@ class ScriptTag extends Component {
     });
   }
 
+  /**
+   * @param {Object} nextProps
+   * @param {Object} nextState
+   */
   componentWillUpdate(nextProps, nextState) {
     ScriptTag.removeNode(nextState.removeAdditionalNode);
   }

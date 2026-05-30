@@ -5,6 +5,35 @@ import { get, isEmpty, map, trim } from '../utils';
 import { Link, withPrefix, classNames, getPageUrl } from '../utils';
 import Action from './Action';
 
+/**
+ * @typedef {Object} HeaderNavLink
+ * @property {string} [url]
+ * @property {string} [label]
+ * @property {"link"|"button"|"icon"} [style]
+ * @property {string} [icon]
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @typedef {Object} HeaderConfig
+ * @property {{
+ *   logo_img?: string,
+ *   logo_img_alt?: string,
+ *   title?: string,
+ *   has_nav?: boolean,
+ *   nav_links?: HeaderNavLink[]
+ * }} header
+ */
+
+/**
+ * @typedef {Object} HeaderPage
+ * @property {{ urlPath?: string }} __metadata
+ */
+
+/**
+ * @param {{ page: HeaderPage, config: HeaderConfig }} props
+ */
 export default function Header({ page, config }) {
   const { header } = config;
 
@@ -21,11 +50,17 @@ export default function Header({ page, config }) {
   const menuOpenRef = useRef(null);
 
   useEffect(() => {
-    const handleRouteChange = () => {
+    /**
+     * @param {string} url
+     */
+    const handleRouteChange = (url) => {
       document.body.classList.remove('menu--opened');
     };
 
-    const handleWindowResize = () => {
+    /**
+     * @param {UIEvent} event
+     */
+    const handleWindowResize = (event) => {
       const menuOpenElm = get(menuOpenRef, 'current.offsetParent');
       if (menuOpenElm === null) {
         document.body.classList.remove('menu--opened');
@@ -41,11 +76,18 @@ export default function Header({ page, config }) {
     };
   }, []);
 
+  /**
+   * @param {React.MouseEvent<HTMLButtonElement>} event
+   */
   const handleMenuToggle = (event) => {
     event.preventDefault();
     document.body.classList.toggle('menu--opened');
   };
 
+  /**
+   * @param {HeaderNavLink[]} navLinks
+   * @param {string} pageUrl
+   */
   const renderNavLinks = (navLinks, pageUrl) => {
     return (
       <React.Fragment>

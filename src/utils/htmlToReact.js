@@ -5,10 +5,18 @@ import ReactHtmlParser, { domToReact } from 'html-react-parser';
 import ScriptTag from '../components/ScriptTag';
 import Link from './link';
 
+/**
+ * @param {string} html
+ */
 export default function htmlToReact(html) {
   if (!html) return null;
 
   return ReactHtmlParser(html, {
+    /**
+     * @param {import('react').ReactNode} reactNode
+     * @param {import('html-react-parser').DOMNode} node
+     * @param {number} index
+     */
     transform: (reactNode, node, index) => {
       if (node.type === 'script') {
         if (!isEmpty(node.children)) {

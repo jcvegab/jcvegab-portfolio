@@ -3,6 +3,26 @@ import { isEmpty } from '../utils';
 
 import { htmlToReact, classNames, withPrefix } from '../utils';
 
+/**
+ * @typedef {Object} SectionTestimonialItem
+ * @property {string} [content]
+ * @property {string} [avatar]
+ * @property {string} [avatar_alt]
+ * @property {string} [author]
+ */
+
+/**
+ * @typedef {Object} SectionTestimonialsData
+ * @property {string} section_id
+ * @property {string} [title]
+ * @property {string} [subtitle]
+ * @property {SectionTestimonialItem[]} [testimonials]
+ * @property {"two"|"three"} [col_number]
+ */
+
+/**
+ * @param {{ section: SectionTestimonialsData }} props
+ */
 export default function SectionTestimonials({ section }) {
   const {
     section_id: sectionId,
@@ -12,6 +32,10 @@ export default function SectionTestimonials({ section }) {
     col_number: colNumber = 'three',
   } = section;
 
+  /**
+   * @param {SectionTestimonialItem} testimonial
+   * @param {number} index
+   */
   const renderTestimonial = (testimonial, index) => {
     const { content, avatar, avatar_alt: avatarAlt = '', author } = testimonial;
 

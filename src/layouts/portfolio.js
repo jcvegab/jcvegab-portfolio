@@ -4,6 +4,30 @@ import { orderBy } from '../utils';
 import { Layout } from '../components/index';
 import { getPageUrl, Link, withPrefix } from '../utils';
 
+/**
+ * @typedef {Object} PortfolioProject
+ * @property {string} [title]
+ * @property {string} [thumb_image]
+ * @property {string} [thumb_image_alt]
+ * @property {{ urlPath: string }} __metadata
+ * @property {string|number|Date} [date]
+ */
+
+/**
+ * @typedef {Object} PortfolioPage
+ * @property {string} title
+ * @property {string} [subtitle]
+ * @property {"mosaic"|"grid"} [layout_style]
+ */
+
+/**
+ * @typedef {Object} PortfolioData
+ * @property {Object} config
+ */
+
+/**
+ * @param {{ data: PortfolioData, page: PortfolioPage, projects?: PortfolioProject[] }} props
+ */
 export default function Portfolio({ data, page, projects: rawProjects = [] }) {
   const { config } = data;
 
@@ -11,6 +35,10 @@ export default function Portfolio({ data, page, projects: rawProjects = [] }) {
 
   const projects = orderBy(rawProjects, 'date', 'desc');
 
+  /**
+   * @param {PortfolioProject} project
+   * @param {number} index
+   */
   const renderProject = (project, index) => {
     const {
       title,

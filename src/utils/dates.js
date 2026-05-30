@@ -13,8 +13,8 @@ const DATE_FORMAT_TYPES = {
 /**
  * Formats a date using the specified format.
  *
- * @param {string} date - The date to format.
- * @param {DateFormat} type - The format to use for formatting the date.
+ * @param {string} date
+ * @param {DateFormat} type
  * @returns {string} The formatted date string.
  * @throws {Error} If the output format is not provided.
  */

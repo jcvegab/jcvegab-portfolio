@@ -4,6 +4,19 @@ import Icon from './Icon';
 
 import { Link, withPrefix, classNames } from '../utils';
 
+/**
+ * @typedef {Object} ActionData
+ * @property {string} url
+ * @property {string} label
+ * @property {"link"|"button"|"icon"} [style]
+ * @property {string} [icon]
+ * @property {boolean} [new_window]
+ * @property {boolean} [no_follow]
+ */
+
+/**
+ * @param {{ action: ActionData }} props
+ */
 export default function Action({ action }) {
   const {
     url,
