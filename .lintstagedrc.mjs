@@ -1,3 +1,5 @@
 export default {
-  "*": ["biome check --write --no-errors-on-unmatched"],
+  '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,css}': [
+    'biome check --write --unsafe --no-errors-on-unmatched',
+  ],
 };

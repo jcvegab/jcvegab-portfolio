@@ -2,15 +2,16 @@ import { notFound } from 'next/navigation';
 
 import pageLayouts from '../layouts';
 
-import { getPageDataBySlug, getAllPagesData } from '../utils/content';
+import { getAllPagesData, getPageDataBySlug } from '../utils/content';
 
 export async function generateMetadata() {
   const data = getPageDataBySlug('/');
-  if (!data?.page?.seo) return {};
+  const seo = data?.page?.seo as Record<string, string> | undefined;
+  if (!seo) return {};
 
   return {
-    title: data.page.seo.title,
-    description: data.page.seo.description,
+    title: seo.title,
+    description: seo.description,
   };
 }
 
@@ -21,23 +22,36 @@ export default function HomePage() {
     notFound();
   }
 
-  const modelName = data.page.__metadata.modelName;
+  const metadata = data.page.__metadata as { modelName: string };
+  const modelName = metadata.modelName;
   const PageLayout = pageLayouts[modelName];
 
   if (!PageLayout) {
     throw new Error(`No page layout matching the page model: ${modelName}`);
   }
 
-  let additionalProps: any = {};
+  const additionalProps: Record<string, unknown> = {};
   if (modelName === 'advanced') {
     const allPages = getAllPagesData();
     additionalProps.projects = allPages
-      .filter((p) => p.page.__metadata.modelName === 'project')
+      .filter((p) => {
+        const pMetadata = p.page.__metadata as { modelName?: string };
+        return pMetadata?.modelName === 'project';
+      })
       .map((p) => p.page);
     additionalProps.posts = allPages
-      .filter((p) => p.page.__metadata.modelName === 'post')
+      .filter((p) => {
+        const pMetadata = p.page.__metadata as { modelName?: string };
+        return pMetadata?.modelName === 'post';
+      })
       .map((p) => p.page);
   }
 
-  return <PageLayout page={data.page} data={{ config: data.site }} {...additionalProps} />;
+  return (
+    <PageLayout
+      page={data.page}
+      data={{ config: data.site }}
+      {...additionalProps}
+    />
+  );
 }

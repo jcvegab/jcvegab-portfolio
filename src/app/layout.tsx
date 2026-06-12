@@ -1,5 +1,6 @@
-import { Metadata } from 'next';
 import { Karla } from 'next/font/google';
+
+import type { Metadata } from 'next';
 import '../sass/main.scss';
 
 const karla = Karla({

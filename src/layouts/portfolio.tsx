@@ -1,6 +1,7 @@
 import { Layout } from '../components';
 
 import { getPageUrl, Link, orderBy, withPrefix } from '../utils';
+
 import type { PortfolioProject, PortfolioProps } from './portfolio.types';
 
 export default function Portfolio({

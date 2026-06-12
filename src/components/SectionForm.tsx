@@ -55,7 +55,7 @@ export default function SectionForm(props: SectionFormProps) {
             </div>
             <input type="hidden" name="form-name" value={formId} />
             {formFields.map((field, index) => (
-              <FormField key={index} field={field} />
+              <FormField key={field.name || index} field={field} />
             ))}
             <div className="form-submit">
               <button type="submit" className="button">

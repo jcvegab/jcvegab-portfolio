@@ -1,6 +1,7 @@
 import type { LayoutConfig, LayoutPage } from '../components/Layout.types';
 
 export type AdvancedSection = {
+  section_id?: string;
   type: string;
 };
 

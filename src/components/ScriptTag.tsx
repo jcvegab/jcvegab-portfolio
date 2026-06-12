@@ -16,6 +16,7 @@ export default function ScriptTag({
       <Script
         id={id || Math.random().toString()}
         type={type}
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: This is intended for dynamic script injection
         dangerouslySetInnerHTML={dangerouslySetInnerHTML}
         strategy={
           defer
@@ -29,6 +30,7 @@ export default function ScriptTag({
   }
 
   return (
+    // biome-ignore lint/correctness/useInlineScriptId: Handled dynamically below
     <Script
       id={id || Math.random().toString()}
       src={src}

@@ -1,13 +1,13 @@
-import fs from 'fs';
+import fs from 'node:fs';
+import path from 'node:path';
 import matter from 'gray-matter';
-import path from 'path';
 
 const contentDir = path.join(process.cwd(), 'content');
 const pagesDir = path.join(contentDir, 'pages');
 
 export interface ContentData {
-  page: any;
-  site: any;
+  page: Record<string, unknown>;
+  site: Record<string, unknown>;
 }
 
 export function getGlobalConfig() {
@@ -48,7 +48,9 @@ export function getAllPagePaths() {
 
 export function getAllPagesData() {
   const paths = getAllPagePaths();
-  return paths.map((p) => getPageDataBySlug(p)).filter(Boolean) as ContentData[];
+  return paths
+    .map((p) => getPageDataBySlug(p))
+    .filter(Boolean) as ContentData[];
 }
 
 export function getPageDataBySlug(slug: string): ContentData | null {
@@ -57,7 +59,7 @@ export function getPageDataBySlug(slug: string): ContentData | null {
     relativePath = '/index';
   }
   if (relativePath.endsWith('/')) {
-    relativePath = relativePath + 'index';
+    relativePath = `${relativePath}index`;
   }
 
   let fullPath = path.join(pagesDir, `${relativePath}.md`);

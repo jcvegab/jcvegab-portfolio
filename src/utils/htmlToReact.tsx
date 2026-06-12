@@ -4,6 +4,7 @@ import ScriptTag from '../components/ScriptTag';
 import Link from './link';
 import { isEmpty, omit } from './lodash';
 
+import type { DOMNode, Element } from 'html-react-parser';
 import type { ReactElement, ReactNode } from 'react';
 
 export default function htmlToReact(html: string) {
@@ -12,28 +13,30 @@ export default function htmlToReact(html: string) {
   return ReactHtmlParser(html, {
     transform: (
       reactNode: ReactNode,
-      node: import('html-react-parser').DOMNode,
+      node: DOMNode,
       index: number,
-    ): ReactElement | void | null => {
+    ): ReactElement | undefined | null => {
       if (node.type === 'script') {
-        if (!isEmpty((node as any).children)) {
+        const domNode = node as Element;
+        if (!isEmpty(domNode.children)) {
           return (
-            <ScriptTag key={index} {...node.attribs}>
-              {domToReact((node as any).children)}
+            <ScriptTag key={index} {...domNode.attribs}>
+              {domToReact(domNode.children as DOMNode[])}
             </ScriptTag>
           );
         } else {
-          return <ScriptTag key={index} {...node.attribs} />;
+          return <ScriptTag key={index} {...domNode.attribs} />;
         }
       }
       if (node.type === 'tag' && node.name === 'a') {
-        const href = node.attribs.href;
-        const props = omit(node.attribs, 'href');
+        const domNode = node as Element;
+        const href = domNode.attribs.href;
+        const props = omit(domNode.attribs, 'href');
         // use Link only if there are no custom attributes like style, class, and what's not that might break react
         if (isEmpty(props)) {
           return (
             <Link key={index} href={href} {...props}>
-              {domToReact((node as any).children)}
+              {domToReact(domNode.children as DOMNode[])}
             </Link>
           );
         }

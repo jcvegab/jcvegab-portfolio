@@ -37,6 +37,8 @@ export default function Header({ page, config }: HeaderProps) {
   const pathname = usePathname();
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    pathname; // This is a safe way to trick linter that pathname is used in useEffect without side effects
     document.body.classList.remove('menu--opened');
   }, [pathname]);
 
@@ -68,6 +70,7 @@ export default function Header({ page, config }: HeaderProps) {
           className="menu-toggle"
           ref={menuOpenRef}
           onClick={handleMenuToggle}
+          type="button"
         >
           <span className="screen-reader-text">Open Menu</span>
           <span className="icon-menu" aria-hidden="true" />
@@ -82,6 +85,7 @@ export default function Header({ page, config }: HeaderProps) {
               id="menu-close"
               className="menu-toggle"
               onClick={handleMenuToggle}
+              type="button"
             >
               <span className="screen-reader-text">Close Menu</span>
               <span className="icon-close" aria-hidden="true" />
@@ -92,7 +96,7 @@ export default function Header({ page, config }: HeaderProps) {
                 const actionStyle = get(action, 'style', 'link');
                 return (
                   <li
-                    key={index}
+                    key={`${actionUrl}-${index}`}
                     className={classNames('menu-item', {
                       'current-menu-item': pageUrl === actionUrl,
                       'menu-button': actionStyle !== 'link',

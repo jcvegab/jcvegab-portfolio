@@ -1,6 +1,7 @@
 import { Layout } from '../components';
 
 import { htmlToReact, markdownify, withPrefix } from '../utils';
+
 import type { ProjectProps } from './project.types';
 
 export default function Project({ data, page }: ProjectProps) {

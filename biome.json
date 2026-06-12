@@ -8,15 +8,41 @@
           "level": "on",
           "options": {
             "groups": [
-              { "type": false, "source": ["react", "next/**", ":PACKAGE:", ":NODE:", ":BUN:", ":URL:"] },
+              {
+                "type": false,
+                "source": [
+                  "react",
+                  "next/**",
+                  ":PACKAGE:",
+                  ":NODE:",
+                  ":BUN:",
+                  ":URL:"
+                ]
+              },
               ":BLANK_LINE:",
-              { "type": false, "source": ["./**", "../**", "!**/utils", "!**/utils/**", "!**/*.scss", "!**/*.css"] },
+              {
+                "type": false,
+                "source": [
+                  "./**",
+                  "../**",
+                  "!**/utils",
+                  "!**/utils/**",
+                  "!**/*.scss",
+                  "!**/*.css"
+                ]
+              },
               ":BLANK_LINE:",
-              { "type": false, "source": ["**/utils", "**/utils/**", "../utils", "./utils"] },
+              {
+                "type": false,
+                "source": ["**/utils", "**/utils/**", "../utils", "./utils"]
+              },
               ":BLANK_LINE:",
               { "type": true },
               ":BLANK_LINE:",
-              { "type": false, "source": ["**/*.scss", "**/*.css", "**/sass/**"] }
+              {
+                "type": false,
+                "source": ["**/*.scss", "**/*.css", "**/sass/**"]
+              }
             ]
           }
         }
@@ -29,6 +55,9 @@
       "recommended": true,
       "a11y": {
         "noSvgWithoutTitle": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
       }
     }
   },

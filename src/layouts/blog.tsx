@@ -8,6 +8,7 @@ import {
   orderBy,
   withPrefix,
 } from '../utils';
+
 import type { BlogPost, BlogProps } from './blog.types';
 
 export default function Blog({ data, page, posts: rawPosts = [] }: BlogProps) {

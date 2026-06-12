@@ -39,7 +39,7 @@ export default function Advanced({
         }
         return (
           <Component
-            key={index}
+            key={section.section_id || index}
             section={section}
             data={data}
             posts={posts}

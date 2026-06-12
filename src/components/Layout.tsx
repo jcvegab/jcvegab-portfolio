@@ -16,17 +16,16 @@ export default function Body({ children, config, page }: LayoutProps) {
     accent_color: accentColor = 'pink',
   } = config;
 
-  const handleVideoEmbeds = () => {
-    const videoEmbeds = [
-      'iframe[src*="youtube.com"]',
-      'iframe[src*="vimeo.com"]',
-    ];
-    noframe(videoEmbeds.join(','), '.inner-sm');
-  };
-
   useEffect(() => {
+    const handleVideoEmbeds = () => {
+      const videoEmbeds = [
+        'iframe[src*="youtube.com"]',
+        'iframe[src*="vimeo.com"]',
+      ];
+      noframe(videoEmbeds.join(','), '.inner-sm');
+    };
     handleVideoEmbeds();
-  }, [children]);
+  }, []);
 
   return (
     <div
