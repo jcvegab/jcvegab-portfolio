@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 import Icon from './Icon';
 
-import { Link, withPrefix, classNames } from '../utils';
+import { classNames, Link, withPrefix } from '../utils';
 
 import type { ActionData } from './Action.types';
 

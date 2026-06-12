@@ -1,6 +1,6 @@
 import { Layout } from '../components';
 
-import { getPageUrl, Link, withPrefix, orderBy } from '../utils';
+import { getPageUrl, Link, orderBy, withPrefix } from '../utils';
 
 import type { PortfolioProject, PortfolioProps } from './portfolio.types';
 

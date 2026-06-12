@@ -1,6 +1,6 @@
 import components, { Layout } from '../components';
 
-import { camelCase, upperFirst, getPageUrl } from '../utils';
+import { camelCase, getPageUrl, upperFirst } from '../utils';
 
 import type { AdvancedProps } from './advanced.types';
 
@@ -39,7 +39,7 @@ export default function Advanced({
         }
         return (
           <Component
-            key={index}
+            key={section.section_id || index}
             section={section}
             data={data}
             posts={posts}

@@ -1,5 +1,5 @@
-import ActionLink from './ActionLink';
 import Action from './Action';
+import ActionLink from './ActionLink';
 
 import { htmlToReact, isEmpty } from '../utils';
 
@@ -23,15 +23,21 @@ export default function Footer({ config }: FooterProps) {
             {copyright && (
               <span className="copyright">{htmlToReact(copyright)}</span>
             )}
-            {links.map((action, index) => (
-              <ActionLink key={index} action={action} />
-            ))}
+            {links.map((action, index) => {
+              return (
+                // biome-ignore lint/suspicious/noArrayIndexKey: Links may not have unique identifiers
+                <ActionLink key={`${action.label}-${index}`} action={action} />
+              );
+            })}
           </div>
           {hasSocial && !isEmpty(socialLinks) && (
             <div className="social-links">
-              {socialLinks.map((action, index) => (
-                <Action key={index} action={action} />
-              ))}
+              {socialLinks.map((action, index) => {
+                return (
+                  // biome-ignore lint/suspicious/noArrayIndexKey: Social links may not have unique identifiers
+                  <Action key={`${action.url}-${index}`} action={action} />
+                );
+              })}
             </div>
           )}
         </div>

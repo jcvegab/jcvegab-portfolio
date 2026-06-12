@@ -1,4 +1,5 @@
 import { compact, startsWith, trim, trimStart } from './lodash';
+
 const pathPrefix = require('../../content/data/config.json').path_prefix;
 
 export default function withPrefix(url: string) {
@@ -14,5 +15,5 @@ export default function withPrefix(url: string) {
     return url;
   }
   const basePath = trim(pathPrefix, '/');
-  return '/' + compact([basePath, trimStart(url, '/')]).join('/');
+  return `/${compact([basePath, trimStart(url, '/')]).join('/')}`;
 }

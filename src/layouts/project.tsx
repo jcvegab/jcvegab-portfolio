@@ -1,6 +1,6 @@
 import { Layout } from '../components';
 
-import { htmlToReact, withPrefix, markdownify } from '../utils';
+import { htmlToReact, markdownify, withPrefix } from '../utils';
 
 import type { ProjectProps } from './project.types';
 

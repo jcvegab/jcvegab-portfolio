@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
-
-import type { HeaderConfig, HeaderPage } from './Header.types';
 import type { FooterConfig } from './Footer.types';
+import type { HeaderConfig, HeaderPage } from './Header.types';
 
 export type LayoutSeo = {
   title?: string;

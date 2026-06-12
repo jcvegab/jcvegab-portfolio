@@ -1,7 +1,5 @@
 export default {
-  "*.{js,jsx,ts,tsx}": [
-    "prettier --write",
-    (files) => `next lint --fix --file ${files.join(" --file ")}`,
+  '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,css}': [
+    'biome check --write --unsafe --no-errors-on-unmatched',
   ],
-  "*.{json,css,scss,md,yml,yaml}": ["prettier --write"],
 };

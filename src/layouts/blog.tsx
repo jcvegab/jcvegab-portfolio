@@ -5,8 +5,8 @@ import {
   formatDate,
   getPageUrl,
   Link,
-  withPrefix,
   orderBy,
+  withPrefix,
 } from '../utils';
 
 import type { BlogPost, BlogProps } from './blog.types';

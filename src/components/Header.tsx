@@ -1,23 +1,24 @@
-import { useEffect, useRef, Fragment } from 'react';
+'use client';
 
-import Router from 'next/router';
+import { usePathname } from 'next/navigation';
+import { Fragment, useEffect, useRef } from 'react';
 
 import Action from './Action';
 
 import {
-  Link,
-  withPrefix,
   classNames,
-  getPageUrl,
   get,
+  getPageUrl,
   isEmpty,
+  Link,
   map,
   trim,
+  withPrefix,
 } from '../utils';
 
 import type { MouseEvent } from 'react';
-import type { HeaderProps } from './Header.types';
 import type { ActionData } from './Action.types';
+import type { HeaderProps } from './Header.types';
 
 export default function Header({ page, config }: HeaderProps) {
   const { header } = config;
@@ -33,13 +34,16 @@ export default function Header({ page, config }: HeaderProps) {
   const pageUrl = trim(getPageUrl(page), '/');
 
   const menuOpenRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      document.body.classList.remove('menu--opened');
-    };
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    pathname; // This is a safe way to trick linter that pathname is used in useEffect without side effects
+    document.body.classList.remove('menu--opened');
+  }, [pathname]);
 
-    const handleWindowResize = (event: UIEvent) => {
+  useEffect(() => {
+    const handleWindowResize = (_event: UIEvent) => {
       const menuOpenElm = get(menuOpenRef, 'current.offsetParent');
       if (menuOpenElm === null) {
         document.body.classList.remove('menu--opened');
@@ -47,11 +51,9 @@ export default function Header({ page, config }: HeaderProps) {
     };
 
     window.addEventListener('resize', handleWindowResize, true);
-    Router.events.on('routeChangeStart', handleRouteChange);
 
     return () => {
       window.removeEventListener('resize', handleWindowResize, true);
-      Router.events.off('routeChangeStart', handleRouteChange);
     };
   }, []);
 
@@ -68,6 +70,7 @@ export default function Header({ page, config }: HeaderProps) {
           className="menu-toggle"
           ref={menuOpenRef}
           onClick={handleMenuToggle}
+          type="button"
         >
           <span className="screen-reader-text">Open Menu</span>
           <span className="icon-menu" aria-hidden="true" />
@@ -82,6 +85,7 @@ export default function Header({ page, config }: HeaderProps) {
               id="menu-close"
               className="menu-toggle"
               onClick={handleMenuToggle}
+              type="button"
             >
               <span className="screen-reader-text">Close Menu</span>
               <span className="icon-close" aria-hidden="true" />
@@ -92,7 +96,7 @@ export default function Header({ page, config }: HeaderProps) {
                 const actionStyle = get(action, 'style', 'link');
                 return (
                   <li
-                    key={index}
+                    key={`${actionUrl}-${index}`}
                     className={classNames('menu-item', {
                       'current-menu-item': pageUrl === actionUrl,
                       'menu-button': actionStyle !== 'link',

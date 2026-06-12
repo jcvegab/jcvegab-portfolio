@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { IconProps } from './Icon.types';
 
 export default function Icon({ icon }: IconProps) {

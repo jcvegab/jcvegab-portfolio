@@ -18,9 +18,9 @@ export default function SectionForm(props: SectionFormProps) {
     submit_label: submitLabel,
   } = section;
 
-  const formHoneypotInputId = formId + '-honeypot';
-  const formHoneypotLabelId = formId + '-honeypot-label';
-  const formHoneypotName = formId + '-bot-field';
+  const formHoneypotInputId = `${formId}-honeypot`;
+  const formHoneypotLabelId = `${formId}-honeypot-label`;
+  const formHoneypotName = `${formId}-bot-field`;
 
   return (
     <section id={sectionId} className="block block-form outer">
@@ -55,7 +55,7 @@ export default function SectionForm(props: SectionFormProps) {
             </div>
             <input type="hidden" name="form-name" value={formId} />
             {formFields.map((field, index) => (
-              <FormField key={index} field={field} />
+              <FormField key={field.name || index} field={field} />
             ))}
             <div className="form-submit">
               <button type="submit" className="button">
