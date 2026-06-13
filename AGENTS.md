@@ -7,7 +7,7 @@
 - `npm run format` — Biome format --write
 - `npm run type-check` — `tsc --noEmit`
 - `npm run build` — static export to `out/`
-- No test suite exists. CI runs: lint → type-check.
+- CI runs: lint → type-check → test.
 
 ## Architecture
 
