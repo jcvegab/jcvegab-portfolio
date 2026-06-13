@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 // withPrefix reads config.json at module level via require()
 // The real config has path_prefix: "/". We test the function as-is.
 import withPrefix from '../withPrefix';

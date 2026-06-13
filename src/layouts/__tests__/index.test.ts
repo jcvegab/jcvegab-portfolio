@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import layoutIndex, * as namedExports from '../index';
 
 describe('layouts index', () => {

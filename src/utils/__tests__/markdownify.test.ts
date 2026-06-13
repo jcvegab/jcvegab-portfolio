@@ -1,5 +1,3 @@
-import { describe, expect, it, vi } from 'vitest';
-
 vi.mock('../htmlToReact', () => ({
   default: vi.fn((html: string) => `reactified:${html}`),
 }));

@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import componentIndex, * as namedExports from '../index';
 
 describe('components index', () => {

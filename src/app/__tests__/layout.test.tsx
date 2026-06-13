@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 vi.mock('next/font/google', () => ({
   Karla: () => ({ variable: '--font-karla-mocked' }),

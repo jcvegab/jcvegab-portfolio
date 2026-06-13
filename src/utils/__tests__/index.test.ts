@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import * as utilsIndex from '../index';
 
 describe('utils index', () => {

@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
 
 vi.mock('next/script', () => ({
   default: ({ children, ...props }: Record<string, any>) => {
