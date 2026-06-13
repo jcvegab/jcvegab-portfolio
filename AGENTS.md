@@ -6,6 +6,7 @@
 - `npm run lint` — Biome check (lint + format validation)
 - `npm run format` — Biome format --write
 - `npm run type-check` — `tsc --noEmit`
+- `npm run test` — Vitest run (use `npm run test:watch` for watch mode)
 - `npm run build` — static export to `out/`
 - CI runs: lint → type-check → test.
 
@@ -22,8 +23,9 @@
 - **Linter/formatter is Biome** (not ESLint/Prettier). Import order is enforced in groups: react/next → packages/node → components → layouts → utils → relative → types → SCSS/CSS.
 - **Biome overrides**: `noSvgWithoutTitle` off, `noImgElement` off.
 - **JS**: single quotes, trailing commas. **JSX**: double quotes. 2-space indent, 80-char lines.
-- **Styling**: SCSS (`src/sass/`). No Tailwind, no CSS modules.
+- **Styling**: SCSS (`src/sass/`). No Tailwind, no CSS modules. Use `import { classNames } from '@/utils'` for composing class strings.
 - **TypeScript**: `strict: false`.
+- **Tests**: Unit tests in `__tests__` dirs adjacent to source files (e.g. `src/components/__tests__/`).
 - **Pre-commit**: husky + lint-staged runs `biome check --write --unsafe`.
 
 ## Environment
