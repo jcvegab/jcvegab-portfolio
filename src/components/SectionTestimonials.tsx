@@ -1,9 +1,13 @@
 import { classNames, htmlToReact, withPrefix } from '@/utils';
 
 import type {
-  SectionTestimonialsProps,
+  SectionTestimonialsItem,
   TestimonialItem,
 } from './SectionTestimonials.types';
+
+export type SectionTestimonialsProps = {
+  section: SectionTestimonialsItem;
+};
 
 export default function SectionTestimonials({
   section,

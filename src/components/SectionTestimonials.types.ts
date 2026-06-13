@@ -14,7 +14,3 @@ export type SectionTestimonialsItem = {
   testimonials?: TestimonialItem[];
   col_number?: SectionTestimonialsColumnNumber;
 };
-
-export type SectionTestimonialsProps = {
-  section: SectionTestimonialsItem;
-};
