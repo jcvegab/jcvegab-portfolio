@@ -3,22 +3,25 @@
 import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useRef } from 'react';
 
-import Action from './Action';
-
 import {
   classNames,
   get,
   getPageUrl,
-  isEmpty,
   Link,
   map,
   trim,
   withPrefix,
-} from '../utils';
+} from '@/utils';
 
-import type { MouseEvent } from 'react';
-import type { ActionData } from './Action.types';
-import type { HeaderProps } from './Header.types';
+import Action from './Action';
+
+import type { Config, Page } from '@/types';
+import type { ActionItem } from './Action.types';
+
+export type HeaderProps = {
+  page: Page;
+  config: Config;
+};
 
 export default function Header({ page, config }: HeaderProps) {
   const { header } = config;
@@ -27,8 +30,8 @@ export default function Header({ page, config }: HeaderProps) {
     logo_img: logo,
     logo_img_alt: logoAlt = '',
     title,
-    has_nav: hasNav,
-    nav_links: navLinks,
+    has_nav: hasNav = false,
+    nav_links: navLinks = [],
   } = header;
 
   const pageUrl = trim(getPageUrl(page), '/');
@@ -57,12 +60,12 @@ export default function Header({ page, config }: HeaderProps) {
     };
   }, []);
 
-  const handleMenuToggle = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     document.body.classList.toggle('menu--opened');
   };
 
-  const renderNavLinks = (navLinks: ActionData[], pageUrl: string) => {
+  const renderNavLinks = (navLinks: ActionItem[], pageUrl: string) => {
     return (
       <Fragment>
         <button
@@ -130,7 +133,7 @@ export default function Header({ page, config }: HeaderProps) {
               </p>
             )}
           </div>
-          {hasNav && !isEmpty(navLinks) && renderNavLinks(navLinks, pageUrl)}
+          {hasNav && navLinks.length > 0 && renderNavLinks(navLinks, pageUrl)}
         </div>
       </div>
     </header>

@@ -1,6 +1,10 @@
 import Action from './Action';
 
-import type { CtaButtonsProps } from './CtaButtons.types';
+import type { ActionItem } from './Action.types';
+
+export type CtaButtonsProps = {
+  actions: ActionItem[];
+};
 
 export default function CtaButtons({ actions }: CtaButtonsProps) {
   return (

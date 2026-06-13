@@ -2,15 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
+import type { Config, PageData, PageRaw } from '@/types';
+
 const contentDir = path.join(process.cwd(), 'content');
 const pagesDir = path.join(contentDir, 'pages');
 
-export interface ContentData {
-  page: Record<string, unknown>;
-  site: Record<string, unknown>;
-}
-
-export function getGlobalConfig() {
+export function getGlobalConfig(): Config | null {
   const configPath = path.join(contentDir, 'data', 'config.json');
   if (fs.existsSync(configPath)) {
     const fileContents = fs.readFileSync(configPath, 'utf8');
@@ -19,7 +16,7 @@ export function getGlobalConfig() {
   return null;
 }
 
-export function getAllPagePaths() {
+export function getAllPagePaths(): string[] {
   const paths: string[] = [];
 
   function walkDir(currentPath: string) {
@@ -46,14 +43,7 @@ export function getAllPagePaths() {
   return paths;
 }
 
-export function getAllPagesData() {
-  const paths = getAllPagePaths();
-  return paths
-    .map((p) => getPageDataBySlug(p))
-    .filter(Boolean) as ContentData[];
-}
-
-export function getPageDataBySlug(slug: string): ContentData | null {
+export function getPageDataBySlug(slug: string): PageData | null {
   let relativePath = slug;
   if (relativePath === '/' || relativePath === '') {
     relativePath = '/index';
@@ -76,12 +66,12 @@ export function getPageDataBySlug(slug: string): ContentData | null {
   const { data, content } = matter(fileContents);
 
   // Model name is usually the 'type' field in frontmatter,
-  // or we can infer it. If 'type' is not set, we default to 'Page'.
-  const modelName = data.type || data.layout || 'Page';
+  // or we can infer it. If 'type' is not set, we default to 'page'.
+  const modelName = data.type || data.layout || 'page';
 
   return {
     page: {
-      ...data,
+      ...(data as PageRaw),
       markdown_content: content,
       __metadata: {
         modelName,
@@ -90,4 +80,9 @@ export function getPageDataBySlug(slug: string): ContentData | null {
     },
     site: getGlobalConfig(),
   };
+}
+
+export function getAllPagesData(): PageData[] {
+  const paths = getAllPagePaths();
+  return paths.map((p) => getPageDataBySlug(p)).filter(Boolean);
 }

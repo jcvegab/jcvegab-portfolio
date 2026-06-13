@@ -1,15 +1,15 @@
-import { Link, withPrefix } from '../utils';
+import { Link, withPrefix } from '@/utils';
 
-import type { ActionLinkData } from './ActionLink.types';
+import type { ActionLinkItem } from './ActionLink.types';
 
 type ActionLinkProps = {
-  action: ActionLinkData;
+  action: ActionLinkItem;
 };
 
 export default function ActionLink({ action }: ActionLinkProps) {
   const { url, label, new_window: newWindow, no_follow: noFollow } = action;
 
-  const attrs: Record<string, unknown> = {};
+  const attrs: React.ComponentPropsWithoutRef<'a'> = {};
   if (newWindow) {
     attrs.target = '_blank';
   }

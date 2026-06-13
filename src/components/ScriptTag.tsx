@@ -1,6 +1,15 @@
 import Script from 'next/script';
 
-import type { ScriptTagProps } from './ScriptTag.types';
+export type ScriptTagProps = Pick<
+  React.ComponentPropsWithoutRef<'script'>,
+  | 'src'
+  | 'async'
+  | 'defer'
+  | 'type'
+  | 'id'
+  | 'dangerouslySetInnerHTML'
+  | 'children'
+>;
 
 export default function ScriptTag({
   src,

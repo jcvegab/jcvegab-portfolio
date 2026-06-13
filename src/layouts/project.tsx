@@ -1,8 +1,11 @@
-import { Layout } from '../components';
+import { Body } from '@/components';
 
-import { htmlToReact, markdownify, withPrefix } from '../utils';
+import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
-import type { ProjectProps } from './project.types';
+import type { LayoutPage } from '@/types';
+import type { ProjectPage } from './project.types';
+
+export type ProjectProps = LayoutPage<ProjectPage>;
 
 export default function Project({ data, page }: ProjectProps) {
   const { config } = data;
@@ -16,7 +19,7 @@ export default function Project({ data, page }: ProjectProps) {
   } = page;
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       <div className="inner outer">
         <article className="post post-full">
           <header className="post-header inner-sm">
@@ -37,6 +40,6 @@ export default function Project({ data, page }: ProjectProps) {
           )}
         </article>
       </div>
-    </Layout>
+    </Body>
   );
 }

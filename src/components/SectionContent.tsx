@@ -1,6 +1,10 @@
-import { htmlToReact, markdownify, withPrefix } from '../utils';
+import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
-import type { SectionContentProps } from './SectionContent.types';
+import type { SectionContentItem } from './SectionContent.types';
+
+export type SectionContentProps = {
+  section: SectionContentItem;
+};
 
 export default function SectionContent({ section }: SectionContentProps) {
   const {

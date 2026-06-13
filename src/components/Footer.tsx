@@ -1,9 +1,13 @@
+import { htmlToReact } from '@/utils';
+
 import Action from './Action';
 import ActionLink from './ActionLink';
 
-import { htmlToReact, isEmpty } from '../utils';
+import type { Config } from '@/types';
 
-import type { FooterProps } from './Footer.types';
+export type FooterProps = {
+  config: Config;
+};
 
 export default function Footer({ config }: FooterProps) {
   const { footer } = config;
@@ -11,8 +15,8 @@ export default function Footer({ config }: FooterProps) {
   const {
     content: copyright,
     links = [],
-    has_social: hasSocial,
-    social_links: socialLinks,
+    has_social: hasSocial = false,
+    social_links: socialLinks = [],
   } = footer;
 
   return (
@@ -30,7 +34,7 @@ export default function Footer({ config }: FooterProps) {
               );
             })}
           </div>
-          {hasSocial && !isEmpty(socialLinks) && (
+          {hasSocial && socialLinks.length > 0 && (
             <div className="social-links">
               {socialLinks.map((action, index) => {
                 return (

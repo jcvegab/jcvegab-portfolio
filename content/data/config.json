@@ -1,5 +1,6 @@
 {
-  "title": "Joseph Vega Blacido",
+  "$schema": "../../schemas/config.schema.json",
+  "title": "Configuration",
   "path_prefix": "/",
   "color_scheme": "light",
   "accent_color": "blue",
@@ -40,8 +41,7 @@
         "style": "icon",
         "icon": "github",
         "new_window": true,
-        "no_follow": false,
-        "type": "action"
+        "no_follow": false
       },
       {
         "label": "LinkedIn",

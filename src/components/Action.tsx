@@ -1,13 +1,13 @@
 import { Fragment } from 'react';
 
+import { classNames, Link, withPrefix } from '@/utils';
+
 import Icon from './Icon';
 
-import { classNames, Link, withPrefix } from '../utils';
-
-import type { ActionData } from './Action.types';
+import type { ActionItem } from './Action.types';
 
 type ActionProps = {
-  action: ActionData;
+  action: ActionItem;
 };
 
 export default function Action({ action }: ActionProps) {
@@ -24,7 +24,8 @@ export default function Action({ action }: ActionProps) {
     button: style === 'button',
     'button-icon': style === 'icon',
   });
-  const attrs: Record<string, unknown> = {};
+
+  const attrs: React.ComponentPropsWithoutRef<'a'> = {};
   if (newWindow) {
     attrs.target = '_blank';
   }
@@ -38,7 +39,7 @@ export default function Action({ action }: ActionProps) {
     <Link href={withPrefix(url)} {...attrs} className={classes}>
       {style === 'icon' ? (
         <Fragment>
-          <Icon icon={icon as import('./Icon.types').IconVariant} />
+          <Icon icon={icon} />
           <span className="screen-reader-text">{label}</span>
         </Fragment>
       ) : (

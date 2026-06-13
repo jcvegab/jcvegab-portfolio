@@ -1,8 +1,14 @@
-import components, { Layout } from '../components';
+import components, { Body } from '@/components';
 
-import { camelCase, getPageUrl, upperFirst } from '../utils';
+import { camelCase, getPageUrl, upperFirst } from '@/utils';
 
-import type { AdvancedProps } from './advanced.types';
+import type { LayoutPage, Page } from '@/types';
+import type { AdvancedPage } from './advanced.types';
+
+export type AdvancedProps = LayoutPage<AdvancedPage> & {
+  posts?: Page[];
+  projects?: Page[];
+};
 
 export default function Advanced({
   data,
@@ -17,7 +23,7 @@ export default function Advanced({
   const pageUrl = getPageUrl(page);
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       {!hideTitle && (
         <header className="page-header inner-sm outer">
           <h1 className="page-title line-top">{title}</h1>
@@ -47,6 +53,6 @@ export default function Advanced({
           />
         );
       })}
-    </Layout>
+    </Body>
   );
 }

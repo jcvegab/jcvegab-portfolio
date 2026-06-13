@@ -1,19 +1,8 @@
-import type { LayoutConfig, LayoutPage } from '../components/Layout.types';
+import type { Page } from '@/types';
 
-export type PostData = {
-  config: LayoutConfig;
-};
-
-export type PostPage = LayoutPage & {
-  title: string;
+export type PostPage = Page & {
   subtitle?: string;
   image?: string;
   image_alt?: string;
-  date?: string | number | Date;
-  markdown_content?: string;
-};
-
-export type PostProps = {
-  data: PostData;
-  page: PostPage;
+  date: string | number | Date;
 };

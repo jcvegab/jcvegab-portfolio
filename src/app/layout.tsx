@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
+type LayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="es" className={karla.variable}>
       <body>{children}</body>

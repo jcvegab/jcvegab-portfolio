@@ -1,11 +1,7 @@
 import NextLink from 'next/link';
 
-import type React from 'react';
-
-type LinkProps = {
+type LinkProps = React.ComponentPropsWithoutRef<'a'> & {
   children: React.ReactNode;
-  href: string;
-  [key: string]: unknown;
 };
 
 export default function Link({ children, href, ...other }: LinkProps) {

@@ -1,12 +1,14 @@
 import { notFound } from 'next/navigation';
 
-import pageLayouts from '../layouts';
+import pageLayouts from '@/layouts';
 
-import { getAllPagesData, getPageDataBySlug } from '../utils/content';
+import { getAllPagesData, getPageDataBySlug } from '@/utils/content';
+
+import type { Page } from '@/types';
 
 export async function generateMetadata() {
   const data = getPageDataBySlug('/');
-  const seo = data?.page?.seo as Record<string, string> | undefined;
+  const seo = data?.page?.seo;
   if (!seo) return {};
 
   return {
@@ -22,7 +24,7 @@ export default function HomePage() {
     notFound();
   }
 
-  const metadata = data.page.__metadata as { modelName: string };
+  const metadata = data.page.__metadata;
   const modelName = metadata.modelName;
   const PageLayout = pageLayouts[modelName];
 
@@ -30,28 +32,27 @@ export default function HomePage() {
     throw new Error(`No page layout matching the page model: ${modelName}`);
   }
 
-  const additionalProps: Record<string, unknown> = {};
+  const additionalProps: {
+    projects?: Page[];
+    posts?: Page[];
+  } = {};
   if (modelName === 'advanced') {
     const allPages = getAllPagesData();
     additionalProps.projects = allPages
-      .filter((p) => {
-        const pMetadata = p.page.__metadata as { modelName?: string };
-        return pMetadata?.modelName === 'project';
-      })
+      .filter((p) => p.page.__metadata?.modelName === 'project')
       .map((p) => p.page);
     additionalProps.posts = allPages
-      .filter((p) => {
-        const pMetadata = p.page.__metadata as { modelName?: string };
-        return pMetadata?.modelName === 'post';
-      })
+      .filter((p) => p.page.__metadata?.modelName === 'post')
       .map((p) => p.page);
   }
 
   return (
     <PageLayout
-      page={data.page}
       data={{ config: data.site }}
-      {...additionalProps}
+      // biome-ignore lint/suspicious/noExplicitAny: This is a bit of a hack to avoid having to define a ton of types for the page data and additional props.
+      page={data.page as any}
+      // biome-ignore lint/suspicious/noExplicitAny: This is a bit of a hack to avoid having to define a ton of types for the page data and additional props.
+      {...(additionalProps as any)}
     />
   );
 }

@@ -1,4 +1,8 @@
-import type { IconProps } from './Icon.types';
+import type { IconVariant } from './Icon.types';
+
+export type IconProps = {
+  icon: IconVariant;
+};
 
 export default function Icon({ icon }: IconProps) {
   switch (icon) {

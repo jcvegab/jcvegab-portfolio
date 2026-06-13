@@ -3,14 +3,20 @@
 import { useEffect } from 'react';
 import noframe from 'reframe.js/dist/noframe';
 
+import { classNames } from '@/utils';
+
 import Footer from './Footer';
 import Header from './Header';
 
-import { classNames } from '../utils';
+import type { Config, Page } from '@/types';
 
-import type { LayoutProps } from './Layout.types';
+export type BodyProps = {
+  children: React.ReactNode;
+  config: Config;
+  page: Page;
+};
 
-export default function Body({ children, config, page }: LayoutProps) {
+export default function Body({ children, config, page }: BodyProps) {
   const {
     color_scheme: colorScheme = 'light',
     accent_color: accentColor = 'pink',

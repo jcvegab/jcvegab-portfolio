@@ -1,17 +1,21 @@
-import CtaButtons from './CtaButtons';
-
 import {
   classNames,
   formatDate,
   getPageUrl,
   htmlToReact,
-  isEmpty,
   Link,
   orderBy,
   withPrefix,
-} from '../utils';
+} from '@/utils';
 
-import type { SectionPostsPost, SectionPostsProps } from './SectionPosts.types';
+import CtaButtons from './CtaButtons';
+
+import type { SectionPostsItem, SectionPostsPost } from './SectionPosts.types';
+
+export type SectionPostsProps = {
+  section: SectionPostsItem;
+  posts?: SectionPostsPost[];
+};
 
 export default function SectionPosts({
   section,
@@ -21,7 +25,7 @@ export default function SectionPosts({
     section_id: sectionId,
     title,
     subtitle,
-    actions,
+    actions = [],
     col_number: colNumber = 'three',
     posts_number: postsNumber = 3,
   } = section;
@@ -87,7 +91,7 @@ export default function SectionPosts({
             {recentPosts.map((post, index) => renderPost(post, index))}
           </div>
         </div>
-        {!isEmpty(actions) && (
+        {actions.length > 0 && (
           <div className="block-buttons inner-sm">
             <CtaButtons actions={actions} />
           </div>

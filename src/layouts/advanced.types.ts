@@ -1,24 +1,11 @@
-import type { LayoutConfig, LayoutPage } from '../components/Layout.types';
+import type { Page } from '@/types';
 
 export type AdvancedSection = {
   section_id?: string;
   type: string;
 };
 
-export type AdvancedPage = LayoutPage & {
+export type AdvancedPage = Page & {
   hideTitle?: boolean;
-  title?: string;
   sections?: AdvancedSection[];
-  __metadata: { urlPath: string };
-};
-
-export type AdvancedData = {
-  config: LayoutConfig;
-};
-
-export type AdvancedProps = {
-  data: AdvancedData;
-  page: AdvancedPage;
-  posts?: Record<string, unknown>[];
-  projects?: Record<string, unknown>[];
 };

@@ -1,8 +1,13 @@
-import { Layout } from '../components';
+import { Body } from '@/components';
 
-import { getPageUrl, Link, orderBy, withPrefix } from '../utils';
+import { getPageUrl, Link, orderBy, withPrefix } from '@/utils';
 
-import type { PortfolioProject, PortfolioProps } from './portfolio.types';
+import type { LayoutPage } from '@/types';
+import type { PortfolioPage, PortfolioProject } from './portfolio.types';
+
+export type PortfolioProps = LayoutPage<PortfolioPage> & {
+  projects?: PortfolioProject[];
+};
 
 export default function Portfolio({
   data,
@@ -40,7 +45,7 @@ export default function Portfolio({
   };
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       <div className="inner outer">
         <header className="page-header inner-sm">
           <h1 className="page-title line-top">{title}</h1>
@@ -50,6 +55,6 @@ export default function Portfolio({
           {projects.map((project, index) => renderProject(project, index))}
         </div>
       </div>
-    </Layout>
+    </Body>
   );
 }

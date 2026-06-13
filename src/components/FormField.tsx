@@ -1,4 +1,8 @@
-import type { FormFieldProps } from './FormField.types';
+import type { FormFieldItem } from './FormField.types';
+
+export type FormFieldProps = {
+  field: FormFieldItem;
+};
 
 export default function FormField({ field }: FormFieldProps) {
   const {
@@ -11,7 +15,10 @@ export default function FormField({ field }: FormFieldProps) {
   } = field;
 
   const labelId = `${name}-label`;
-  const attr: Record<string, unknown> = {};
+  const attr: Pick<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    'aria-labelledby' | 'required'
+  > = {};
   if (label) {
     attr['aria-labelledby'] = labelId;
   }

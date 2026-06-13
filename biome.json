@@ -22,19 +22,33 @@
               ":BLANK_LINE:",
               {
                 "type": false,
-                "source": [
-                  "./**",
-                  "../**",
-                  "!**/utils",
-                  "!**/utils/**",
-                  "!**/*.scss",
-                  "!**/*.css"
-                ]
+                "source": ["@/components", "@/components/**"]
               },
               ":BLANK_LINE:",
               {
                 "type": false,
-                "source": ["**/utils", "**/utils/**", "../utils", "./utils"]
+                "source": ["@/layouts", "@/layouts/**"]
+              },
+              ":BLANK_LINE:",
+              {
+                "type": false,
+                "source": ["@/utils", "@/utils/**"]
+              },
+              ":BLANK_LINE:",
+              {
+                "type": false,
+                "source": [
+                  "./**",
+                  "../**",
+                  "!@/components",
+                  "!@/components/**",
+                  "!@/layouts",
+                  "!@/layouts/**",
+                  "!@/utils",
+                  "!@/utils/**",
+                  "!**/*.scss",
+                  "!**/*.css"
+                ]
               },
               ":BLANK_LINE:",
               { "type": true },

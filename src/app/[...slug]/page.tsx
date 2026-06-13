@@ -1,12 +1,14 @@
 import { notFound } from 'next/navigation';
 
-import pageLayouts from '../../layouts';
+import pageLayouts from '@/layouts';
 
 import {
   getAllPagePaths,
   getAllPagesData,
   getPageDataBySlug,
-} from '../../utils/content';
+} from '@/utils/content';
+
+import type { Page } from '@/types';
 
 export async function generateStaticParams() {
   const paths = getAllPagePaths();
@@ -27,7 +29,7 @@ export async function generateMetadata({
   const slugPath = `/${slug ? slug.join('/') : ''}`;
   const data = getPageDataBySlug(slugPath);
 
-  const seo = data?.page?.seo as Record<string, string> | undefined;
+  const seo = data?.page?.seo;
   if (!seo) return {};
 
   return {
@@ -58,14 +60,14 @@ export default async function SlugPage({
   }
 
   const additionalProps: {
-    projects?: Record<string, unknown>[];
-    posts?: Record<string, unknown>[];
+    projects?: Page[];
+    posts?: Page[];
   } = {};
   if (modelName === 'portfolio') {
     const allPages = getAllPagesData();
     additionalProps.projects = allPages
       .filter((p) => {
-        const pMetadata = p.page.__metadata as { modelName?: string };
+        const pMetadata = p.page.__metadata;
         return pMetadata?.modelName === 'project';
       })
       .map((p) => p.page);
@@ -73,7 +75,7 @@ export default async function SlugPage({
     const allPages = getAllPagesData();
     additionalProps.posts = allPages
       .filter((p) => {
-        const pMetadata = p.page.__metadata as { modelName?: string };
+        const pMetadata = p.page.__metadata;
         return pMetadata?.modelName === 'post';
       })
       .map((p) => p.page);
@@ -81,8 +83,8 @@ export default async function SlugPage({
 
   return (
     <PageLayout
-      page={data.page}
       data={{ config: data.site }}
+      page={data.page}
       {...additionalProps}
     />
   );

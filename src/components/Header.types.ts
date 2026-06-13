@@ -1,22 +1,9 @@
-import type { ActionData } from './Action.types';
+import type { ActionItem } from './Action.types';
 
 export type HeaderConfig = {
-  header: {
-    logo_img?: string;
-    logo_img_alt?: string;
-    title?: string;
-    has_nav?: boolean;
-    nav_links?: ActionData[];
-  };
-};
-
-export type HeaderPage = {
-  __metadata: {
-    urlPath: string;
-  };
-};
-
-export type HeaderProps = {
-  page: HeaderPage;
-  config: HeaderConfig;
+  title?: string;
+  has_nav?: boolean;
+  nav_links?: ActionItem[];
+  logo_img?: string;
+  logo_img_alt?: string;
 };

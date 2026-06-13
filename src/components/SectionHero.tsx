@@ -1,15 +1,26 @@
+import { markdownify } from '@/utils';
+
 import CtaButtons from './CtaButtons';
 
-import { markdownify } from '../utils';
+import type { SectionHeroItem } from './SectionHero.types';
 
-import type { SectionHeroProps } from './SectionHero.types';
+export type SectionHeroProps = {
+  section: SectionHeroItem;
+};
 
 export default function SectionHero({ section }: SectionHeroProps) {
-  const { section_id: sectionId, title, avatar, content, actions } = section;
+  const {
+    section_id: sectionId,
+    title,
+    avatar,
+    avatar_alt,
+    content,
+    actions = [],
+  } = section;
 
   return (
     <section id={sectionId} className="block block-hero outer avatar-hero">
-      <img alt="Joseph Vega Avatar" src={avatar} />
+      <img alt={avatar_alt} src={avatar} />
       <div className="inner">
         {title && (
           <div className="block-header inner-sm">
@@ -19,7 +30,7 @@ export default function SectionHero({ section }: SectionHeroProps) {
         {content && (
           <div className="block-content inner-sm">{markdownify(content)}</div>
         )}
-        {actions && (
+        {actions.length > 0 && (
           <div className="block-buttons inner-sm">
             <CtaButtons actions={actions} />
           </div>

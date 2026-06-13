@@ -1,4 +1,4 @@
-import { Layout } from '../components';
+import { Body } from '@/components';
 
 import {
   classNames,
@@ -7,9 +7,14 @@ import {
   Link,
   orderBy,
   withPrefix,
-} from '../utils';
+} from '@/utils';
 
-import type { BlogPost, BlogProps } from './blog.types';
+import type { LayoutPage } from '@/types';
+import type { BlogPage, BlogPost } from './blog.types';
+
+export type BlogProps = LayoutPage<BlogPage> & {
+  posts?: BlogPost[];
+};
 
 export default function Blog({ data, page, posts: rawPosts = [] }: BlogProps) {
   const { config } = data;
@@ -61,7 +66,7 @@ export default function Blog({ data, page, posts: rawPosts = [] }: BlogProps) {
   };
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       <div className="inner outer">
         <header
           className={classNames('page-header', 'inner-sm', {
@@ -80,6 +85,6 @@ export default function Blog({ data, page, posts: rawPosts = [] }: BlogProps) {
           {posts.map((post, index) => renderPost(post, index))}
         </div>
       </div>
-    </Layout>
+    </Body>
   );
 }

@@ -1,12 +1,13 @@
-export type SectionPortfolioProject = {
+import type { Page } from '@/types';
+
+export type SectionPortfolioProject = Page & {
   title?: string;
   thumb_image?: string;
   thumb_image_alt?: string;
-  __metadata: { urlPath: string };
   date?: string | number | Date;
 };
 
-export type SectionPortfolioData = {
+export type SectionPortfolioItem = {
   section_id: string;
   title?: string;
   subtitle?: string;
@@ -17,6 +18,6 @@ export type SectionPortfolioData = {
 };
 
 export type SectionPortfolioProps = {
-  section: SectionPortfolioData;
+  section: SectionPortfolioItem;
   projects?: SectionPortfolioProject[];
 };

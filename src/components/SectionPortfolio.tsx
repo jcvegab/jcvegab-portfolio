@@ -5,7 +5,7 @@ import {
   orderBy,
   size,
   withPrefix,
-} from '../utils';
+} from '@/utils';
 
 import type {
   SectionPortfolioProject,

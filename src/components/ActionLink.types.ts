@@ -1,4 +1,4 @@
-export type ActionLinkData = {
+export type ActionLinkItem = {
   url: string;
   label: string;
   new_window?: boolean;

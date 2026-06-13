@@ -1,18 +1,20 @@
-export type SectionTestimonialItem = {
+export type TestimonialItem = {
   content?: string;
   avatar?: string;
   avatar_alt?: string;
   author?: string;
 };
 
-export type SectionTestimonialsData = {
+export type SectionTestimonialsColumnNumber = 'two' | 'three';
+
+export type SectionTestimonialsItem = {
   section_id: string;
   title?: string;
   subtitle?: string;
-  testimonials?: SectionTestimonialItem[];
-  col_number?: 'two' | 'three';
+  testimonials?: TestimonialItem[];
+  col_number?: SectionTestimonialsColumnNumber;
 };
 
 export type SectionTestimonialsProps = {
-  section: SectionTestimonialsData;
+  section: SectionTestimonialsItem;
 };

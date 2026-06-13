@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Configuration",
+  "description": "This file contains the configuration for the website, including the header, footer, and other settings.",
+  "type": "object",
+  "required": ["title", "header", "footer"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "description": "A field for the JSON schema specification: https://json-schema.org/",
+      "anyOf": [{ "$ref": "#/$defs/Schema" }, { "type": "null" }]
+    },
+    "title": { "type": "string" },
+    "color_scheme": {
+      "type": "string",
+      "enum": ["light", "dark"]
+    },
+    "accent_color": { "type": "string" },
+    "path_prefix": { "type": "string" },
+    "favicon": { "type": "string" },
+    "domain": { "type": "string" },
+    "header": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "has_nav": { "type": "boolean" },
+        "logo_img": { "type": "string" },
+        "logo_img_alt": { "type": "string" },
+        "nav_links": { "$ref": "#/$defs/ActionItem" }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "content": { "type": "string" },
+        "has_social": { "type": "boolean" },
+        "links": { "$ref": "#/$defs/ActionLinkItem" },
+        "social_links": { "$ref": "#/$defs/ActionItem" }
+      }
+    }
+  },
+  "$defs": {
+    "Schema": { "type": "string" },
+    "IconVariant": {
+      "type": "string",
+      "enum": [
+        "dribbble",
+        "facebook",
+        "github",
+        "instagram",
+        "linkedin",
+        "pinterest",
+        "twitter",
+        "youtube",
+        "vimeo"
+      ]
+    },
+    "ActionItem": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string" },
+          "style": {
+            "type": "string",
+            "enum": ["link", "button", "icon"]
+          },
+          "icon": { "$ref": "#/$defs/IconVariant" },
+          "new_window": { "type": "boolean" },
+          "no_follow": { "type": "boolean" }
+        }
+      }
+    },
+    "ActionLinkItem": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "url": { "type": "string" },
+          "label": { "type": "string" },
+          "new_window": { "type": "boolean" },
+          "no_follow": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

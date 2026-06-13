@@ -1,17 +1,11 @@
 import withPrefix from './withPrefix';
 
-type PageUrlMetadata = {
-  urlPath: string;
-};
-
-type PageUrlPost = {
-  __metadata: PageUrlMetadata;
-};
+import type { Page } from '@/types';
 
 export default function getPageUrl(
-  post: PageUrlPost,
+  page: Page,
   { withPrefix: addPrefix = false }: { withPrefix?: boolean } = {},
 ) {
-  const urlPath = post.__metadata.urlPath;
+  const urlPath = page.__metadata.urlPath;
   return addPrefix ? withPrefix(urlPath) : urlPath;
 }

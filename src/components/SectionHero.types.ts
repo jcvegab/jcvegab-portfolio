@@ -1,13 +1,10 @@
-import type { ActionData } from './Action.types';
+import type { ActionItem } from './Action.types';
 
-export type SectionHeroData = {
+export type SectionHeroItem = {
   section_id: string;
   title?: string;
-  avatar?: string;
+  avatar: string;
+  avatar_alt: string;
   content?: string;
-  actions?: ActionData[];
-};
-
-export type SectionHeroProps = {
-  section: SectionHeroData;
+  actions?: ActionItem[];
 };

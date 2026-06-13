@@ -1,6 +1,7 @@
 import ReactHtmlParser, { domToReact } from 'html-react-parser';
 
-import ScriptTag from '../components/ScriptTag';
+import ScriptTag from '@/components/ScriptTag';
+
 import Link from './link';
 import { isEmpty, omit } from './lodash';
 

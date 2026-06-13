@@ -8,7 +8,3 @@ export type IconVariant =
   | 'twitter'
   | 'youtube'
   | 'vimeo';
-
-export type IconProps = {
-  icon: IconVariant;
-};

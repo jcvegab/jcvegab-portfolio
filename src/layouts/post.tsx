@@ -1,8 +1,11 @@
-import { Layout } from '../components';
+import { Body } from '@/components';
 
-import { formatDate, htmlToReact, markdownify, withPrefix } from '../utils';
+import { formatDate, htmlToReact, markdownify, withPrefix } from '@/utils';
 
-import type { PostProps } from './post.types';
+import type { LayoutPage } from '@/types';
+import type { PostPage } from './post.types';
+
+export type PostProps = LayoutPage<PostPage>;
 
 export default function Post({ data, page }: PostProps) {
   const { config } = data;
@@ -20,7 +23,7 @@ export default function Post({ data, page }: PostProps) {
   const formattedDate = formatDate(date, 'date_display_full');
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       <div className="inner outer">
         <article className="post post-full">
           <header className="post-header inner-sm">
@@ -46,6 +49,6 @@ export default function Post({ data, page }: PostProps) {
           </footer>
         </article>
       </div>
-    </Layout>
+    </Body>
   );
 }

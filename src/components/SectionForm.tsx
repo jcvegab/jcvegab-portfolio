@@ -1,8 +1,12 @@
+import { htmlToReact, markdownify } from '@/utils';
+
 import FormField from './FormField';
 
-import { htmlToReact, markdownify } from '../utils';
+import type { SectionFormItem } from './SectionForm.types';
 
-import type { SectionFormProps } from './SectionForm.types';
+export type SectionFormProps = {
+  section: SectionFormItem;
+};
 
 export default function SectionForm(props: SectionFormProps) {
   const { section } = props;

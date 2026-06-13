@@ -1,8 +1,8 @@
-import { classNames, htmlToReact, isEmpty, withPrefix } from '../utils';
+import { classNames, htmlToReact, withPrefix } from '@/utils';
 
 import type {
-  SectionTestimonialItem,
   SectionTestimonialsProps,
+  TestimonialItem,
 } from './SectionTestimonials.types';
 
 export default function SectionTestimonials({
@@ -12,14 +12,11 @@ export default function SectionTestimonials({
     section_id: sectionId,
     title,
     subtitle,
-    testimonials,
+    testimonials = [],
     col_number: colNumber = 'three',
   } = section;
 
-  const renderTestimonial = (
-    testimonial: SectionTestimonialItem,
-    index: number,
-  ) => {
+  const renderTestimonial = (testimonial: TestimonialItem, index: number) => {
     const { content, avatar, avatar_alt: avatarAlt = '', author } = testimonial;
 
     return (
@@ -52,7 +49,7 @@ export default function SectionTestimonials({
             )}
           </div>
         )}
-        {!isEmpty(testimonials) && (
+        {testimonials.length > 0 && (
           <div className="block-content">
             <div
               className={classNames('grid', {

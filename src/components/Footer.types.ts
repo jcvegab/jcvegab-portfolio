@@ -1,15 +1,9 @@
-import type { ActionData } from './Action.types';
-import type { ActionLinkData } from './ActionLink.types';
+import type { ActionItem } from './Action.types';
+import type { ActionLinkItem } from './ActionLink.types';
 
 export type FooterConfig = {
-  footer: {
-    content?: string;
-    links?: ActionLinkData[];
-    has_social?: boolean;
-    social_links?: ActionData[];
-  };
-};
-
-export type FooterProps = {
-  config: FooterConfig;
+  content?: string;
+  has_social?: boolean;
+  links?: ActionLinkItem[];
+  social_links?: ActionItem[];
 };

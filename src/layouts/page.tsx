@@ -1,8 +1,11 @@
-import { Layout } from '../components';
+import { Body } from '@/components';
 
-import { htmlToReact, markdownify, withPrefix } from '../utils';
+import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
-import type { PageProps } from './page.types';
+import type { LayoutPage } from '@/types';
+import type { BasePage } from './page.types';
+
+export type PageProps = LayoutPage<BasePage>;
 
 export default function Page({ data, page }: PageProps) {
   const { config } = data;
@@ -16,7 +19,7 @@ export default function Page({ data, page }: PageProps) {
   } = page;
 
   return (
-    <Layout page={page} config={config}>
+    <Body page={page} config={config}>
       <div className="inner outer">
         <article className="post post-full">
           <header className="post-header inner-sm">
@@ -37,6 +40,6 @@ export default function Page({ data, page }: PageProps) {
           )}
         </article>
       </div>
-    </Layout>
+    </Body>
   );
 }

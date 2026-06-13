@@ -1,8 +1,12 @@
+import { classNames, htmlToReact, markdownify, withPrefix } from '@/utils';
+
 import CtaButtons from './CtaButtons';
 
-import { classNames, htmlToReact, markdownify, withPrefix } from '../utils';
+import type { SectionGridItem, SectionItem } from './SectionGrid.types';
 
-import type { SectionGridItem, SectionGridProps } from './SectionGrid.types';
+export type SectionGridProps = {
+  section: SectionItem;
+};
 
 export default function SectionGrid({ section }: SectionGridProps) {
   const {

@@ -1,11 +1,11 @@
 import Action from './Action';
 import ActionLink from './ActionLink';
+import Body from './Body';
 import CtaButtons from './CtaButtons';
 import Footer from './Footer';
 import FormField from './FormField';
 import Header from './Header';
 import Icon from './Icon';
-import Layout from './Layout';
 import SectionContent from './SectionContent';
 import SectionForm from './SectionForm';
 import SectionGrid from './SectionGrid';
@@ -17,12 +17,12 @@ import SectionTestimonials from './SectionTestimonials';
 export {
   Action,
   ActionLink,
+  Body,
   CtaButtons,
   Footer,
   FormField,
   Header,
   Icon,
-  Layout,
   SectionContent,
   SectionForm,
   SectionGrid,
@@ -39,7 +39,7 @@ export default {
   Footer,
   FormField,
   Header,
-  Layout,
+  Body,
   Icon,
   SectionContent,
   SectionForm,

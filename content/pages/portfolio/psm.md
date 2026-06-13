@@ -6,6 +6,7 @@ thumb_image: images/2_thumb.jpg
 thumb_image_alt: An orange on a blue background
 image: images/2.jpg
 image_alt: An orange on a blue background
+
 seo:
     title: Proyectos San Marcos | Website, Intranet y Plataforma de cursos
     description: This is the project 2 description
