@@ -52,11 +52,13 @@ describe('SectionPosts', () => {
     {
       title: 'Post 1',
       date: '2024-01-15',
+      markdown_content: '',
       __metadata: { urlPath: '/blog/post1', modelName: 'post' as const },
     },
     {
       title: 'Post 2',
       date: '2024-02-20',
+      markdown_content: '',
       __metadata: { urlPath: '/blog/post2', modelName: 'post' as const },
     },
   ];
@@ -83,6 +85,7 @@ describe('SectionPosts', () => {
     const manyPosts = Array.from({ length: 10 }, (_, i) => ({
       title: `Post ${i + 1}`,
       date: '2024-01-15',
+      markdown_content: '',
       __metadata: {
         urlPath: `/blog/p${i}`,
         modelName: 'post' as const,

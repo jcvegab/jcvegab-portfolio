@@ -65,7 +65,7 @@ describe('Page layout', () => {
   });
 
   it('renders without optional fields', () => {
-    const { container } = render(
+    render(
       <PageLayout
         {...({
           data: baseProps.data,

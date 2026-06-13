@@ -23,8 +23,8 @@ describe('SectionForm', () => {
     form_id: 'contact-form',
     form_action: '/thanks',
     form_fields: [
-      { input_type: 'text', name: 'name', label: 'Name' },
-      { input_type: 'email', name: 'email', label: 'Email' },
+      { input_type: 'text' as const, name: 'name', label: 'Name' },
+      { input_type: 'email' as const, name: 'email', label: 'Email' },
     ],
     submit_label: 'Send',
   };

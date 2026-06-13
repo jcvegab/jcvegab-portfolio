@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import FormField from '../FormField';
 
 describe('FormField', () => {
-  it('renders a text input by default', () => {
+  it('renders a text input', () => {
     const { container } = render(
       <FormField field={{ input_type: 'text', name: 'name', label: 'Name' }} />,
     );
@@ -70,7 +70,6 @@ describe('FormField', () => {
     const { container } = render(
       <FormField
         field={{
-          input_type: 'email',
           name: 'email',
           label: 'Email',
           is_required: true,
@@ -84,7 +83,6 @@ describe('FormField', () => {
     const { container } = render(
       <FormField
         field={{
-          input_type: 'text',
           name: 'name',
           label: 'Name',
           default_value: 'Enter your name',

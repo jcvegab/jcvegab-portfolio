@@ -1,7 +1,13 @@
-export type FormFieldInputType = 'checkbox' | 'select' | 'textarea' | 'default';
+export type FormFieldInputType =
+  | 'checkbox'
+  | 'select'
+  | 'textarea'
+  | 'default'
+  | 'text'
+  | 'email';
 
 export type FormFieldItem = {
-  input_type: FormFieldInputType;
+  input_type?: FormFieldInputType;
   name: string;
   default_value?: string;
   options?: string[];

@@ -24,4 +24,33 @@ describe('CtaButtons', () => {
     const { container } = render(<CtaButtons actions={[]} />);
     expect(container.innerHTML).toBe('');
   });
+
+  it('renders single action', () => {
+    const actions = [{ label: 'Single', url: '/single' }];
+    render(<CtaButtons actions={actions} />);
+    expect(screen.getByText('Single')).toBeInTheDocument();
+  });
+
+  it('renders actions with external urls', () => {
+    const actions = [
+      { label: 'External', url: 'https://example.com' },
+      { label: 'Internal', url: '/internal' },
+    ];
+    render(<CtaButtons actions={actions} />);
+    expect(screen.getByText('External')).toBeInTheDocument();
+    expect(screen.getByText('Internal')).toBeInTheDocument();
+  });
+
+  it('renders actions in correct order', () => {
+    const actions = [
+      { label: 'First', url: '/first' },
+      { label: 'Second', url: '/second' },
+      { label: 'Third', url: '/third' },
+    ];
+    render(<CtaButtons actions={actions} />);
+    const links = screen.getAllByRole('link');
+    expect(links[0]).toHaveTextContent('First');
+    expect(links[1]).toHaveTextContent('Second');
+    expect(links[2]).toHaveTextContent('Third');
+  });
 });
