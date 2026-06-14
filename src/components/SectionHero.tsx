@@ -15,7 +15,7 @@ export default function SectionHero({ section }: SectionHeroProps) {
     section_id: sectionId,
     title,
     avatar,
-    avatar_alt,
+    avatar_alt = '',
     content,
     actions = [],
   } = section;
