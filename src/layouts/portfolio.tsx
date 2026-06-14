@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Body } from '@/components';
 
 import { getPageUrl, Link, orderBy, withPrefix } from '@/utils';
@@ -33,7 +35,12 @@ export default function Portfolio({
         <Link href={projectUrl} className="project-link">
           {thumbImage && (
             <div className="project-thumbnail">
-              <img src={withPrefix(thumbImage)} alt={thumbImageAlt} />
+              <Image
+                src={withPrefix(thumbImage)}
+                alt={thumbImageAlt}
+                fill={true}
+                style={{ objectFit: 'cover' }}
+              />
             </div>
           )}
           <header className="project-header">

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
 import type { SectionContentItem } from './SectionContent.types';
@@ -29,7 +31,13 @@ export default function SectionContent({ section }: SectionContentProps) {
         )}
         {image && (
           <div className="block-image">
-            <img src={withPrefix(image)} alt={imageAlt} />
+            <Image
+              src={withPrefix(image)}
+              alt={imageAlt}
+              width={1200}
+              height={800}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         )}
         {content && (

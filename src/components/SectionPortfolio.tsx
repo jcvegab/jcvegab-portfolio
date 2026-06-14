@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {
   getPageUrl,
   htmlToReact,
@@ -54,7 +56,12 @@ export default function SectionPortfolio({
           >
             {thumbImage && (
               <div className="project-thumbnail">
-                <img src={withPrefix(thumbImage)} alt={thumbImageAlt} />
+                <Image
+                  src={withPrefix(thumbImage)}
+                  alt={thumbImageAlt}
+                  fill={true}
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             )}
             <span className="view-all-button">{viewAllLabel}</span>
@@ -67,7 +74,12 @@ export default function SectionPortfolio({
           <Link href={projectUrl} className="project-link">
             {thumbImage && (
               <div className="project-thumbnail">
-                <img src={withPrefix(thumbImage)} alt={thumbImageAlt} />
+                <Image
+                  src={withPrefix(thumbImage)}
+                  alt={thumbImageAlt}
+                  fill={true}
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             )}
             <header className="project-header">

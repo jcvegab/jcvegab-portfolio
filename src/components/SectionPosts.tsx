@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {
   classNames,
   formatDate,
@@ -51,7 +53,12 @@ export default function SectionPosts({
         <div className="post-inside">
           {thumbImage && (
             <Link className="post-thumbnail" href={postUrl}>
-              <img src={withPrefix(thumbImage)} alt={thumbImageAlt} />
+              <Image
+                src={withPrefix(thumbImage)}
+                alt={thumbImageAlt}
+                fill={true}
+                style={{ objectFit: 'cover' }}
+              />
             </Link>
           )}
           <header className="post-header">

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { markdownify } from '@/utils';
 
 import CtaButtons from './CtaButtons';
@@ -20,7 +22,7 @@ export default function SectionHero({ section }: SectionHeroProps) {
 
   return (
     <section id={sectionId} className="block block-hero outer avatar-hero">
-      <img alt={avatar_alt} src={avatar} />
+      <Image src={avatar} alt={avatar_alt} width={160} height={160} priority />
       <div className="inner">
         {title && (
           <div className="block-header inner-sm">

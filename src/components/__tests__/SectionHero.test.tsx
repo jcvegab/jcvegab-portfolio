@@ -2,6 +2,12 @@ import { render, screen } from '@testing-library/react';
 
 import SectionHero from '../SectionHero';
 
+vi.mock('next/image', () => ({
+  default: ({ priority, ...props }: Record<string, unknown>) => (
+    <img alt="" {...props} />
+  ),
+}));
+
 vi.mock('@/utils', () => ({
   markdownify: (md: string) => md,
 }));

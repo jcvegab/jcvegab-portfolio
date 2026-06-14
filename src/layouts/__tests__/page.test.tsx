@@ -2,6 +2,12 @@ import { render, screen } from '@testing-library/react';
 
 import PageLayout from '../page';
 
+vi.mock('next/image', () => ({
+  default: ({ priority, ...props }: Record<string, unknown>) => (
+    <img alt="" {...props} />
+  ),
+}));
+
 vi.mock('@/components', () => ({
   Body: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="body">{children}</div>

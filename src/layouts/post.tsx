@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Body } from '@/components';
 
 import { formatDate, htmlToReact, markdownify, withPrefix } from '@/utils';
@@ -34,7 +36,13 @@ export default function Post({ data, page }: PostProps) {
           </header>
           {image && (
             <div className="post-image">
-              <img src={withPrefix(image)} alt={imageAlt} />
+              <Image
+                src={withPrefix(image)}
+                alt={imageAlt}
+                width={1200}
+                height={800}
+                style={{ width: '100%', height: 'auto' }}
+              />
             </div>
           )}
           {markdownContent && (

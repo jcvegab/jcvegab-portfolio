@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useRef } from 'react';
 
@@ -124,7 +125,13 @@ export default function Header({ page, config }: HeaderProps) {
             {logo ? (
               <p className="site-logo">
                 <Link href={withPrefix('/')}>
-                  <img src={withPrefix(logo)} alt={logoAlt} />
+                  <Image
+                    src={withPrefix(logo)}
+                    alt={logoAlt}
+                    width={200}
+                    height={40}
+                    style={{ width: 'auto', height: 'auto' }}
+                  />
                 </Link>
               </p>
             ) : (

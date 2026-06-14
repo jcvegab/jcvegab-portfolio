@@ -2,6 +2,12 @@ import { render, screen } from '@testing-library/react';
 
 import SectionTestimonials from '../SectionTestimonials';
 
+vi.mock('next/image', () => ({
+  default: ({ priority, ...props }: Record<string, unknown>) => (
+    <img alt="" {...props} />
+  ),
+}));
+
 vi.mock('@/utils', () => ({
   classNames: (...args: any[]): string | null => {
     const classes: string[] = [];

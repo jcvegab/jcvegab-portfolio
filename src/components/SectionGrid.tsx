@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { classNames, htmlToReact, markdownify, withPrefix } from '@/utils';
 
 import CtaButtons from './CtaButtons';
@@ -36,7 +38,13 @@ export default function SectionGrid({ section }: SectionGridProps) {
         )}
         {image && (
           <div className="grid-item-image">
-            <img src={withPrefix(image)} alt={imageAlt} />
+            <Image
+              src={withPrefix(image)}
+              alt={imageAlt}
+              width={1200}
+              height={800}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         )}
         {title && <h3 className="grid-item-title">{title}</h3>}

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { classNames, htmlToReact, withPrefix } from '@/utils';
 
 import type {
@@ -29,10 +31,12 @@ export default function SectionTestimonials({
           <p className="testimonial-content">{htmlToReact(content)}</p>
           <footer className="testimonial-footer">
             {avatar && (
-              <img
+              <Image
                 className="testimonial-avatar"
                 src={withPrefix(avatar)}
                 alt={avatarAlt}
+                width={60}
+                height={60}
               />
             )}
             {author && <cite className="testimonial-author">{author}</cite>}
