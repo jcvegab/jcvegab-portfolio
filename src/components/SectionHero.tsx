@@ -22,7 +22,14 @@ export default function SectionHero({ section }: SectionHeroProps) {
 
   return (
     <section id={sectionId} className="block block-hero outer avatar-hero">
-      <Image src={avatar} alt={avatar_alt} width={160} height={160} priority />
+      <Image
+        src={avatar}
+        alt={avatar_alt}
+        width={160}
+        height={160}
+        priority
+        style={{ objectFit: 'cover' }}
+      />
       <div className="inner">
         {title && (
           <div className="block-header inner-sm">
