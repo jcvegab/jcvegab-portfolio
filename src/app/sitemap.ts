@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { getAllPagesData, getGlobalConfig } from '@/utils/content';
 
 import type { MetadataRoute } from 'next';
