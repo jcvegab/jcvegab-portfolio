@@ -104,7 +104,11 @@ Guia completa: [`docs/development.md`](docs/development.md).
 - [`docs/architecture.md`](docs/architecture.md): limites tecnicos, flujo de render y dependencias internas.
 - [`docs/content.md`](docs/content.md): como crear y mantener paginas Markdown.
 - [`docs/development.md`](docs/development.md): comandos, convenciones y validacion.
-- [`docs/documentation-plan.md`](docs/documentation-plan.md): plan de actualizacion documental y estado de cierre.
+- [`docs/technical-debt.md`](docs/technical-debt.md): TODOs, seguimiento y deuda tecnica.
+
+## Analisis Local De Codigo
+
+Este repositorio usa una herramienta local de analisis de codigo para exploracion estructural. No documentar nombres de indice, rutas locales ni detalles especificos de maquina.
 
 ## Licencia
 
