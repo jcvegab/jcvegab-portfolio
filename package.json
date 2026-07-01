@@ -1,21 +1,30 @@
 {
   "name": "jcvegab-portfolio",
   "version": "1.0.0",
-  "description": "A personal portfolio website built with Next.js, showcasing projects and blog posts.",
+  "description": "Personal portfolio and blog for Joseph Vega, built with Next.js static export, React, TypeScript and Markdown content.",
   "keywords": [
-    "nextjs",
-    "react",
-    "portfolio",
     "blog",
-    "markdown",
+    "content-driven",
     "frontend",
-    "static-site"
+    "jamstack",
+    "markdown",
+    "nextjs",
+    "portfolio",
+    "react",
+    "scss",
+    "static-export",
+    "static-site",
+    "typescript",
+    "vitest"
   ],
   "author": "Joseph Vega <admin@jcvegab.dev>",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/jcvegab/jcvegab-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcvegab/jcvegab-portfolio/issues"
   },
   "homepage": "https://jcvegab.dev",
   "private": true,

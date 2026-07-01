@@ -1,100 +1,111 @@
 # Jcvegab Portfolio
 
-A personal portfolio website built with Next.js, showcasing projects and blog posts.
+Portafolio personal de Joseph Vega, construido con Next.js 16 como sitio estatico exportable. El sitio publica paginas de presentacion, proyectos y blog desde contenido Markdown versionado en el repositorio.
 
-## Tech Stack
+## Stack
 
-- **Framework:** Next.js 16 (Static Export)
-- **UI / Core:** React 19, TypeScript
-- **Styling:** SCSS
-- **Content:** Markdown (parsed via `gray-matter` & `marked`)
-- **Testing:** Vitest + React Testing Library
-- **Linting & Formatting:** Biome
+| Area | Tecnologia |
+|---|---|
+| Framework | Next.js 16 static export |
+| UI | React 19 + TypeScript |
+| Contenido | Markdown + frontmatter (`gray-matter`, `marked`) |
+| Estilos | SCSS global en `src/sass/` |
+| Calidad | Biome, TypeScript, Vitest, Testing Library |
+| Deploy | Export estatico en `out/` |
 
-## Prerequisites
+## Requisitos
 
 - Node.js >= 24.0.0
 - npm >= 11.0.0
 
-## Getting Started
+## Inicio Rapido
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Abrir `http://localhost:3000`.
 
-## Available Scripts
+## Scripts
 
-| Command | Description |
+| Comando | Uso |
 |---|---|
-| `npm run dev` | Dev server with Turbopack |
-| `npm run build` | Static export to `out/` |
-| `npm run lint` | Biome check (lint + format validation) |
-| `npm run format` | Biome format --write |
-| `npm run type-check` | `tsc --noEmit` |
-| `npm run test` | Vitest run |
-| `npm run test:watch` | Vitest watch mode |
-| `npm run test:coverage` | Vitest with coverage |
+| `npm run dev` | Servidor local con Turbopack |
+| `npm run build` | Build y export estatico a `out/` |
+| `npm run lint` | Biome check sobre `src/` |
+| `npm run format` | Formato Biome sobre `src/` |
+| `npm run type-check` | Verificacion TypeScript sin emitir archivos |
+| `npm run test` | Suite Vitest |
+| `npm run test:watch` | Vitest en modo watch |
+| `npm run test:coverage` | Vitest con coverage |
 
-CI order: lint `->` type-check `->` test.
+CI ejecuta `lint`, luego `type-check`, luego `test`.
 
-## Architecture & Content
+## Estructura
 
-### Page Layouts
-
-The `layout` or `type` frontmatter field selects a layout component from `src/layouts/`:
-
-- `page` (default)
-- `advanced`
-- `blog`
-- `portfolio`
-- `post`
-- `project`
-
-### Markdown Sections (`advanced` layout)
-
-Pages using the `advanced` layout can define a `sections` array in frontmatter:
-
-| Section type | Component | Purpose |
-|---|---|---|
-| `section_hero` | SectionHero | Hero banner with avatar, title, description, CTA buttons |
-| `section_portfolio` | SectionPortfolio | Grid/mosaic of recent projects |
-| `section_posts` | SectionPosts | Grid of recent blog posts |
-| `section_grid` | SectionGrid | Generic grid items with image, text, buttons |
-| `section_content` | SectionContent | Text block with optional image |
-| `section_form` | SectionForm | Contact form (Netlify Forms) |
-| `section_testimonials` | SectionTestimonials | Testimonial grid |
-
-### Routing & File Structure
-
-The filesystem under `content/pages/` maps directly to URLs:
-
-```
-content/pages/
-  index.md              ->  /
-  about.md              ->  /about
-  contact.md            ->  /contact
-  thank-you.md          ->  /thank-you
-  blog/
-    index.md            ->  /blog
-    workplace.md        ->  /blog/workplace
-  portfolio/
-    index.md            ->  /portfolio
-    psm.md              ->  /portfolio/psm
-    tweetable.md        ->  /portfolio/tweetable
+```text
+content/
+  data/config.json        Configuracion global del sitio
+  pages/                  Paginas Markdown y rutas publicas
+docs/                     Documentacion tecnica del repositorio
+schemas/                  Esquemas JSON para contenido/config
+src/
+  app/                    Entrypoints App Router y metadata
+  components/             Secciones y componentes compartidos
+  layouts/                Layouts seleccionados por frontmatter
+  sass/                   Estilos SCSS globales
+  utils/                  Carga de contenido, URLs y helpers
 ```
 
-### Global Config
+## Contenido
 
-Site-wide settings in `content/data/config.json` (schema: `schemas/config.schema.json`).
+Las paginas viven en `content/pages/`. La ruta publica sale de la ruta del archivo:
 
-### Styling
+| Archivo | URL |
+|---|---|
+| `content/pages/index.md` | `/` |
+| `content/pages/about.md` | `/about/` |
+| `content/pages/contact.md` | `/contact/` |
+| `content/pages/blog/index.md` | `/blog/` |
+| `content/pages/blog/workplace.md` | `/blog/workplace/` |
+| `content/pages/portfolio/index.md` | `/portfolio/` |
+| `content/pages/portfolio/psm.md` | `/portfolio/psm/` |
+| `content/pages/portfolio/tweetable.md` | `/portfolio/tweetable/` |
 
-- SCSS in `src/sass/` — no Tailwind, no CSS modules.
-- Compose class strings via `import { classNames } from '@/utils'` (wraps `clsx`).
+El campo `layout` o `type` del frontmatter selecciona un layout en `src/layouts/`. El layout `advanced` puede renderizar secciones declaradas en frontmatter.
 
-## License
+Mas detalle: [`docs/content.md`](docs/content.md).
 
-This project is unlicensed.
+## Arquitectura
+
+- `src/app/page.tsx` renderiza home desde `content/pages/index.md`.
+- `src/app/[...slug]/page.tsx` renderiza las demas paginas estaticas.
+- `src/utils/content.ts` lee Markdown, frontmatter y configuracion global.
+- `src/layouts/index.ts` resuelve el layout solicitado por cada pagina.
+- `src/components/` contiene secciones reutilizables como hero, grid, posts, portfolio, formulario y testimonios.
+
+Mas detalle: [`docs/architecture.md`](docs/architecture.md).
+
+## Desarrollo
+
+Antes de cerrar cambios:
+
+```bash
+npm run lint
+npm run type-check
+npm run test
+```
+
+Guia completa: [`docs/development.md`](docs/development.md).
+
+## Documentacion
+
+- [`docs/architecture.md`](docs/architecture.md): limites tecnicos, flujo de render y dependencias internas.
+- [`docs/content.md`](docs/content.md): como crear y mantener paginas Markdown.
+- [`docs/development.md`](docs/development.md): comandos, convenciones y validacion.
+- [`docs/documentation-plan.md`](docs/documentation-plan.md): plan de actualizacion documental y estado de cierre.
+
+## Licencia
+
+Proyecto privado sin licencia publica.
