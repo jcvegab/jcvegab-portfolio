@@ -58,7 +58,7 @@ Pages with layout `advanced` may declare `sections` in frontmatter.
 - `domain` for metadata, sitemap, and robots.
 - Header navigation.
 - Social links and footer content.
-- `favicon` (present in the config file but **not consumed at runtime** — the favicon is hardcoded in `src/app/layout.tsx`).
+- `favicon` (consumed by `src/layouts/BaseLayout.astro`).
 - `color_scheme` and `accent_color`.
 
 Validate changes against `schemas/config.schema.json`.

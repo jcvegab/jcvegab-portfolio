@@ -1,33 +1,34 @@
 # Architecture
 
-This repository is a static site built with Next.js 16 App Router and `output: 'export'`. No server runtime, no API routes.
+This repository is a static site built with Astro 7. No server runtime, no API routes.
 
 ## Render Flow
 
-1. `src/app/page.tsx` loads the home page from `content/pages/index.md`.
-2. `src/app/[...slug]/page.tsx` generates static routes for the rest of `content/pages/`.
+1. `src/pages/index.astro` loads the home page from `content/pages/index.md`.
+2. `src/pages/[...slug].astro` generates static routes for the rest of `content/pages/`.
 3. `src/utils/content.ts` reads Markdown, frontmatter, and `content/data/config.json`.
-4. `src/layouts/index.ts` selects the layout using `layout` or `type` from frontmatter.
+4. `src/components/PageRenderer.tsx` selects the layout using `layout` or `type` from frontmatter.
 5. Layouts compose components from `src/components/` and global styles from `src/sass/`.
 
 ## Layers
 
 | Layer | Path | Responsibility |
 |---|---|---|
-| Entry | `src/app/` | Routes, metadata, sitemap, and robots |
-| Layouts | `src/layouts/` | Visual structure per page type |
-| Components | `src/components/` | Reusable UI blocks |
+| Entry | `src/pages/` | Astro pages, routing, and SSR data loading |
+| Layouts | `src/layouts/` | Visual structure per page type (React) |
+| Components | `src/components/` | Reusable UI blocks (React + Astro) |
 | Utilities | `src/utils/` | Markdown, URLs, CSS classes, dates, and helpers |
 | Content | `content/` | Editable site data |
 | Styles | `src/sass/` | Global SCSS and partials by visual domain |
 
 ## Key Points
 
-- `next.config.js` sets `output: 'export'`, `trailingSlash: true`, and disables runtime image optimization.
+- `astro.config.mjs` sets `output: 'static'`, `trailingSlash: 'always'`, `build.format: 'directory'`.
 - Content is part of the build. Markdown changes require a new build.
-- `content/data/config.json` provides header nav, footer links, domain, color scheme, accent color, and `path_prefix`. The favicon in this file is **not read at runtime**; the favicon is hardcoded in `src/app/layout.tsx:15-17`.
+- `content/data/config.json` provides header nav, footer links, domain, color scheme, accent color, and `path_prefix`. The `favicon` field is consumed by `BaseLayout.astro`.
 - `schemas/config.schema.json` documents the expected shape of global configuration.
 - Tests live next to source code in `__tests__` directories.
+- React components are rendered at build time via `@astrojs/react`. Interactive components (Header) use `client:load`.
 
 ## Hotspots
 

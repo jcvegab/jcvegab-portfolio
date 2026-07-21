@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (2026-07-21)
+Superseded by [ADR 0004](0004-replace-nextjs-static-export-with-astro.md) (2026-07-21)
 
 ## Context
 
