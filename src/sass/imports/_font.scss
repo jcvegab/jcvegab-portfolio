@@ -1,6 +1,6 @@
 $font: (
   primary: (
-    var(--font-karla),
+    var(--font-karla, 'Karla Variable'),
     'Karla',
     sans-serif,
   ),
