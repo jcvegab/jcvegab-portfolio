@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import PageLayout from '../page';
 
-vi.mock('next/image', () => ({
+vi.mock('@/components/StaticImage', () => ({
   default: ({ priority, ...props }: Record<string, unknown>) => (
     <img alt="" {...props} />
   ),

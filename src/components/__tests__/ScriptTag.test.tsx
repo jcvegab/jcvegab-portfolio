@@ -1,18 +1,5 @@
 import { render } from '@testing-library/react';
 
-vi.mock('next/script', () => ({
-  default: ({ children, ...props }: Record<string, any>) => {
-    if (props.dangerouslySetInnerHTML) {
-      return <script data-testid="script" {...props} />;
-    }
-    return (
-      <script data-testid="script" {...props}>
-        {children}
-      </script>
-    );
-  },
-}));
-
 import ScriptTag from '../ScriptTag';
 
 describe('ScriptTag', () => {
