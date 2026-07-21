@@ -1,18 +1,17 @@
 {
   "name": "jcvegab-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio and blog for Joseph Vega, built with Next.js static export, React, TypeScript and Markdown content.",
+  "description": "Personal portfolio and blog for Joseph Vega, built with Astro, React, TypeScript and Markdown content.",
   "keywords": [
+    "astro",
     "blog",
     "content-driven",
     "frontend",
     "jamstack",
     "markdown",
-    "nextjs",
     "portfolio",
     "react",
     "scss",
-    "static-export",
     "static-site",
     "typescript",
     "vitest"
@@ -33,21 +32,16 @@
     "npm": ">=11.0.0"
   },
   "scripts": {
-    "build": "next build",
-    "dev": "next dev --turbo",
-    "develop": "next dev --turbo",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
     "format": "biome format --write ./src",
     "lint": "biome check ./src",
-    "type-check": "tsc --noEmit",
+    "type-check": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepare": "husky",
-    "start": "next start",
-    "dev:astro": "astro dev",
-    "build:astro": "astro build",
-    "preview:astro": "astro preview",
-    "check:astro": "astro check"
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
@@ -59,13 +53,10 @@
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
     "html-react-parser": "^6.1.4",
-    "lodash": "^4.18.1",
     "lodash-es": "^4.18.1",
     "marked": "^18.0.6",
-    "next": "^16.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "reframe.js": "^4.0.2",
     "sass": "^1.101.0"
   },
   "devDependencies": {

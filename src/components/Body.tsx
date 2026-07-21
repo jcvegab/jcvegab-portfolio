@@ -1,8 +1,3 @@
-'use client';
-
-import { useEffect } from 'react';
-import noframe from 'reframe.js/dist/noframe';
-
 import { classNames } from '@/utils';
 
 import Footer from './Footer';
@@ -21,17 +16,6 @@ export default function Body({ children, config, page }: BodyProps) {
     color_scheme: colorScheme = 'light',
     accent_color: accentColor = 'pink',
   } = config;
-
-  useEffect(() => {
-    const handleVideoEmbeds = () => {
-      const videoEmbeds = [
-        'iframe[src*="youtube.com"]',
-        'iframe[src*="vimeo.com"]',
-      ];
-      noframe(videoEmbeds.join(','), '.inner-sm');
-    };
-    handleVideoEmbeds();
-  }, []);
 
   return (
     <div

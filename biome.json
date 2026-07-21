@@ -12,7 +12,6 @@
                 "type": false,
                 "source": [
                   "react",
-                  "next/**",
                   ":PACKAGE:",
                   ":NODE:",
                   ":BUN:",

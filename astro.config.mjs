@@ -16,7 +16,6 @@ export default defineConfig({
       filter: (page) => {
         return page !== 'https://jcvegab.dev/404/';
       },
-      entryUrl: 'https://jcvegab.dev/sitemap.xml',
     }),
   ],
   vite: {
