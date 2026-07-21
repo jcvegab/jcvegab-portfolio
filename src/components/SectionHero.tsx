@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import { markdownify } from '@/utils';
 
@@ -22,7 +22,7 @@ export default function SectionHero({ section }: SectionHeroProps) {
 
   return (
     <section id={sectionId} className="block block-hero outer avatar-hero">
-      <Image
+      <StaticImage
         src={avatar}
         alt={avatar_alt}
         width={160}

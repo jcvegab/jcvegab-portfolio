@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import {
   classNames,
@@ -53,7 +53,7 @@ export default function SectionPosts({
         <div className="post-inside">
           {thumbImage && (
             <Link className="post-thumbnail" href={postUrl}>
-              <Image
+              <StaticImage
                 src={withPrefix(thumbImage)}
                 alt={thumbImageAlt}
                 fill={true}

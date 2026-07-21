@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import {
   getPageUrl,
@@ -36,8 +36,8 @@ export default function SectionPortfolio({
     project: SectionPortfolioProject,
     index: number,
     projectCount: number,
-    viewAllLabel: string,
-    viewAllUrl: string,
+    viewAllLabel: string | undefined,
+    viewAllUrl: string | undefined,
   ) => {
     const {
       title,
@@ -56,7 +56,7 @@ export default function SectionPortfolio({
           >
             {thumbImage && (
               <div className="project-thumbnail">
-                <Image
+                <StaticImage
                   src={withPrefix(thumbImage)}
                   alt={thumbImageAlt}
                   fill={true}
@@ -74,7 +74,7 @@ export default function SectionPortfolio({
           <Link href={projectUrl} className="project-link">
             {thumbImage && (
               <div className="project-thumbnail">
-                <Image
+                <StaticImage
                   src={withPrefix(thumbImage)}
                   alt={thumbImageAlt}
                   fill={true}

@@ -1,4 +1,4 @@
-// withPrefix reads config.json at module level via require()
+// withPrefix reads config.json at module level via static import
 // The real config has path_prefix: "/". We test the function as-is.
 import withPrefix from '../withPrefix';
 

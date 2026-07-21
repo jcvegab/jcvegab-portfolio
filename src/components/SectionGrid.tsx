@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import { classNames, htmlToReact, markdownify, withPrefix } from '@/utils';
 
@@ -38,7 +38,7 @@ export default function SectionGrid({ section }: SectionGridProps) {
         )}
         {image && (
           <div className="grid-item-image">
-            <Image
+            <StaticImage
               src={withPrefix(image)}
               alt={imageAlt}
               width={1200}

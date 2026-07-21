@@ -1,5 +1,3 @@
-import Script from 'next/script';
-
 export type ScriptTagProps = Pick<
   React.ComponentPropsWithoutRef<'script'>,
   | 'src'
@@ -22,33 +20,18 @@ export default function ScriptTag({
 }: ScriptTagProps) {
   if (dangerouslySetInnerHTML) {
     return (
-      <Script
-        id={id || Math.random().toString()}
+      <script
+        id={id}
         type={type}
         // biome-ignore lint/security/noDangerouslySetInnerHtml: This is intended for dynamic script injection
         dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-        strategy={
-          defer
-            ? 'lazyOnload'
-            : async
-              ? 'afterInteractive'
-              : 'beforeInteractive'
-        }
       />
     );
   }
 
   return (
-    // biome-ignore lint/correctness/useInlineScriptId: Handled dynamically below
-    <Script
-      id={id || Math.random().toString()}
-      src={src}
-      type={type}
-      strategy={
-        defer ? 'lazyOnload' : async ? 'afterInteractive' : 'beforeInteractive'
-      }
-    >
+    <script id={id} src={src} type={type} async={async} defer={defer}>
       {children}
-    </Script>
+    </script>
   );
 }

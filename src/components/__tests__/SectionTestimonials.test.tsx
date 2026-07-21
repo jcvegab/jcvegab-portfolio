@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import SectionTestimonials from '../SectionTestimonials';
 
-vi.mock('next/image', () => ({
+vi.mock('@/components/StaticImage', () => ({
   default: ({ priority, ...props }: Record<string, unknown>) => (
     <img alt="" {...props} />
   ),

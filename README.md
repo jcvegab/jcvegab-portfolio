@@ -1,17 +1,17 @@
 # Jcvegab Portfolio
 
-Portafolio personal de Joseph Vega, construido con Next.js 16 como sitio estatico exportable. El sitio publica paginas de presentacion, proyectos y blog desde contenido Markdown versionado en el repositorio.
+Portafolio personal de Joseph Vega, construido con Astro como sitio estático. El sitio publica páginas de presentación, proyectos y blog desde contenido Markdown versionado en el repositorio.
 
 ## Stack
 
 | Area | Tecnologia |
 |---|---|
-| Framework | Next.js 16 static export |
+| Framework | Astro 7 static build |
 | UI | React 19 + TypeScript |
 | Contenido | Markdown + frontmatter (`gray-matter`, `marked`) |
 | Estilos | SCSS global en `src/sass/` |
 | Calidad | Biome, TypeScript, Vitest, Testing Library |
-| Deploy | Export estatico en `out/` |
+| Deploy | Export estático en `out/` |
 
 ## Requisitos
 
@@ -25,33 +25,34 @@ npm install
 npm run dev
 ```
 
-Abrir `http://localhost:3000`.
+Abrir `http://localhost:4321`.
 
 ## Scripts
 
 | Comando | Uso |
 |---|---|
-| `npm run dev` | Servidor local con Turbopack |
-| `npm run build` | Build y export estatico a `out/` |
+| `npm run dev` | Servidor local Astro |
+| `npm run build` | Build estático a `out/` |
 | `npm run lint` | Biome check sobre `src/` |
 | `npm run format` | Formato Biome sobre `src/` |
-| `npm run type-check` | Verificacion TypeScript sin emitir archivos |
+| `npm run type-check` | `astro check` |
 | `npm run test` | Suite Vitest |
 | `npm run test:watch` | Vitest en modo watch |
 | `npm run test:coverage` | Vitest con coverage |
 
-CI ejecuta `lint`, luego `type-check`, luego `test`.
+CI ejecuta `lint`, luego `type-check`, luego `test`, luego `build`.
 
 ## Estructura
 
 ```text
 content/
-  data/config.json        Configuracion global del sitio
-  pages/                  Paginas Markdown y rutas publicas
-docs/                     Documentacion tecnica del repositorio
+  data/config.json        Configuración global del sitio
+  pages/                  Páginas Markdown y rutas públicas
+docs/                     Documentación técnica del repositorio
 schemas/                  Esquemas JSON para contenido/config
+public/                   Assets estáticos, robots.txt y scripts
 src/
-  app/                    Entrypoints App Router y metadata
+  astro-pages/            Entrypoints Astro y rutas
   components/             Secciones y componentes compartidos
   layouts/                Layouts seleccionados por frontmatter
   sass/                   Estilos SCSS globales
@@ -60,7 +61,7 @@ src/
 
 ## Contenido
 
-Las paginas viven en `content/pages/`. La ruta publica sale de la ruta del archivo:
+Las páginas viven en `content/pages/`. La ruta pública sale de la ruta del archivo:
 
 | Archivo | URL |
 |---|---|
@@ -75,17 +76,17 @@ Las paginas viven en `content/pages/`. La ruta publica sale de la ruta del archi
 
 El campo `layout` o `type` del frontmatter selecciona un layout en `src/layouts/`. El layout `advanced` puede renderizar secciones declaradas en frontmatter.
 
-Mas detalle: [`docs/content.md`](docs/content.md).
+Más detalle: [`docs/content.md`](docs/content.md).
 
 ## Arquitectura
 
-- `src/app/page.tsx` renderiza home desde `content/pages/index.md`.
-- `src/app/[...slug]/page.tsx` renderiza las demas paginas estaticas.
-- `src/utils/content.ts` lee Markdown, frontmatter y configuracion global.
-- `src/layouts/index.ts` resuelve el layout solicitado por cada pagina.
+- `src/pages/index.astro` renderiza home desde `content/pages/index.md`.
+- `src/pages/[...slug].astro` renderiza las demás páginas estáticas via `getStaticPaths`.
+- `src/utils/content.ts` lee Markdown, frontmatter y configuración global.
+- `src/components/PageRenderer.tsx` resuelve el layout solicitado por cada página.
 - `src/components/` contiene secciones reutilizables como hero, grid, posts, portfolio, formulario y testimonios.
 
-Mas detalle: [`docs/architecture.md`](docs/architecture.md).
+Más detalle: [`docs/architecture.md`](docs/architecture.md).
 
 ## Desarrollo
 
@@ -97,19 +98,15 @@ npm run type-check
 npm run test
 ```
 
-Guia completa: [`docs/development.md`](docs/development.md).
+Guía completa: [`docs/development.md`](docs/development.md).
 
-## Documentacion
+## Documentación
 
-- [`docs/architecture.md`](docs/architecture.md): limites tecnicos, flujo de render y dependencias internas.
-- [`docs/content.md`](docs/content.md): como crear y mantener paginas Markdown.
-- [`docs/development.md`](docs/development.md): comandos, convenciones y validacion.
-- [`docs/technical-debt.md`](docs/technical-debt.md): TODOs, seguimiento y deuda tecnica.
-
-## Analisis Local De Codigo
-
-Este repositorio usa una herramienta local de analisis de codigo para exploracion estructural. No documentar nombres de indice, rutas locales ni detalles especificos de maquina.
+- [`docs/architecture.md`](docs/architecture.md): límites técnicos, flujo de render y dependencias internas.
+- [`docs/content.md`](docs/content.md): cómo crear y mantener páginas Markdown.
+- [`docs/development.md`](docs/development.md): comandos, convenciones y validación.
+- [`docs/adr/`](docs/adr/): Decisiones de arquitectura registradas (ADRs).
 
 ## Licencia
 
-Proyecto privado sin licencia publica.
+Proyecto privado sin licencia pública.

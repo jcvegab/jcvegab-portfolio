@@ -11,7 +11,7 @@ import {
   trim,
   trimStart,
   upperFirst,
-} from 'lodash';
+} from 'lodash-es';
 
 export {
   camelCase,

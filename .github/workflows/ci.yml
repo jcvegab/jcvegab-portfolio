@@ -31,3 +31,6 @@ jobs:
 
       - name: Run Tests
         run: npm run test
+
+      - name: Build Static Site
+        run: npm run build

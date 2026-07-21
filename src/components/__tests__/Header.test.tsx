@@ -2,13 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 import Header from '../Header';
 
-const mockUsePathname = vi.fn(() => '/');
-vi.mock('next/navigation', () => ({
-  usePathname: () => mockUsePathname(),
-}));
-
 vi.mock('@/utils', () => ({
-  classNames: (...args: any[]) => args.flat().filter(Boolean).join(' ') || null,
+  classNames: (...args: unknown[]) =>
+    args.flat().filter(Boolean).join(' ') || undefined,
   get: (obj: Record<string, any>, path: string, defaultValue?: any) => {
     const keys = path.split('.');
     let result = obj;
@@ -37,10 +33,6 @@ vi.mock('../Action', () => ({
 }));
 
 describe('Header', () => {
-  beforeEach(() => {
-    mockUsePathname.mockReturnValue('/');
-  });
-
   const basePage = {
     title: 'Home',
     markdown_content: '',

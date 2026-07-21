@@ -5,5 +5,5 @@ import clsx from 'clsx';
 export default function classNames(
   ...args: Array<string | number | boolean | Record<string, unknown>>
 ) {
-  return clsx(...args) || null;
+  return clsx(...args) || undefined;
 }

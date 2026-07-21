@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import { Body } from '@/components';
+import StaticImage from '@/components/StaticImage';
 
 import { getPageUrl, Link, orderBy, withPrefix } from '@/utils';
 
@@ -35,7 +34,7 @@ export default function Portfolio({
         <Link href={projectUrl} className="project-link">
           {thumbImage && (
             <div className="project-thumbnail">
-              <Image
+              <StaticImage
                 src={withPrefix(thumbImage)}
                 alt={thumbImageAlt}
                 fill={true}

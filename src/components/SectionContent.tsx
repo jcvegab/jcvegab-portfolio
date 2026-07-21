@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
@@ -31,7 +31,7 @@ export default function SectionContent({ section }: SectionContentProps) {
         )}
         {image && (
           <div className="block-image">
-            <Image
+            <StaticImage
               src={withPrefix(image)}
               alt={imageAlt}
               width={1200}

@@ -12,7 +12,6 @@
                 "type": false,
                 "source": [
                   "react",
-                  "next/**",
                   ":PACKAGE:",
                   ":NODE:",
                   ":BUN:",
@@ -76,6 +75,18 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    },
     {
       "includes": ["src/**/__tests__/**"],
       "linter": {

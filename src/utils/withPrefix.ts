@@ -1,6 +1,7 @@
+import config from '../../content/data/config.json';
 import { compact, startsWith, trim, trimStart } from './lodash';
 
-const pathPrefix = require('../../content/data/config.json').path_prefix;
+const pathPrefix = config.path_prefix;
 
 export default function withPrefix(url: string) {
   if (!url) {

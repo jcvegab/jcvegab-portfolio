@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import { Body } from '@/components';
+import StaticImage from '@/components/StaticImage';
 
 import { htmlToReact, markdownify, withPrefix } from '@/utils';
 
@@ -32,7 +31,7 @@ export default function Page({ data, page }: PageProps) {
           </header>
           {image && (
             <div className="post-image">
-              <Image
+              <StaticImage
                 src={withPrefix(image)}
                 alt={imageAlt}
                 width={1200}
