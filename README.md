@@ -104,7 +104,7 @@ Guia completa: [`docs/development.md`](docs/development.md).
 - [`docs/architecture.md`](docs/architecture.md): limites tecnicos, flujo de render y dependencias internas.
 - [`docs/content.md`](docs/content.md): como crear y mantener paginas Markdown.
 - [`docs/development.md`](docs/development.md): comandos, convenciones y validacion.
-- [`docs/technical-debt.md`](docs/technical-debt.md): TODOs, seguimiento y deuda tecnica.
+- [`docs/adr/`](docs/adr/): Decisiones de arquitectura registradas (ADRs).
 
 ## Analisis Local De Codigo
 

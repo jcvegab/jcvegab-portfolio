@@ -1,40 +1,47 @@
-# Desarrollo
+# Development
 
-## Instalacion
+## Setup
 
 ```bash
 npm install
 ```
 
-Requisitos:
+Requirements:
 
 - Node.js >= 24.0.0
 - npm >= 11.0.0
 
-## Comandos
+## Commands
 
-| Comando | Descripcion |
+| Command | Description |
 |---|---|
-| `npm run dev` | Servidor local con Turbopack |
-| `npm run build` | Build de Next.js y export estatico |
-| `npm run lint` | Biome check sobre `src/` |
-| `npm run format` | Formato Biome sobre `src/` |
-| `npm run type-check` | TypeScript sin emitir archivos |
+| `npm run dev` | Local dev server with Turbopack |
+| `npm run build` | Next.js build and static export |
+| `npm run lint` | Biome check (`check --no-errors-on-unmatched`) over `src/` |
+| `npm run format` | Biome format over `src/` |
+| `npm run type-check` | TypeScript without emitting files |
 | `npm run test` | Vitest run |
 | `npm run test:watch` | Vitest watch |
-| `npm run test:coverage` | Vitest con coverage |
+| `npm run test:coverage` | Vitest with coverage |
 
-## Convenciones
+## Conventions
 
-- TypeScript en modo no estricto por configuracion actual del repositorio.
-- Imports con alias `@/*` hacia `src/*`.
-- Estilos en SCSS global. No Tailwind ni CSS modules.
-- Biome controla formato y lint.
-- Tests unitarios junto al codigo en carpetas `__tests__`.
-- Componentes compartidos se exportan desde `src/components/index.ts`.
-- Layouts se registran en `src/layouts/index.ts`.
+- TypeScript in non-strict mode as configured (`strict: false` in `tsconfig.json`).
+- Imports use the `@/*` alias to `src/*`.
+- Styles use global SCSS in `src/sass/`. No Tailwind or CSS modules.
+- Biome controls formatting and linting.
+- Unit tests live next to source code in `__tests__` directories.
+- Shared components are exported from `src/components/index.ts`.
+- Layouts are registered in `src/layouts/index.ts`.
 
-## Validacion Antes De Commit
+## Pre-commit Hook
+
+Husky with `lint-staged` runs Biome on staged files before every commit.
+
+- Config: `.lintstagedrc.mjs` — runs `biome check --write --unsafe` on `*.{js,ts,jsx,tsx,json,jsonc,css}`.
+- Hook: `.husky/pre-commit` — executes `npx lint-staged`.
+
+## Validation Before Commit
 
 ```bash
 npm run lint
@@ -42,14 +49,14 @@ npm run type-check
 npm run test
 ```
 
-La misma secuencia corre en CI.
+The same sequence runs in CI (`.github/workflows/ci.yml`).
 
-## Build Estatico
+## Static Build
 
-`npm run build` genera salida estatica en `out/` por `output: 'export'`.
+`npm run build` generates a static export in `out/` via `output: 'export'`.
 
-Consideraciones:
+Considerations:
 
-- No agregar API routes ni dependencias de servidor.
-- Usar imagenes compatibles con export estatico.
-- Mantener `trailingSlash: true` para rutas generadas.
+- Do not add API routes or server dependencies.
+- Use images compatible with static export (`images.unoptimized: true`).
+- Keep `trailingSlash: true` for generated routes.

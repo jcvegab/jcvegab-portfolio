@@ -1,17 +1,17 @@
-# Contenido
+# Content
 
-El sitio se mantiene desde archivos Markdown en `content/pages/` y configuracion global en `content/data/config.json`.
+The site is maintained via Markdown files in `content/pages/` and global configuration in `content/data/config.json`.
 
-## Crear Paginas
+## Creating Pages
 
-1. Crear un archivo `.md` dentro de `content/pages/`.
-2. Definir frontmatter con `title`, `layout` o `type` cuando aplique.
-3. Escribir el cuerpo en Markdown.
-4. Ejecutar `npm run type-check` y `npm run test` si el cambio toca datos usados por componentes.
+1. Create a `.md` file inside `content/pages/`.
+2. Define frontmatter with `title` and `layout` or `type` as applicable.
+3. Write the body in Markdown.
+4. Run `npm run type-check` and `npm run test` if the change touches data consumed by components.
 
-## Rutas
+## Routes
 
-| Archivo | Ruta |
+| File | URL |
 |---|---|
 | `content/pages/index.md` | `/` |
 | `content/pages/about.md` | `/about/` |
@@ -25,39 +25,40 @@ El sitio se mantiene desde archivos Markdown en `content/pages/` y configuracion
 
 ## Layouts
 
-`layout` o `type` selecciona un componente en `src/layouts/`.
+`layout` or `type` selects a component in `src/layouts/`.
 
-| Valor | Uso |
+| Value | Use |
 |---|---|
-| `page` | Pagina generica |
-| `advanced` | Pagina con secciones configurables |
-| `blog` | Indice de posts |
-| `post` | Articulo individual |
-| `portfolio` | Indice de proyectos |
-| `project` | Proyecto individual |
+| `page` | Generic page |
+| `advanced` | Page with configurable sections |
+| `blog` | Post index |
+| `post` | Individual article |
+| `portfolio` | Project index |
+| `project` | Individual project |
 
-## Secciones Advanced
+## Advanced Sections
 
-Paginas con layout `advanced` pueden declarar `sections` en frontmatter.
+Pages with layout `advanced` may declare `sections` in frontmatter.
 
-| Tipo | Componente | Uso |
+| Type | Component | Use |
 |---|---|---|
-| `section_hero` | `SectionHero` | Hero con imagen, texto y CTAs |
-| `section_portfolio` | `SectionPortfolio` | Resumen de proyectos |
-| `section_posts` | `SectionPosts` | Resumen de posts |
-| `section_grid` | `SectionGrid` | Grid generico de items |
-| `section_content` | `SectionContent` | Bloque de contenido con imagen opcional |
-| `section_form` | `SectionForm` | Formulario de contacto Netlify Forms |
-| `section_testimonials` | `SectionTestimonials` | Testimonios |
+| `section_hero` | `SectionHero` | Hero with image, text, and CTAs |
+| `section_portfolio` | `SectionPortfolio` | Project summary |
+| `section_posts` | `SectionPosts` | Post summary |
+| `section_grid` | `SectionGrid` | Generic item grid |
+| `section_content` | `SectionContent` | Content block with optional image |
+| `section_form` | `SectionForm` | Netlify Forms contact form |
+| `section_testimonials` | `SectionTestimonials` | Testimonials |
 
-## Configuracion Global
+## Global Configuration
 
-`content/data/config.json` contiene:
+`content/data/config.json` contains:
 
-- `path_prefix` para deploys bajo subruta.
-- `domain` para metadata, sitemap y robots.
-- Navegacion de header.
-- Links sociales y contenido del footer.
-- `favicon`, color scheme y accent color.
+- `path_prefix` for deployment under a subpath (used by `withPrefix` to normalize internal links and asset paths).
+- `domain` for metadata, sitemap, and robots.
+- Header navigation.
+- Social links and footer content.
+- `favicon` (present in the config file but **not consumed at runtime** — the favicon is hardcoded in `src/app/layout.tsx`).
+- `color_scheme` and `accent_color`.
 
-Validar cambios contra `schemas/config.schema.json`.
+Validate changes against `schemas/config.schema.json`.
