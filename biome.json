@@ -77,6 +77,12 @@
   },
   "overrides": [
     {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "enabled": false
+      }
+    },
+    {
       "includes": ["src/**/__tests__/**"],
       "linter": {
         "rules": {

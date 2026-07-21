@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  robots?: string[];
+  extra?: Array<{
+    keyName?: string;
+    name?: string;
+    value?: string;
+    relativeUrl?: boolean;
+  }>;
+  domain?: string;
+}
+
+const { title, description, robots, extra = [], domain } = Astro.props;
+---
+
+{title && <title>{title}</title>}
+
+{description && <meta name="description" content={description} />}
+
+{
+  robots?.length && (
+    <meta name="robots" content={robots.join(', ')} />
+  )
+}
+
+{
+  extra.map((item) => {
+    const key = item.keyName || 'name';
+    let value = item.value || '';
+
+    if (value && item.relativeUrl && domain) {
+      value = value.startsWith('/')
+        ? `${domain}${value}`
+        : `${domain}/${value}`;
+    }
+
+    return <meta {...{ [key]: item.name }} content={String(value)} />;
+  })
+}

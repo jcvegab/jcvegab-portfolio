@@ -1,0 +1,28 @@
+---
+import '@fontsource-variable/karla';
+import '../sass/main.scss';
+
+export interface Props {
+  favicon?: string;
+}
+
+const { favicon } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {favicon && <link rel="icon" type="image/png" href={favicon} />}
+    {favicon && <link rel="shortcut icon" type="image/png" href={favicon} />}
+    {favicon && <link rel="apple-touch-icon" type="image/png" href={favicon} />}
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+
+    <script is:inline src="/scripts/noframe.js"></script>
+    <script is:inline src="/scripts/menu.js"></script>
+  </body>
+</html>
