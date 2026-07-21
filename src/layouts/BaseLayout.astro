@@ -24,6 +24,10 @@ const { favicon } = Astro.props;
     <slot />
 
     <script is:inline src="/scripts/noframe.js"></script>
-    <script is:inline src="/scripts/menu.js"></script>
+    <script>
+      import { initMenu } from '@/scripts/menu';
+
+      initMenu();
+    </script>
   </body>
 </html>

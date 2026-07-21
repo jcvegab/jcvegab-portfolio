@@ -17,7 +17,7 @@
 - **Global config**: `content/data/config.json` (schema: `schemas/config.schema.json`).
 - **Routing**: `src/pages/index.astro` (home) + `src/pages/[...slug].astro` (all other pages). Both resolve content via `src/utils/content.ts` and render through `src/components/PageRenderer.tsx` which uses the layout registry in `src/layouts/index.ts`.
 - **Path alias**: `@/*` → `./src/*`
-- **React integration**: React components render at build time via `@astrojs/react`. Interactive components use `client:load`.
+- **React integration**: React components render at build time via `@astrojs/react`. Client interactivity uses small scripts from `src/scripts/` and `public/scripts/`.
 
 ## Conventions
 

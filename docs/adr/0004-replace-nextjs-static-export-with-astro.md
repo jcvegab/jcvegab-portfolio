@@ -29,7 +29,7 @@ Replace Next.js with Astro as the static site generator. Keep React for existing
 - **Fonts use `@fontsource-variable/karla`** instead of `next/font/google`.
 - **Images use a StaticImage wrapper** instead of `next/image`.
 - **Links use plain `<a>` tags** instead of `next/link`.
-- **Client interactivity** (menu toggle, video embeds) is handled by vanilla JS scripts in `public/scripts/`.
+- **Client interactivity** (menu toggle, video embeds) is handled by small vanilla scripts in `src/scripts/` and `public/scripts/`.
 - **TypeScript checking** moved from `tsc --noEmit` to `astro check`.
 - Next.js dependencies, `next.config.js`, `next-env.d.ts`, and `src/app/` are removed.
 - Build output (`out/`) and public URLs remain unchanged.

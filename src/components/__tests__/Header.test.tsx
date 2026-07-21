@@ -103,4 +103,15 @@ describe('Header', () => {
     render(<Header page={basePage} config={baseConfig as any} />);
     expect(screen.getByText('Open Menu')).toBeInTheDocument();
   });
+
+  it('renders accessible menu controls', () => {
+    render(<Header page={basePage} config={baseConfig as any} />);
+
+    const menuOpen = screen.getByRole('button', { name: 'Open Menu' });
+    const menuClose = screen.getByRole('button', { name: 'Close Menu' });
+
+    expect(menuOpen).toHaveAttribute('aria-controls', 'main-navigation');
+    expect(menuOpen).toHaveAttribute('aria-expanded', 'false');
+    expect(menuClose).toHaveAttribute('aria-controls', 'main-navigation');
+  });
 });
