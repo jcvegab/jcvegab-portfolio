@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useRef } from 'react';
+
+import StaticImage from '@/components/StaticImage';
 
 import {
   classNames,
@@ -22,9 +22,10 @@ import type { ActionItem } from './Action.types';
 export type HeaderProps = {
   page: Page;
   config: Config;
+  currentPath?: string;
 };
 
-export default function Header({ page, config }: HeaderProps) {
+export default function Header({ page, config, currentPath }: HeaderProps) {
   const { header } = config;
 
   const {
@@ -35,16 +36,9 @@ export default function Header({ page, config }: HeaderProps) {
     nav_links: navLinks = [],
   } = header;
 
-  const pageUrl = trim(getPageUrl(page), '/');
+  const pageUrl = trim(currentPath ?? getPageUrl(page), '/');
 
   const menuOpenRef = useRef(null);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    pathname; // This is a safe way to trick linter that pathname is used in useEffect without side effects
-    document.body.classList.remove('menu--opened');
-  }, [pathname]);
 
   useEffect(() => {
     const handleWindowResize = (_event: UIEvent) => {
@@ -125,7 +119,7 @@ export default function Header({ page, config }: HeaderProps) {
             {logo ? (
               <p className="site-logo">
                 <Link href={withPrefix('/')}>
-                  <Image
+                  <StaticImage
                     src={withPrefix(logo)}
                     alt={logoAlt}
                     width={200}

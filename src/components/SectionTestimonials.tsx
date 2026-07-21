@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import StaticImage from '@/components/StaticImage';
 
 import { classNames, htmlToReact, withPrefix } from '@/utils';
 
@@ -31,7 +31,7 @@ export default function SectionTestimonials({
           <p className="testimonial-content">{htmlToReact(content)}</p>
           <footer className="testimonial-footer">
             {avatar && (
-              <Image
+              <StaticImage
                 className="testimonial-avatar"
                 src={withPrefix(avatar)}
                 alt={avatarAlt}

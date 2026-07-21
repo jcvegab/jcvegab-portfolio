@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import { Body } from '@/components';
+import StaticImage from '@/components/StaticImage';
 
 import {
   classNames,
@@ -48,7 +47,7 @@ export default function Blog({ data, page, posts: rawPosts = [] }: BlogProps) {
         <div className="post-inside">
           {thumbImage && (
             <Link className="post-thumbnail" href={postUrl}>
-              <Image
+              <StaticImage
                 src={withPrefix(thumbImage)}
                 alt={thumbImageAlt}
                 fill={true}
