@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Seo from '@/components/Seo.astro';
+import { getGlobalConfig } from '@/utils/content';
+
+const config = getGlobalConfig();
+---
+
+<BaseLayout favicon={config?.favicon}>
+  <Seo slot="head"
+    title="404 - Página no encontrada"
+    robots={['noindex']}
+    domain={config?.domain}
+  />
+
+  <div class="inner outer">
+    <header class="page-header inner-sm">
+      <h1 class="page-title line-top">404 - Página no encontrada</h1>
+      <p class="page-subtitle">La página que buscas no existe o fue movida.</p>
+    </header>
+    <div class="post-content inner-sm">
+      <p><a href="/">Volver al inicio</a></p>
+    </div>
+  </div>
+</BaseLayout>

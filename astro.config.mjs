@@ -16,5 +16,8 @@ export default defineConfig({
         '@': '/src',
       },
     },
+    ssr: {
+      noExternal: ['lodash'],
+    },
   },
 });

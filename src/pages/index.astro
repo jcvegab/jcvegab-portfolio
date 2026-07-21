@@ -1,7 +1,47 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Seo from '@/components/Seo.astro';
+import PageRenderer from '@/components/PageRenderer';
+import {
+  getAllPagesData,
+  getGlobalConfig,
+  getPageDataBySlug,
+} from '@/utils/content';
+
+const data = getPageDataBySlug('/');
+
+if (!data) {
+  return new Response('Not Found', { status: 404 });
+}
+
+const config = getGlobalConfig();
+const { seo } = data.page;
+
+const metadata = data.page.__metadata as { modelName: string };
+const modelName = metadata.modelName;
+
+let projects: import('@/types').Page[] | undefined;
+let posts: import('@/types').Page[] | undefined;
+
+if (modelName === 'advanced') {
+  const allPages = getAllPagesData();
+  projects = allPages
+    .filter((p) => p.page.__metadata?.modelName === 'project')
+    .map((p) => p.page);
+  posts = allPages
+    .filter((p) => p.page.__metadata?.modelName === 'post')
+    .map((p) => p.page);
+}
 ---
 
-<BaseLayout>
-  <h1>Astro bootstrap OK</h1>
+<BaseLayout favicon={config?.favicon}>
+  <Seo slot="head"
+    title={seo?.title}
+    description={seo?.description}
+    robots={seo?.robots}
+    extra={seo?.extra}
+    domain={config?.domain}
+  />
+
+  <PageRenderer client:load data={data} posts={posts} projects={projects} currentPath="/" />
 </BaseLayout>
