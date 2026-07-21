@@ -1,12 +1,12 @@
 import classNames from '../classNames';
 
 describe('classNames', () => {
-  it('returns null for no arguments', () => {
-    expect(classNames()).toBeNull();
+  it('returns undefined for no arguments', () => {
+    expect(classNames()).toBeUndefined();
   });
 
-  it('returns null for all falsy values', () => {
-    expect(classNames(false, null, undefined, 0, '')).toBeNull();
+  it('returns undefined for all falsy values', () => {
+    expect(classNames(false, null, undefined, 0, '')).toBeUndefined();
   });
 
   it('joins truthy string arguments', () => {
@@ -24,9 +24,9 @@ describe('classNames', () => {
     expect(result).toBe('1 2');
   });
 
-  it('returns null if all records are false', () => {
+  it('returns undefined if all records are false', () => {
     const result = classNames({ foo: false, bar: false });
-    expect(result).toBeNull();
+    expect(result).toBeUndefined();
   });
 
   it('combines strings and objects', () => {

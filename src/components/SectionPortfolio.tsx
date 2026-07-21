@@ -36,8 +36,8 @@ export default function SectionPortfolio({
     project: SectionPortfolioProject,
     index: number,
     projectCount: number,
-    viewAllLabel: string,
-    viewAllUrl: string,
+    viewAllLabel: string | undefined,
+    viewAllUrl: string | undefined,
   ) => {
     const {
       title,
