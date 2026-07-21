@@ -34,7 +34,7 @@ Requirements:
 - Shared components are exported from `src/components/index.ts`.
 - Layouts are registered in `src/layouts/index.ts`.
 - Astro files (`.astro`) are excluded from Biome lint/format.
-- Scripts in `public/scripts/` handle client interactivity.
+- Scripts in `src/scripts/` and `public/scripts/` handle client interactivity.
 
 ## Pre-commit Hook
 

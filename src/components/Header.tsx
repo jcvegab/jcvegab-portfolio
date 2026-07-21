@@ -1,6 +1,4 @@
-'use client';
-
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment } from 'react';
 
 import StaticImage from '@/components/StaticImage';
 
@@ -38,36 +36,14 @@ export default function Header({ page, config, currentPath }: HeaderProps) {
 
   const pageUrl = trim(currentPath ?? getPageUrl(page), '/');
 
-  const menuOpenRef = useRef(null);
-
-  useEffect(() => {
-    const handleWindowResize = (_event: UIEvent) => {
-      const menuOpenElm = get(menuOpenRef, 'current.offsetParent');
-      if (menuOpenElm === null) {
-        document.body.classList.remove('menu--opened');
-      }
-    };
-
-    window.addEventListener('resize', handleWindowResize, true);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize, true);
-    };
-  }, []);
-
-  const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    document.body.classList.toggle('menu--opened');
-  };
-
   const renderNavLinks = (navLinks: ActionItem[], pageUrl: string) => {
     return (
       <Fragment>
         <button
           id="menu-open"
           className="menu-toggle"
-          ref={menuOpenRef}
-          onClick={handleMenuToggle}
+          aria-controls="main-navigation"
+          aria-expanded="false"
           type="button"
         >
           <span className="screen-reader-text">Open Menu</span>
@@ -82,7 +58,7 @@ export default function Header({ page, config, currentPath }: HeaderProps) {
             <button
               id="menu-close"
               className="menu-toggle"
-              onClick={handleMenuToggle}
+              aria-controls="main-navigation"
               type="button"
             >
               <span className="screen-reader-text">Close Menu</span>

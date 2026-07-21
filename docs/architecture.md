@@ -28,7 +28,7 @@ This repository is a static site built with Astro 7. No server runtime, no API r
 - `content/data/config.json` provides header nav, footer links, domain, color scheme, accent color, and `path_prefix`. The `favicon` field is consumed by `BaseLayout.astro`.
 - `schemas/config.schema.json` documents the expected shape of global configuration.
 - Tests live next to source code in `__tests__` directories.
-- React components are rendered at build time via `@astrojs/react`. Interactive components (Header) use `client:load`.
+- React components are rendered at build time via `@astrojs/react`. Client interactivity uses small vanilla scripts from `src/scripts/` and `public/scripts/`.
 
 ## Hotspots
 
