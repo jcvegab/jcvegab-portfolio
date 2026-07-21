@@ -4,5 +4,5 @@ import htmlToReact from './htmlToReact';
 
 export default function markdownify(markdown: string) {
   if (!markdown) return null;
-  return htmlToReact(marked.parse(markdown) as string);
+  return htmlToReact(marked.parse(markdown, { async: false }));
 }

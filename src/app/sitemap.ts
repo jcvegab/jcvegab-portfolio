@@ -19,12 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const url = path === '/' ? domain : `${domain}${path}`;
 
-    const rawData = pageData.page as Record<string, unknown>;
-    const dateStr = rawData.date;
+    const rawData = pageData.page;
 
     return {
       url,
-      ...(dateStr && { lastModified: new Date(dateStr as string) }),
+      ...('date' in rawData && {
+        lastModified: new Date(rawData.date as string),
+      }),
     };
   });
 }
