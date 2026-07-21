@@ -76,8 +76,7 @@ web_modules/
 .cache
 .parcel-cache
 
-# Next.js build output
-.next
+# Astro build output
 out
 
 # Serverless directories
@@ -93,7 +92,6 @@ out
 .yarn/install-state.gz
 .pnp.*
 
-.sourcebit-nextjs-cache.json
 .DS_Store
 .idea
 .astro
