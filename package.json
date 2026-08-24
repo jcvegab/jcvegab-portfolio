@@ -62,7 +62,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.9",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.3.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "24.13.3",
