@@ -55,8 +55,8 @@
     "html-react-parser": "^6.1.8",
     "lodash-es": "^4.18.1",
     "marked": "^18.1.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "sass": "^1.105.1"
   },
   "devDependencies": {
