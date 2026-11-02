@@ -1,4 +1,4 @@
-@use 'functions';
+@use "functions";
 
 /**
  * Site Header
@@ -17,8 +17,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -160,8 +158,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 
@@ -178,18 +174,14 @@
   .site-header {
     &:after {
       background: rgba(functions.palette(charcoal), 0.6);
-      content: '';
+      content: "";
       height: 100vh;
       left: 0;
       opacity: 0;
       position: absolute;
       top: 0;
-      -webkit-transition:
-        opacity 0.25s,
-        visibility 0s 0.25s;
-      transition:
-        opacity 0.25s,
-        visibility 0s 0.25s;
+      -webkit-transition: opacity 0.25s, visibility 0s 0.25s;
+      transition: opacity 0.25s, visibility 0s 0.25s;
       visibility: hidden;
       width: 100%;
       z-index: 998;

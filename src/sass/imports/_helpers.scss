@@ -1,12 +1,10 @@
-@use 'functions';
+@use "functions";
 
 /**
  * Helper Classes
  */
 // Grid
 .grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -67,7 +65,7 @@
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     display: table;
   }
 }
@@ -78,7 +76,7 @@
 
   &:before {
     border-left: 45px solid functions.palette(accent);
-    content: '';
+    content: "";
     display: block;
     height: 3px;
     margin-bottom: 0.83333rem;

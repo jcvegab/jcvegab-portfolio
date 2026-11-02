@@ -1,4 +1,4 @@
-@use 'functions';
+@use "functions";
 
 /**
  * Form fields
@@ -14,13 +14,13 @@ label {
   }
 }
 
-input[type='text'],
-input[type='password'],
-input[type='email'],
-input[type='tel'],
-input[type='number'],
-input[type='search'],
-input[type='url'],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
 select,
 textarea {
   background: transparent;
@@ -110,7 +110,7 @@ option {
     border: solid transparent;
     border-width: 0.3125em;
     box-sizing: border-box;
-    content: '';
+    content: "";
     position: absolute;
     right: 5px;
     top: 50%;
@@ -144,7 +144,7 @@ option {
     font-weight: normal;
   }
 
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     height: 1.5em;
     left: 0;
     position: absolute;

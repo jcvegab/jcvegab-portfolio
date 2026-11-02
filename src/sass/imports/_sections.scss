@@ -1,4 +1,4 @@
-@use 'functions';
+@use "functions";
 
 /**
  * Sections
@@ -41,8 +41,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -77,7 +75,7 @@
   &:after {
     border: 2px solid functions.palette(charcoal-light-75);
     box-sizing: border-box;
-    content: '';
+    content: "";
     height: 35%;
     left: 0;
     position: absolute;
@@ -155,7 +153,7 @@
   &:after {
     border: 2px solid functions.palette(accent);
     box-sizing: border-box;
-    content: '';
+    content: "";
     height: 32%;
     left: 0;
     position: absolute;
@@ -230,8 +228,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 1.33333em;
 }
