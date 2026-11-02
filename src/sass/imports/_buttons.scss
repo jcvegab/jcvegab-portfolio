@@ -1,4 +1,4 @@
-@use 'functions';
+@use "functions";
 
 /**
  * Buttons
@@ -13,6 +13,7 @@
   box-sizing: border-box;
   color: functions.palette(accent);
   display: -webkit-inline-box;
+  // biome-ignore lint/suspicious/noDuplicateProperties: legacy flexbox fallback
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 16px;
@@ -49,7 +50,7 @@
     border: 2px solid currentColor;
     box-sizing: border-box;
     color: inherit;
-    content: '';
+    content: "";
     height: 32%;
     left: 0;
     position: absolute;
@@ -104,8 +105,6 @@
   border: 0;
   box-sizing: border-box;
   color: inherit;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 1em;
   -webkit-box-pack: center;
@@ -119,8 +118,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;

@@ -1,11 +1,11 @@
-@use 'sass:list';
-@use 'sass:map';
-@use 'sass:math';
-@use 'sass:meta';
-@use 'sass:string';
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 
-@use '../imports/font';
-@use '../imports/palette';
+@use "../imports/font";
+@use "../imports/palette";
 
 /// Removes a specific item from a list.
 /// @author Hugo Giraudel
