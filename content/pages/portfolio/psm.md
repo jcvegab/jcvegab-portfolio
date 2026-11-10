@@ -2,36 +2,37 @@
 title: Proyectos San Marcos
 subtitle: Website | Intranet | Plataforma de cursos
 date: '2019-04-30'
-thumb_image: images/2_thumb.jpg
-thumb_image_alt: An orange on a blue background
-image: images/2.jpg
-image_alt: An orange on a blue background
+featured_order: 5
+thumb_image: /images/san-marcos-cover.webp
+thumb_image_alt: Ilustración conceptual de sitio web, intranet y plataforma de cursos
+image: /images/san-marcos-cover.webp
+image_alt: Ilustración conceptual de los Proyectos San Marcos
 
 seo:
     title: Proyectos San Marcos | Website, Intranet y Plataforma de cursos
-    description: This is the project 2 description
+    description: Proyectos San Marcos reúne un sitio web, una intranet y una plataforma de cursos para un entorno universitario.
     extra:
         - name: 'og:type'
           value: website
           keyName: property
         - name: 'og:title'
-          value: Project Title 2
+          value: Proyectos San Marcos
           keyName: property
         - name: 'og:description'
-          value: This is the project 2 description
+          value: Sitio web, intranet y plataforma de cursos para un entorno universitario.
           keyName: property
         - name: 'og:image'
-          value: images/2.jpg
+          value: /images/san-marcos-cover.webp
           keyName: property
           relativeUrl: true
         - name: 'twitter:card'
           value: summary_large_image
         - name: 'twitter:title'
-          value: Project Title 2
+          value: Proyectos San Marcos
         - name: 'twitter:description'
-          value: This is the project 2 description
+          value: Sitio web, intranet y plataforma de cursos para un entorno universitario.
         - name: 'twitter:image'
-          value: images/2.jpg
+          value: /images/san-marcos-cover.webp
           relativeUrl: true
 layout: project
 ---

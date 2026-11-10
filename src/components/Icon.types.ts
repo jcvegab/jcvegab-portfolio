@@ -5,6 +5,6 @@ export type IconVariant =
   | 'instagram'
   | 'linkedin'
   | 'pinterest'
-  | 'twitter'
+  | 'x'
   | 'youtube'
   | 'vimeo';

@@ -7,19 +7,28 @@ sections:
     type: section_hero
     avatar: https://avatars.githubusercontent.com/u/11130613?s=400&u=a5667dbdba42332a2a088e4a7afb73be2eb3f58b&v=4
     title: Joseph Vega Blacido
+    avatar_alt: Retrato de Joseph Vega Blacido
     content: >
-      Soy **Full-Stack Web Developer** y disfruto trabajar en la planificación,
-      arquitectura y desarrollo de aplicaciones web que crean nuevas
-      experiencias para los usuarios.
+      Soy **Full Stack Developer · AI Engineer**. Desarrollo productos de
+      principio a fin, desde entender las necesidades de los usuarios hasta
+      diseñar e implementar soluciones completas.
 
-      Me especializo en construir **aplicaciones full-stack modernas**, APIs
-      backend y interfaces frontend utilizando tecnologías del ecosistema
-      JavaScript y otros frameworks web.
+      Combino **React, TypeScript y NestJS** con **Python, FastAPI y agentes de
+      IA** para automatizar tareas y simplificar procesos reales. Tomo
+      decisiones técnicas según el contexto del producto, equilibrando
+      mantenibilidad, escalabilidad y necesidades del negocio.
 
-      **Tecnologías / Habilidades:** React, Vue, Javascript, Node.js, NestJS,
-      Ruby on Rails, HTML, CSS, PostgreSQL, Git, GitHub
+      Trabajo con equipos de Producto para anticipar problemas y construir
+      soluciones útiles sin complejidad innecesaria.
 
-    actions: []
+    actions:
+      - label: Ver proyectos
+        url: /portfolio/
+        style: button
+      - label: Ver CV (PDF)
+        url: https://drive.google.com/file/d/19H-GvO3Y0bfGgOdXIoKsa6wv91_r35NI/view?usp=sharing
+        style: link
+        new_window: true
 
   - section_id: latest-projects
     type: section_portfolio
@@ -27,7 +36,7 @@ sections:
     title: Mis proyectos
     projects_number: 6
     view_all_label: Ver todos
-    view_all_url: portfolio
+    view_all_url: /portfolio/
 
   # - section_id: latest-posts
   #   type: section_posts
@@ -41,8 +50,8 @@ sections:
   #       style: button
 
 seo:
-  title: Joseph Vega Blacido | Full-Stack Web Developer
-  description: Portafolio de Joseph Vega Blacido, Full-Stack Web Developer especializado en React, Node.js, NestJS y Ruby on Rails. Proyectos de desarrollo web, aplicaciones full-stack y APIs backend.
+  title: Joseph Vega Blacido | Full Stack Developer · AI Engineer
+  description: Joseph Vega Blacido desarrolla productos full stack y funcionalidades con agentes de IA usando React, TypeScript, NestJS, Python y FastAPI.
 
   extra:
     - name: 'og:type'
@@ -50,11 +59,11 @@ seo:
       keyName: property
 
     - name: 'og:title'
-      value: Joseph Vega Blacido – Full-Stack Web Developer
+      value: Joseph Vega Blacido – Full Stack Developer · AI Engineer
       keyName: property
 
     - name: 'og:description'
-      value: Portafolio de desarrollo web Full-Stack con proyectos en React, Node.js, NestJS y Ruby on Rails.
+      value: Productos full stack y agentes de IA con React, TypeScript, NestJS, Python y FastAPI.
       keyName: property
 
     - name: 'og:image'
@@ -70,10 +79,10 @@ seo:
       value: summary_large_image
 
     - name: 'twitter:title'
-      value: Joseph Vega Blacido – Full-Stack Web Developer
+      value: Joseph Vega Blacido – Full Stack Developer · AI Engineer
 
     - name: 'twitter:description'
-      value: Portafolio de proyectos de desarrollo web y aplicaciones full-stack.
+      value: Desarrollo de productos full stack y funcionalidades con agentes de IA.
 
     - name: 'twitter:image'
       value: images/exto_preview.png

@@ -52,6 +52,52 @@ describe('Page layout', () => {
     expect(screen.getByText('## Content here')).toBeInTheDocument();
   });
 
+  it('renders a structured experience timeline between intro and content', () => {
+    const { container } = render(
+      <PageLayout
+        {...({
+          ...baseProps,
+          page: {
+            ...baseProps.page,
+            intro: 'My introduction',
+            experience: [
+              {
+                id: 'company',
+                company: 'Company',
+                role: 'Developer',
+                location: 'Remote',
+                summary: 'Built software.',
+                periods: [
+                  {
+                    start: '2025-05',
+                    start_label: 'May 2025',
+                    end_label: 'Present',
+                  },
+                ],
+                highlights: ['Built a product'],
+                technologies: ['React'],
+              },
+            ],
+          },
+        } as any)}
+      />,
+    );
+
+    expect(screen.getByText('My introduction')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Developer' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Company')).toBeInTheDocument();
+    expect(screen.getByText('## Content here')).toBeInTheDocument();
+    const html = container.innerHTML;
+    expect(html.indexOf('My introduction')).toBeLessThan(
+      html.indexOf('experience-timeline'),
+    );
+    expect(html.indexOf('experience-timeline')).toBeLessThan(
+      html.indexOf('## Content here'),
+    );
+  });
+
   it('renders the image when provided', () => {
     render(
       <PageLayout

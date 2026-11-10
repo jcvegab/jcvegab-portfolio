@@ -57,8 +57,8 @@ sections:
       Normalmente respondo dentro de las próximas 24–48 horas.
 
 seo:
-  title: Contacto | Joseph Vega – Full-Stack Developer
-  description: Página de contacto de Joseph Vega, Full-Stack Developer especializado en React, TypeScript, Node.js, NestJS y Ruby on Rails. Disponible para colaboraciones, consultoría y oportunidades laborales.
+  title: Contacto | Joseph Vega Blacido – Full Stack Developer · AI Engineer
+  description: Contacta a Joseph Vega Blacido para proyectos full stack, automatización con IA y oportunidades profesionales.
 
   extra:
     - name: 'og:type'
@@ -66,7 +66,7 @@ seo:
       keyName: property
 
     - name: 'og:title'
-      value: Contactar a Joseph Vega – Full-Stack Developer
+      value: Contactar a Joseph Vega Blacido – Full Stack Developer · AI Engineer
       keyName: property
 
     - name: 'og:description'

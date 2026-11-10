@@ -34,10 +34,10 @@ describe('Footer', () => {
           icon: 'github',
         },
         {
-          label: 'Twitter',
-          url: 'https://twitter.com',
+          label: 'X',
+          url: 'https://x.com/jcvegab',
           style: 'icon',
-          icon: 'twitter',
+          icon: 'x',
         },
       ],
     },
@@ -61,7 +61,10 @@ describe('Footer', () => {
   it('renders social links when has_social is true', () => {
     render(<Footer config={config as any} />);
     expect(screen.getByText('GitHub')).toBeInTheDocument();
-    expect(screen.getByText('Twitter')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'X' })).toHaveAttribute(
+      'href',
+      'https://x.com/jcvegab',
+    );
   });
 
   it('does not render social links when has_social is false', () => {

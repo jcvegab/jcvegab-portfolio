@@ -1,4 +1,5 @@
 import { Body } from '@/components';
+import ExperienceTimeline from '@/components/ExperienceTimeline';
 import StaticImage from '@/components/StaticImage';
 
 import { htmlToReact, markdownify, withPrefix } from '@/utils';
@@ -16,6 +17,8 @@ export default function Page({ data, page }: PageProps) {
     subtitle,
     image,
     image_alt: imageAlt = '',
+    intro,
+    experience,
     markdown_content: markdownContent,
   } = page;
 
@@ -40,9 +43,11 @@ export default function Page({ data, page }: PageProps) {
               />
             </div>
           )}
-          {markdownContent && (
+          {(intro || experience?.length || markdownContent) && (
             <div className="post-content inner-sm">
-              {markdownify(markdownContent)}
+              {intro && <div className="page-intro">{markdownify(intro)}</div>}
+              {experience && <ExperienceTimeline experiences={experience} />}
+              {markdownContent && markdownify(markdownContent)}
             </div>
           )}
         </article>

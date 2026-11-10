@@ -2,6 +2,7 @@
 title: Tweetable – Twitter Clone en Ruby on Rails
 subtitle: Aplicación tipo Twitter construida con Ruby on Rails
 date: '2021-01-13'
+featured_order: 4
 thumb_image: /images/tweetable-cover.png
 thumb_image_alt: Interfaz de Tweetable, clon de Twitter desarrollado en Ruby on Rails
 image: /images/tweetable-cover.png

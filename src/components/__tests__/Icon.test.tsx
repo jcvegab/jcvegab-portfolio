@@ -10,7 +10,7 @@ describe('Icon', () => {
     'instagram',
     'linkedin',
     'pinterest',
-    'twitter',
+    'x',
     'youtube',
     'vimeo',
   ] as const;

@@ -7,5 +7,6 @@ export default function getPageUrl(
   { withPrefix: addPrefix = false }: { withPrefix?: boolean } = {},
 ) {
   const urlPath = page.__metadata.urlPath;
-  return addPrefix ? withPrefix(urlPath) : urlPath;
+  const canonicalPath = urlPath.endsWith('/') ? urlPath : `${urlPath}/`;
+  return addPrefix ? withPrefix(canonicalPath) : canonicalPath;
 }

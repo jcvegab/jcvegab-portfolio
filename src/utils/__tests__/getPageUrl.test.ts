@@ -14,19 +14,19 @@ describe('getPageUrl', () => {
     },
   };
 
-  it('returns urlPath when withPrefix is false', () => {
+  it('returns the canonical page URL when withPrefix is false', () => {
     const result = getPageUrl(mockPage);
-    expect(result).toBe('/test-page');
+    expect(result).toBe('/test-page/');
   });
 
   it('returns urlPath when withPrefix option is false', () => {
     const result = getPageUrl(mockPage, { withPrefix: false });
-    expect(result).toBe('/test-page');
+    expect(result).toBe('/test-page/');
   });
 
   it('returns prefixed urlPath when withPrefix is true', () => {
     const result = getPageUrl(mockPage, { withPrefix: true });
-    expect(result).toBe('/prefix/test-page');
+    expect(result).toBe('/prefix/test-page/');
   });
 
   it('handles root path', () => {
@@ -40,6 +40,6 @@ describe('getPageUrl', () => {
 
   it('uses default options when none provided', () => {
     const result = getPageUrl(mockPage);
-    expect(result).toBe('/test-page');
+    expect(result).toBe('/test-page/');
   });
 });
