@@ -110,3 +110,5 @@ layout: page
 **Ingeniería y despliegue:** Docker, CI/CD, testing y Azure. He trabajado también con AWS y Google Cloud.
 
 Puedes escribirme a **contact@jcvegab.dev** o encontrarme en [LinkedIn](https://www.linkedin.com/in/joseph-vegab/).
+
+<a href="https://drive.google.com/file/d/19H-GvO3Y0bfGgOdXIoKsa6wv91_r35NI/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver CV (PDF)</a>

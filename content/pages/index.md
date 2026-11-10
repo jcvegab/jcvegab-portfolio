@@ -21,7 +21,14 @@ sections:
       Trabajo con equipos de Producto para anticipar problemas y construir
       soluciones útiles sin complejidad innecesaria.
 
-    actions: []
+    actions:
+      - label: Ver proyectos
+        url: /portfolio/
+        style: button
+      - label: Ver CV (PDF)
+        url: https://drive.google.com/file/d/19H-GvO3Y0bfGgOdXIoKsa6wv91_r35NI/view?usp=sharing
+        style: link
+        new_window: true
 
   - section_id: latest-projects
     type: section_portfolio
