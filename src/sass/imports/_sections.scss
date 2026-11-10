@@ -266,6 +266,11 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
+
+  .block-content + .block-buttons {
+    margin-top: 1.5em;
+  }
+
   .inner {
     margin: 0;
   }
