@@ -28,7 +28,11 @@ export default function SectionPortfolio({
     projects_number: projectsNumber = 6,
   } = section;
 
-  const projects = orderBy(rawProjects, 'date', 'desc');
+  const projects = orderBy(
+    rawProjects,
+    ['featured_order', 'date'],
+    ['asc', 'desc'],
+  );
   const recentProjects = projects.slice(0, projectsNumber);
   const projectCount = size(recentProjects);
 

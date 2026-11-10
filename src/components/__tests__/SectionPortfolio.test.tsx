@@ -63,12 +63,43 @@ describe('SectionPortfolio', () => {
         section={{
           ...baseSection,
           view_all_label: 'View All',
-          view_all_url: '/portfolio',
+          view_all_url: '/portfolio/',
         }}
         projects={projects as any}
       />,
     );
     expect(screen.getByText('View All')).toBeInTheDocument();
+    expect(screen.getByText('View All').closest('a')).toHaveAttribute(
+      'href',
+      '/prefix/portfolio/',
+    );
+  });
+
+  it('uses the last project image for the view all card', () => {
+    render(
+      <SectionPortfolio
+        section={{
+          ...baseSection,
+          view_all_label: 'View All',
+          view_all_url: '/portfolio/',
+        }}
+        projects={
+          [
+            projects[0],
+            {
+              ...projects[1],
+              thumb_image: '/images/san-marcos-cover.webp',
+              thumb_image_alt: 'Proyectos San Marcos',
+            },
+          ] as any
+        }
+      />,
+    );
+
+    expect(screen.getByAltText('Proyectos San Marcos')).toHaveAttribute(
+      'src',
+      '/prefix/images/san-marcos-cover.webp',
+    );
   });
 
   it('renders with mosaic layout by default', () => {

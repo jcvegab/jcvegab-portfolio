@@ -19,7 +19,11 @@ export default function Portfolio({
 
   const { title, subtitle, layout_style: layoutStyle = 'mosaic' } = page;
 
-  const projects = orderBy(rawProjects, 'date', 'desc');
+  const projects = orderBy(
+    rawProjects,
+    ['featured_order', 'date'],
+    ['asc', 'desc'],
+  );
 
   const renderProject = (project: PortfolioProject, index: number) => {
     const {

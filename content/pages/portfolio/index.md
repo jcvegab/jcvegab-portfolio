@@ -1,26 +1,26 @@
 ---
-title: Joseph Vega – Full-Stack Developer Portfolio
-subtitle: Proyectos y experimentos de desarrollo web Full-Stack
+title: Proyectos de Joseph Vega Blacido
+subtitle: Productos full stack, interfaces y arquitectura de software
 layout_style: mosaic
 
 seo:
-  title: Portfolio | Joseph Vega – Full-Stack Developer
-  description: Portafolio de Joseph Vega, Full-Stack Developer de Perú especializado en React, TypeScript, Node.js, NestJS y Ruby on Rails. Proyectos de desarrollo web, APIs backend y aplicaciones full-stack.
+  title: Proyectos | Joseph Vega Blacido – Full Stack Developer · AI Engineer
+  description: Proyectos de Joseph Vega Blacido con React, TypeScript, NestJS, Python, PostgreSQL y desarrollo full stack.
   extra:
     - name: 'og:type'
       value: website
       keyName: property
 
     - name: 'og:title'
-      value: Joseph Vega – Full-Stack Developer Portfolio
+      value: Proyectos de Joseph Vega Blacido
       keyName: property
 
     - name: 'og:description'
-      value: Portafolio con proyectos de desarrollo web Full-Stack usando React, TypeScript, Node.js, NestJS y Ruby on Rails.
+      value: Productos full stack, interfaces y arquitectura de software con React, NestJS, Python y PostgreSQL.
       keyName: property
 
     - name: 'og:image'
-      value: /images/portfolio-preview.jpg
+      value: /images/exto_preview.png
       keyName: property
       relativeUrl: true
 
@@ -32,13 +32,13 @@ seo:
       value: summary_large_image
 
     - name: 'twitter:title'
-      value: Joseph Vega – Full-Stack Developer
+      value: Proyectos de Joseph Vega Blacido
 
     - name: 'twitter:description'
-      value: Portafolio de desarrollo web Full-Stack con proyectos en React, TypeScript, Node.js, NestJS y Ruby on Rails.
+      value: Proyectos de desarrollo full stack, interfaces y arquitectura de software.
 
     - name: 'twitter:image'
-      value: /images/portfolio-preview.jpg
+      value: /images/exto_preview.png
       relativeUrl: true
 
 layout: portfolio

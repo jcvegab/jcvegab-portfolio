@@ -5,6 +5,7 @@ export type SectionPortfolioProject = Page & {
   thumb_image?: string;
   thumb_image_alt?: string;
   date?: string | number | Date;
+  featured_order?: number;
 };
 
 export type SectionPortfolioItem = {

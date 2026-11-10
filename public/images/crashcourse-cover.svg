@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Crashcourse</title>
+  <desc id="desc">Ilustración de un catálogo de cursos conectado a una API</desc>
+  <defs>
+  </defs>
+  <rect width="1200" height="800" fill="#183b72"/>
+  <circle cx="1050" cy="130" r="250" fill="#7399e5" opacity=".13"/>
+  <circle cx="110" cy="760" r="330" fill="#94b4ff" opacity=".1"/>
+  <text x="95" y="125" fill="#afc7ff" font-family="Arial,sans-serif" font-size="22" font-weight="bold" letter-spacing="3">FULL STACK PROJECT</text>
+  <text x="90" y="215" fill="#fff" font-family="Arial,sans-serif" font-size="72" font-weight="bold">Crashcourse</text>
+  <text x="95" y="270" fill="#cbdcff" font-family="Arial,sans-serif" font-size="28">Plataforma de cursos</text>
+  <rect x="95" y="345" width="665" height="360" rx="24" fill="#0c1c39" opacity=".45"/>
+  <rect x="120" y="370" width="615" height="44" rx="12" fill="#7798d7" opacity=".45"/>
+  <circle cx="151" cy="392" r="8" fill="#fff" opacity=".8"/>
+  <circle cx="179" cy="392" r="8" fill="#fff" opacity=".5"/>
+  <circle cx="207" cy="392" r="8" fill="#fff" opacity=".3"/>
+  <rect x="120" y="440" width="180" height="230" rx="16" fill="#f0f5ff"/>
+  <rect x="320" y="440" width="180" height="230" rx="16" fill="#f0f5ff"/>
+  <rect x="520" y="440" width="190" height="230" rx="16" fill="#f0f5ff"/>
+  <rect x="138" y="458" width="144" height="110" rx="11" fill="#e3ab65"/><rect x="338" y="458" width="144" height="110" rx="11" fill="#75a8b2"/><rect x="538" y="458" width="154" height="110" rx="11" fill="#ba91ca"/>
+  <path d="M150 590h100M150 612h122M350 590h100M350 612h122M550 590h100M550 612h122" stroke="#416091" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+  <path d="M760 530h80" stroke="#9cbcff" stroke-width="5" stroke-dasharray="10 10"/>
+  <rect x="840" y="465" width="275" height="145" rx="22" fill="#f2f6ff"/>
+  <text x="878" y="525" fill="#24437c" font-family="Arial,sans-serif" font-size="30" font-weight="bold">GraphQL</text>
+  <text x="878" y="566" fill="#5572a4" font-family="Arial,sans-serif" font-size="22">Django · PostgreSQL</text>
+</svg>
