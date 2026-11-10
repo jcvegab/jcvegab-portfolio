@@ -1,8 +1,6 @@
 ---
 title: Acerca de mí
 subtitle: Full Stack Developer · AI Engineer
-image: images/about.jpg
-image_alt: Joseph Vega desarrollando software
 
 seo:
   title: Sobre mí | Joseph Vega Blacido – Full Stack Developer · AI Engineer
@@ -20,27 +18,18 @@ seo:
       value: Experiencia en productos full stack, arquitectura de software y agentes de IA aplicados a funcionalidades reales.
       keyName: property
 
-    - name: 'og:image'
-      value: images/about.jpg
-      keyName: property
-      relativeUrl: true
-
     - name: 'og:locale'
       value: es_PE
       keyName: property
 
     - name: 'twitter:card'
-      value: summary_large_image
+      value: summary
 
     - name: 'twitter:title'
       value: Joseph Vega Blacido – Full Stack Developer · AI Engineer
 
     - name: 'twitter:description'
       value: Desarrollo de productos de principio a fin con React, NestJS, Python, FastAPI y agentes de IA.
-
-    - name: 'twitter:image'
-      value: images/about.jpg
-      relativeUrl: true
 
 layout: page
 ---
