@@ -4,7 +4,7 @@ subtitle: Productos full stack, interfaces y arquitectura de software
 layout_style: mosaic
 
 seo:
-  title: Proyectos | Joseph Vega Blacido – Full Stack Developer · AI Engineer
+  title: Proyectos | Joseph Vega Blacido, AI Engineer
   description: Proyectos de Joseph Vega Blacido con React, TypeScript, NestJS, Python, PostgreSQL y desarrollo full stack.
   extra:
     - name: 'og:type'

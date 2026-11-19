@@ -9,12 +9,14 @@ sections:
     title: Joseph Vega Blacido
     avatar_alt: Retrato de Joseph Vega Blacido
     content: >
-      Soy **Full Stack Developer · AI Engineer**. Desarrollo productos de
-      principio a fin, desde entender las necesidades de los usuarios hasta
-      diseñar e implementar soluciones completas.
+      Soy **AI Engineer en Lapzo** y tengo experiencia como **Full Stack
+      Developer**. Desarrollo productos de principio a fin, desde entender las
+      necesidades de los usuarios hasta diseñar e implementar soluciones
+      completas.
 
-      Combino **React, TypeScript y NestJS** con **Python, FastAPI y agentes de
-      IA** para automatizar tareas y simplificar procesos reales. Tomo
+      Integro **agentes de IA** en el producto con **Python, LangGraph y
+      FastAPI** para automatizar tareas y simplificar procesos reales. Mi
+      experiencia full stack incluye **React, TypeScript y NestJS**. Tomo
       decisiones técnicas según el contexto del producto, equilibrando
       mantenibilidad, escalabilidad y necesidades del negocio.
 
@@ -25,8 +27,11 @@ sections:
       - label: Ver proyectos
         url: /portfolio/
         style: button
+      - label: Contacto
+        url: /contact/
+        style: link
       - label: Ver CV (PDF)
-        url: https://drive.google.com/file/d/19H-GvO3Y0bfGgOdXIoKsa6wv91_r35NI/view?usp=sharing
+        url: https://drive.google.com/file/d/11AknPknXiVcm1tK4_7EniIMahO7x5mZ2/view?usp=sharing
         style: link
         new_window: true
 
@@ -50,8 +55,8 @@ sections:
   #       style: button
 
 seo:
-  title: Joseph Vega Blacido | Full Stack Developer · AI Engineer
-  description: Joseph Vega Blacido desarrolla productos full stack y funcionalidades con agentes de IA usando React, TypeScript, NestJS, Python y FastAPI.
+  title: Joseph Vega Blacido | AI Engineer en Lapzo
+  description: Joseph Vega Blacido desarrolla agentes de IA y los integra en productos con Python, LangGraph y FastAPI. Tiene experiencia en desarrollo full stack.
 
   extra:
     - name: 'og:type'
@@ -59,11 +64,11 @@ seo:
       keyName: property
 
     - name: 'og:title'
-      value: Joseph Vega Blacido – Full Stack Developer · AI Engineer
+      value: Joseph Vega Blacido | AI Engineer en Lapzo
       keyName: property
 
     - name: 'og:description'
-      value: Productos full stack y agentes de IA con React, TypeScript, NestJS, Python y FastAPI.
+      value: Desarrollo e integración de agentes de IA con Python, LangGraph y FastAPI.
       keyName: property
 
     - name: 'og:image'
@@ -79,10 +84,10 @@ seo:
       value: summary_large_image
 
     - name: 'twitter:title'
-      value: Joseph Vega Blacido – Full Stack Developer · AI Engineer
+      value: Joseph Vega Blacido | AI Engineer en Lapzo
 
     - name: 'twitter:description'
-      value: Desarrollo de productos full stack y funcionalidades con agentes de IA.
+      value: Desarrollo e integración de agentes de IA con Python, LangGraph y FastAPI.
 
     - name: 'twitter:image'
       value: images/exto_preview.png
