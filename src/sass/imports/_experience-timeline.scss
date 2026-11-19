@@ -110,6 +110,16 @@
   }
 }
 
+.experience-timeline__role + .experience-timeline__role {
+  border-top: 1px solid #d4e1ea;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+
+  .palette-dark & {
+    border-top-color: #627789;
+  }
+}
+
 .experience-timeline__dates {
   align-items: flex-start;
   color: #435c6f;

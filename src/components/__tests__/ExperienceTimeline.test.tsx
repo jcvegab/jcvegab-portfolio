@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 
 import ExperienceTimeline from '../ExperienceTimeline';
 
@@ -90,7 +90,9 @@ describe('ExperienceTimeline', () => {
       screen.getByText('Desarrollo productos con IA.'),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('list', { name: 'Tecnologías utilizadas en Lapzo' }),
+      screen.getByRole('list', {
+        name: 'Tecnologías utilizadas como Full Stack Developer en Lapzo',
+      }),
     ).toHaveTextContent('ReactFastAPI');
     expect(region.querySelectorAll('svg[aria-hidden="true"]')).toHaveLength(4);
     expect(
@@ -99,6 +101,35 @@ describe('ExperienceTimeline', () => {
     expect(
       container.querySelector('time[datetime="2024-05"]'),
     ).toBeInTheDocument();
+  });
+
+  it('groups roles at the same company in their original order', () => {
+    const [lapzo, inetum] = experiences;
+    const aiRole = {
+      ...lapzo,
+      id: 'lapzo-ai-engineer',
+      role: 'Ingeniero de IA',
+      periods: [lapzo.periods[0]],
+    };
+    const fullStackRole = { ...lapzo, periods: [lapzo.periods[1]] };
+
+    render(
+      <ExperienceTimeline experiences={[aiRole, fullStackRole, inetum]} />,
+    );
+
+    expect(screen.getAllByRole('article')).toHaveLength(2);
+    expect(screen.getAllByRole('link', { name: 'Lapzo' })).toHaveLength(1);
+
+    const company = within(screen.getByRole('article', { name: 'Lapzo' }));
+    expect(
+      company.getAllByRole('heading').map((heading) => heading.textContent),
+    ).toEqual(['Ingeniero de IA', 'Full Stack Developer']);
+    expect(
+      company.getByRole('region', { name: 'Ingeniero de IA' }),
+    ).toHaveTextContent('Mayo de 2025 – Presente');
+    expect(
+      company.getByRole('region', { name: 'Full Stack Developer' }),
+    ).toHaveTextContent('Septiembre de 2021 – Mayo de 2024');
   });
 
   it('renders nothing when there is no experience', () => {

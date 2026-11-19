@@ -51,14 +51,13 @@ sections:
       laboral o necesitas ayuda con el desarrollo de una aplicación web,
       puedes enviarme un mensaje usando el siguiente formulario.
 
-      También puedes escribirme directamente a:
-      **contact@jcvegab.dev**
+      También puedes escribirme a [contact@jcvegab.dev](mailto:contact@jcvegab.dev).
 
       Normalmente respondo dentro de las próximas 24–48 horas.
 
 seo:
-  title: Contacto | Joseph Vega Blacido – Full Stack Developer · AI Engineer
-  description: Contacta a Joseph Vega Blacido para proyectos full stack, automatización con IA y oportunidades profesionales.
+  title: Contacto | Joseph Vega Blacido, AI Engineer
+  description: Contacta a Joseph Vega Blacido para proyectos de IA, desarrollo full stack y oportunidades profesionales.
 
   extra:
     - name: 'og:type'
@@ -66,11 +65,11 @@ seo:
       keyName: property
 
     - name: 'og:title'
-      value: Contactar a Joseph Vega Blacido – Full Stack Developer · AI Engineer
+      value: Contactar a Joseph Vega Blacido, AI Engineer
       keyName: property
 
     - name: 'og:description'
-      value: Ponte en contacto con Joseph Vega para proyectos de desarrollo web, consultoría o oportunidades laborales.
+      value: Ponte en contacto con Joseph Vega para proyectos de IA, desarrollo web u oportunidades laborales.
       keyName: property
 
     - name: 'twitter:card'
@@ -80,7 +79,7 @@ seo:
       value: Contacto – Joseph Vega
 
     - name: 'twitter:description'
-      value: Página de contacto para proyectos, consultoría y oportunidades laborales en desarrollo web.
+      value: Contacto para proyectos de IA, desarrollo web y oportunidades laborales.
 
 layout: advanced
 ---
