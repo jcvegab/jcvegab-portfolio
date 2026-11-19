@@ -31,7 +31,7 @@ sections:
         url: /contact/
         style: link
       - label: Ver CV (PDF)
-        url: https://drive.google.com/file/d/19H-GvO3Y0bfGgOdXIoKsa6wv91_r35NI/view?usp=sharing
+        url: https://drive.google.com/file/d/11AknPknXiVcm1tK4_7EniIMahO7x5mZ2/view?usp=sharing
         style: link
         new_window: true
 
